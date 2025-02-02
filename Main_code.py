@@ -418,6 +418,46 @@ class StockTradingEnvironment:
         done = self.current_step >= len(self.data) - 1
         return self._get_state(), reward, done
 
+    def get_state(self) -> np.ndarray:
+        """Get the current state of the environment."""
+        current_step = self.current_step - 1
+        
+        # Get current price and technical indicators
+        current_price = self.data.iloc[current_step]['close']
+        rsi = self.data.iloc[current_step]['RSI']
+        macd = self.data.iloc[current_step]['MACD']
+        macd_signal = self.data.iloc[current_step]['MACD_Signal']
+        ema5 = self.data.iloc[current_step]['EMA5']
+        ema20 = self.data.iloc[current_step]['EMA20']
+        volatility = self.data.iloc[current_step]['Volatility']
+        volume = self.data.iloc[current_step]['volume']
+        
+        # Calculate price changes
+        price_change = self.data.iloc[current_step]['Returns']
+        volume_ma5 = self.data.iloc[current_step]['Volume_MA5']
+        
+        # Normalize indicators
+        normalized_price = current_price / self.data['close'].mean() - 1
+        normalized_volume = volume / volume_ma5 - 1
+        
+        # Create state array
+        state = np.array([
+            normalized_price,          # Normalized price
+            price_change,             # Price change
+            rsi / 100,                # Normalized RSI
+            macd,                     # MACD
+            macd_signal,              # MACD Signal
+            ema5 / current_price - 1,  # EMA5 relative to price
+            ema20 / current_price - 1, # EMA20 relative to price
+            volatility,               # Volatility
+            normalized_volume,        # Normalized volume
+            self.shares_held / 100,        # Current position
+            self.balance / 10000,     # Normalized balance
+            1 if self.shares_held > 0 else 0  # Position indicator
+        ], dtype=np.float32)
+        
+        return state
+
 class TradingAgent:
     """Deep Q-Learning agent for stock trading."""
     

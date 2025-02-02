@@ -1,90 +1,90 @@
 {
-    "symbol": "AAPL",
-    "training_return": 1.1224660000000086,
-    "final_portfolio_value": 1011.2246600000001,
+    "symbol": "AGIX",
+    "training_return": -2.048700000000008,
+    "final_portfolio_value": 979.5129999999999,
     "recommendation": {
         "signal": "SELL",
         "confidence": 100.0,
-        "risk": "Low",
+        "risk": "Medium",
         "action_probabilities": {
-            "hold": 4.4688440864983446e-18,
-            "buy": 5.9393210835589905e-12,
+            "hold": 5.989371265736039e-21,
+            "buy": 7.189136441350028e-25,
             "sell": 1.0
         },
         "technical_indicators": {
             "RSI": 0.0,
-            "MACD": 2.906258915762322,
-            "MACD_Signal": 1.1813048774937327,
-            "Volatility": 0.019080534464765337
+            "MACD": -0.11025625141798656,
+            "MACD_Signal": -0.06058382455969751,
+            "Volatility": 0.0226145621261965
         }
     },
     "trading_history": [
         {
             "date": "2025-01-22",
             "action": "buy",
-            "shares": 2,
-            "price": 223.83,
-            "cost": 447.88383000000005,
+            "shares": 16,
+            "price": 30.45,
+            "cost": 487.4436,
             "portfolio_value": 1000
         },
         {
             "date": "2025-01-23",
             "action": "sell",
-            "shares": 2,
-            "price": 223.66,
-            "value": 447.09634,
-            "return": -0.07595049814592142,
-            "portfolio_value": 999.43617
+            "shares": 16,
+            "price": 30.48,
+            "value": 487.43616000000003,
+            "return": 0.09852216748768847,
+            "portfolio_value": 1000.2364
         },
         {
             "date": "2025-01-24",
             "action": "buy",
-            "shares": 2,
-            "price": 222.78,
-            "cost": 445.78278,
-            "portfolio_value": 999.2125100000001
+            "shares": 16,
+            "price": 30.345,
+            "cost": 485.76275999999996,
+            "portfolio_value": 999.9925599999999
         },
         {
             "date": "2025-01-27",
             "action": "sell",
-            "shares": 2,
-            "price": 229.86,
-            "value": 459.49014000000005,
-            "return": 3.178023161863728,
-            "portfolio_value": 1013.1497300000001
+            "shares": 16,
+            "price": 29.25,
+            "value": 467.766,
+            "return": -3.608502224419176,
+            "portfolio_value": 982.2298
         },
         {
             "date": "2025-01-28",
             "action": "buy",
-            "shares": 2,
-            "price": 238.26,
-            "cost": 476.75826,
-            "portfolio_value": 1012.9198700000002
+            "shares": 16,
+            "price": 30.27,
+            "cost": 484.56216,
+            "portfolio_value": 981.9957999999999
         },
         {
             "date": "2025-01-29",
             "action": "sell",
-            "shares": 2,
-            "price": 239.36,
-            "value": 478.48064000000005,
-            "return": 0.4616805170821887,
-            "portfolio_value": 1014.8816100000001
+            "shares": 16,
+            "price": 30.07,
+            "value": 480.87944,
+            "return": -0.6607201850016495,
+            "portfolio_value": 978.5536399999999
         },
         {
             "date": "2025-01-30",
             "action": "buy",
-            "shares": 2,
-            "price": 237.59,
-            "cost": 475.41759,
-            "portfolio_value": 1014.6422500000001
+            "shares": 16,
+            "price": 30.01,
+            "cost": 480.40008,
+            "portfolio_value": 978.3130799999999
         }
     ],
     "model_performance": {
-        "avg_reward": 121.79330579303412,
+        "avg_reward": 57.19386030446611,
         "final_epsilon": 0.12157665459056936,
         "training_episodes": 20,
-        "sharpe_ratio": 4.878571470566788,
-        "max_drawdown": 0.0036033266973869507
+        "sharpe_ratio": -7.507161590149723,
+        "max_drawdown": 0.0219181385520464
     },
     "dates": {
         "training_start": "2024-01-23",

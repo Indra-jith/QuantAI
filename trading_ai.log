@@ -6008,3 +6008,104 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:39:06,222 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "POST /process_stock HTTP/1.1" 200 -
 2025-02-02 15:39:06,279 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:39:06,306 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:41:43,056 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:41:43,491 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:41:48,904 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:41:48,909 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:41:48,959 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:41:48] "GET / HTTP/1.1" 200 -
+2025-02-02 15:41:49,080 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:41:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:41:49,084 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:41:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:41:49,153 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:41:49,198 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:41:49] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:41:52,356 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:41:52,359 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 15:41:52,360 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:41:52,361 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:41:52,362 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 15:41:52,362 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:41:55,088 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:41:55,118 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:41:55,119 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:41:55,143 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 15:41:55,143 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 15:41:55,143 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:41:57,615 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:41:57,644 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:41:57,644 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:41:57,658 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 15:41:57,659 - __main__ - INFO - Initializing training environment
+2025-02-02 15:41:57,660 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:41:57,661 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:41:58,333 - __main__ - INFO - Training model for INTC
+2025-02-02 15:41:58,788 - Main_code - INFO - Episode 1/20 | Reward: 2218.85 | Avg Reward: 2218.85 | Trades: 173 | Epsilon: 0.900 | Time: 0.45s
+2025-02-02 15:41:59,307 - Main_code - INFO - Episode 2/20 | Reward: 2721.00 | Avg Reward: 2469.92 | Trades: 179 | Epsilon: 0.810 | Time: 0.97s
+2025-02-02 15:41:59,801 - Main_code - INFO - Episode 3/20 | Reward: 2773.99 | Avg Reward: 2571.28 | Trades: 176 | Epsilon: 0.729 | Time: 1.47s
+2025-02-02 15:42:00,323 - Main_code - INFO - Episode 4/20 | Reward: 2858.40 | Avg Reward: 2643.06 | Trades: 194 | Epsilon: 0.656 | Time: 1.99s
+2025-02-02 15:42:00,827 - Main_code - INFO - Episode 5/20 | Reward: 4106.54 | Avg Reward: 2935.76 | Trades: 190 | Epsilon: 0.590 | Time: 2.49s
+2025-02-02 15:42:01,349 - Main_code - INFO - Episode 6/20 | Reward: 5114.79 | Avg Reward: 3514.94 | Trades: 202 | Epsilon: 0.531 | Time: 3.01s
+2025-02-02 15:42:01,845 - Main_code - INFO - Episode 7/20 | Reward: 4557.65 | Avg Reward: 3882.27 | Trades: 204 | Epsilon: 0.478 | Time: 3.51s
+2025-02-02 15:42:02,353 - Main_code - INFO - Episode 8/20 | Reward: 4866.66 | Avg Reward: 4300.81 | Trades: 211 | Epsilon: 0.430 | Time: 4.02s
+2025-02-02 15:42:02,863 - Main_code - INFO - Episode 9/20 | Reward: 3827.74 | Avg Reward: 4494.68 | Trades: 215 | Epsilon: 0.387 | Time: 4.53s
+2025-02-02 15:42:03,385 - Main_code - INFO - Episode 10/20 | Reward: 5096.99 | Avg Reward: 4692.77 | Trades: 223 | Epsilon: 0.349 | Time: 5.05s
+2025-02-02 15:42:03,887 - Main_code - INFO - Early stopping at episode 11 due to no improvement
+2025-02-02 15:42:03,887 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:42:03,893 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:42:03,893 - __main__ - ERROR - Error processing INTC: 'StockTradingEnvironment' object has no attribute 'get_state'
+2025-02-02 15:42:03,894 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 116, in process_stock
+    recommendation = generate_trading_recommendations(agent, test_env)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 625, in generate_trading_recommendations
+    state = env.get_state()
+AttributeError: 'StockTradingEnvironment' object has no attribute 'get_state'
+
+2025-02-02 15:42:03,897 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:42:03] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-02 15:43:04,232 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:43:04,642 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:43:09,667 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:43:09,674 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:43:09,730 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:09] "GET / HTTP/1.1" 200 -
+2025-02-02 15:43:09,874 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:43:09,876 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:43:09,970 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:43:10,017 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:10] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:43:13,138 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:43:13,141 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 15:43:13,141 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:43:13,142 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:43:13,142 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 15:43:13,143 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:43:15,636 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:43:15,663 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:43:15,664 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:43:15,683 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 15:43:15,684 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 15:43:15,685 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:43:18,183 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:43:18,211 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:43:18,211 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:43:18,233 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 15:43:18,233 - __main__ - INFO - Initializing training environment
+2025-02-02 15:43:18,234 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:43:18,234 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:43:18,997 - __main__ - INFO - Training model for INTC
+2025-02-02 15:43:19,473 - Main_code - INFO - Episode 1/20 | Reward: 1460.24 | Avg Reward: 1460.24 | Trades: 157 | Epsilon: 0.900 | Time: 0.48s
+2025-02-02 15:43:19,989 - Main_code - INFO - Episode 2/20 | Reward: 1465.23 | Avg Reward: 1462.74 | Trades: 179 | Epsilon: 0.810 | Time: 0.99s
+2025-02-02 15:43:20,508 - Main_code - INFO - Episode 3/20 | Reward: 4151.45 | Avg Reward: 2358.98 | Trades: 183 | Epsilon: 0.729 | Time: 1.51s
+2025-02-02 15:43:21,024 - Main_code - INFO - Episode 4/20 | Reward: 2935.35 | Avg Reward: 2503.07 | Trades: 192 | Epsilon: 0.656 | Time: 2.03s
+2025-02-02 15:43:21,542 - Main_code - INFO - Episode 5/20 | Reward: 4311.94 | Avg Reward: 2864.84 | Trades: 195 | Epsilon: 0.590 | Time: 2.55s
+2025-02-02 15:43:22,059 - Main_code - INFO - Episode 6/20 | Reward: 5374.33 | Avg Reward: 3647.66 | Trades: 197 | Epsilon: 0.531 | Time: 3.06s
+2025-02-02 15:43:22,575 - Main_code - INFO - Episode 7/20 | Reward: 4845.26 | Avg Reward: 4323.67 | Trades: 207 | Epsilon: 0.478 | Time: 3.58s
+2025-02-02 15:43:23,074 - Main_code - INFO - Episode 8/20 | Reward: 4434.52 | Avg Reward: 4380.28 | Trades: 204 | Epsilon: 0.430 | Time: 4.08s
+2025-02-02 15:43:23,573 - Main_code - INFO - Episode 9/20 | Reward: 3970.07 | Avg Reward: 4587.22 | Trades: 208 | Epsilon: 0.387 | Time: 4.58s
+2025-02-02 15:43:24,081 - Main_code - INFO - Episode 10/20 | Reward: 3620.02 | Avg Reward: 4448.84 | Trades: 212 | Epsilon: 0.349 | Time: 5.08s
+2025-02-02 15:43:24,585 - Main_code - INFO - Early stopping at episode 11 due to no improvement
+2025-02-02 15:43:24,586 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:43:24,593 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:43:24,594 - __main__ - INFO - Saving results for INTC
+2025-02-02 15:43:24,596 - __main__ - INFO - Successfully processed INTC
+2025-02-02 15:43:24,600 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:24] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:43:24,672 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:24] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:43:24,711 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:43:33,101 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
