@@ -6427,3 +6427,567 @@ jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'value'
 2025-02-02 15:51:26,716 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:51:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:52:02,925 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:52:02] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:52:02,972 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:52:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 16:31:29,697 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 16:31:29,697 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 16:31:29,699 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 16:31:33,765 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 16:31:33,772 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 16:31:35,725 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:31:35] "GET / HTTP/1.1" 200 -
+2025-02-02 16:31:35,813 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:31:35] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 16:31:35,845 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:31:35] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-02 16:31:35,930 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 16:31:35,993 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:31:35] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 16:31:40,627 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 16:31:40,631 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 16:31:40,631 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 16:31:40,632 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 16:31:40,632 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 16:31:40,632 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 16:31:56,811 - Main_code - ERROR - API request failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:31:56,812 - Main_code - ERROR - Error getting data for period: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:31:56,813 - __main__ - ERROR - Error processing INTC: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:31:57,009 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 782, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 470, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 514, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 782, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 470, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 514, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 57, in get_stock_data
+    response = requests.get(base_url, params=params)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 77, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 110, in get_stock_data
+    raise ValueError(f"Failed to fetch data: {str(e)}")
+ValueError: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+2025-02-02 16:31:57,011 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:31:57] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-02 16:34:05,749 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:05] "GET / HTTP/1.1" 200 -
+2025-02-02 16:34:05,842 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 16:34:05,844 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:05] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-02 16:34:05,958 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 16:34:05,998 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-02 16:34:06,023 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:06] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 16:34:09,996 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 16:34:09,998 - __main__ - INFO - Processing stock data for NVDA
+2025-02-02 16:34:09,999 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 16:34:09,999 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 16:34:10,000 - __main__ - INFO - Fetching training data for NVDA
+2025-02-02 16:34:10,000 - Main_code - INFO - Downloading data for NVDA...
+2025-02-02 16:34:26,409 - Main_code - ERROR - API request failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:34:26,411 - Main_code - ERROR - Error getting data for period: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:34:26,411 - __main__ - ERROR - Error processing NVDA: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-02-02 16:34:26,415 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 782, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 470, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 514, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 782, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 470, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\ssl_.py", line 514, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 57, in get_stock_data
+    response = requests.get(base_url, params=params)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 77, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 110, in get_stock_data
+    raise ValueError(f"Failed to fetch data: {str(e)}")
+ValueError: Failed to fetch data: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+2025-02-02 16:34:26,417 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 16:34:26] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-02 17:50:59,793 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 17:50:59,793 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 17:50:59,796 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 17:51:03,538 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 17:51:03,541 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 17:51:03,565 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:51:03] "GET / HTTP/1.1" 200 -
+2025-02-02 17:51:03,654 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:51:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:51:03,655 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:51:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 17:51:03,798 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:51:03,856 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:51:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-02 17:51:03,857 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:51:03] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 17:51:43,366 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:51:43,369 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 17:51:43,369 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 17:51:43,369 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 17:51:43,370 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 17:51:43,370 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 17:51:45,910 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 17:51:45,957 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 17:51:45,958 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 17:51:45,984 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 17:51:45,986 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 17:51:45,987 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 17:51:48,855 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 17:51:48,889 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 17:51:48,890 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 17:51:48,912 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 17:51:48,912 - __main__ - INFO - Initializing training environment
+2025-02-02 17:51:48,913 - __main__ - INFO - Initializing testing environment
+2025-02-02 17:51:48,913 - __main__ - INFO - Initializing trading agent
+2025-02-02 17:51:50,147 - __main__ - INFO - Training model for INTC
+2025-02-02 17:51:51,246 - Main_code - INFO - Episode 1/20 | Reward: -19.18 | Avg Reward: -19.18 | Trades: 161 | Epsilon: 0.900 | Time: 1.10s
+2025-02-02 17:51:52,590 - Main_code - INFO - Episode 2/20 | Reward: -21.38 | Avg Reward: -20.28 | Trades: 164 | Epsilon: 0.810 | Time: 2.44s
+2025-02-02 17:51:53,760 - Main_code - INFO - Episode 3/20 | Reward: -14.19 | Avg Reward: -18.25 | Trades: 134 | Epsilon: 0.729 | Time: 3.61s
+2025-02-02 17:51:55,110 - Main_code - INFO - Episode 4/20 | Reward: -10.87 | Avg Reward: -16.40 | Trades: 124 | Epsilon: 0.656 | Time: 4.96s
+2025-02-02 17:51:56,240 - Main_code - INFO - Episode 5/20 | Reward: -11.15 | Avg Reward: -15.35 | Trades: 112 | Epsilon: 0.590 | Time: 6.09s
+2025-02-02 17:51:57,335 - Main_code - INFO - Episode 6/20 | Reward: -9.49 | Avg Reward: -13.41 | Trades: 105 | Epsilon: 0.531 | Time: 7.19s
+2025-02-02 17:51:58,673 - Main_code - INFO - Episode 7/20 | Reward: -2.66 | Avg Reward: -9.67 | Trades: 71 | Epsilon: 0.478 | Time: 8.52s
+2025-02-02 17:51:59,896 - Main_code - INFO - Episode 8/20 | Reward: -3.75 | Avg Reward: -7.58 | Trades: 70 | Epsilon: 0.430 | Time: 9.75s
+2025-02-02 17:52:01,162 - Main_code - INFO - Episode 9/20 | Reward: 0.07 | Avg Reward: -5.39 | Trades: 63 | Epsilon: 0.387 | Time: 11.01s
+2025-02-02 17:52:02,484 - Main_code - INFO - Episode 10/20 | Reward: -2.74 | Avg Reward: -3.71 | Trades: 73 | Epsilon: 0.349 | Time: 12.34s
+2025-02-02 17:52:03,822 - Main_code - INFO - Episode 11/20 | Reward: -2.17 | Avg Reward: -2.25 | Trades: 61 | Epsilon: 0.314 | Time: 13.67s
+2025-02-02 17:52:05,180 - Main_code - INFO - Episode 12/20 | Reward: -12.42 | Avg Reward: -4.20 | Trades: 58 | Epsilon: 0.282 | Time: 15.03s
+2025-02-02 17:52:06,520 - Main_code - INFO - Episode 13/20 | Reward: -4.21 | Avg Reward: -4.30 | Trades: 46 | Epsilon: 0.254 | Time: 16.37s
+2025-02-02 17:52:07,879 - Main_code - INFO - Episode 14/20 | Reward: 0.92 | Avg Reward: -4.12 | Trades: 48 | Epsilon: 0.229 | Time: 17.73s
+2025-02-02 17:52:09,269 - Main_code - INFO - Episode 15/20 | Reward: 2.44 | Avg Reward: -3.09 | Trades: 43 | Epsilon: 0.206 | Time: 19.12s
+2025-02-02 17:52:10,813 - Main_code - INFO - Episode 16/20 | Reward: 5.22 | Avg Reward: -1.61 | Trades: 32 | Epsilon: 0.185 | Time: 20.66s
+2025-02-02 17:52:12,269 - Main_code - INFO - Episode 17/20 | Reward: 6.40 | Avg Reward: 2.16 | Trades: 27 | Epsilon: 0.167 | Time: 22.12s
+2025-02-02 17:52:13,638 - Main_code - INFO - Episode 18/20 | Reward: 6.41 | Avg Reward: 4.28 | Trades: 30 | Epsilon: 0.150 | Time: 23.49s
+2025-02-02 17:52:14,963 - Main_code - INFO - Episode 19/20 | Reward: 7.66 | Avg Reward: 5.63 | Trades: 20 | Epsilon: 0.135 | Time: 24.82s
+2025-02-02 17:52:16,031 - Main_code - INFO - Episode 20/20 | Reward: 7.54 | Avg Reward: 6.65 | Trades: 21 | Epsilon: 0.122 | Time: 25.88s
+2025-02-02 17:52:16,031 - __main__ - INFO - Evaluating model performance
+2025-02-02 17:52:16,041 - __main__ - INFO - Generating trading recommendations
+2025-02-02 17:52:16,043 - __main__ - INFO - Saving results for INTC
+2025-02-02 17:52:16,047 - __main__ - INFO - Successfully processed INTC
+2025-02-02 17:52:16,051 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:16] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 17:52:16,213 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:16] "GET /results HTTP/1.1" 200 -
+2025-02-02 17:52:16,268 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:52:57,344 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:57] "GET / HTTP/1.1" 200 -
+2025-02-02 17:52:57,411 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:52:57,411 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 17:52:57,498 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:52:57,550 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:52:57] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 17:53:04,510 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:53:04] "GET /results HTTP/1.1" 200 -
+2025-02-02 17:53:04,573 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:53:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:54:14,053 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:14] "GET /results HTTP/1.1" 200 -
+2025-02-02 17:54:14,097 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:54:26,958 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:26] "GET / HTTP/1.1" 200 -
+2025-02-02 17:54:27,021 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:54:27,023 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 17:54:27,113 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:54:27,174 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:54:27] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 17:54:32,606 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:54:32,609 - __main__ - INFO - Processing stock data for DELL
+2025-02-02 17:54:32,611 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 17:54:32,611 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 17:54:32,611 - __main__ - INFO - Fetching training data for DELL
+2025-02-02 17:54:32,612 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 17:54:35,082 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 17:54:35,109 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 17:54:35,110 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 17:54:35,132 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-02 17:54:35,133 - __main__ - INFO - Fetching testing data for DELL
+2025-02-02 17:54:35,133 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 17:54:37,203 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 17:54:37,219 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 17:54:37,220 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 17:54:37,238 - Main_code - INFO - Got 8 days of data for DELL
+2025-02-02 17:54:37,239 - __main__ - INFO - Initializing training environment
+2025-02-02 17:54:37,239 - __main__ - INFO - Initializing testing environment
+2025-02-02 17:54:37,240 - __main__ - INFO - Initializing trading agent
+2025-02-02 17:54:37,241 - __main__ - INFO - Training model for DELL
+2025-02-02 17:54:38,355 - Main_code - INFO - Episode 1/20 | Reward: -21.51 | Avg Reward: -21.51 | Trades: 170 | Epsilon: 0.900 | Time: 1.11s
+2025-02-02 17:54:39,752 - Main_code - INFO - Episode 2/20 | Reward: -16.10 | Avg Reward: -18.80 | Trades: 152 | Epsilon: 0.810 | Time: 2.51s
+2025-02-02 17:54:41,020 - Main_code - INFO - Episode 3/20 | Reward: -13.33 | Avg Reward: -16.98 | Trades: 130 | Epsilon: 0.729 | Time: 3.78s
+2025-02-02 17:54:42,348 - Main_code - INFO - Episode 4/20 | Reward: -9.95 | Avg Reward: -15.22 | Trades: 119 | Epsilon: 0.656 | Time: 5.11s
+2025-02-02 17:54:43,657 - Main_code - INFO - Episode 5/20 | Reward: -10.77 | Avg Reward: -14.33 | Trades: 99 | Epsilon: 0.590 | Time: 6.42s
+2025-02-02 17:54:44,939 - Main_code - INFO - Episode 6/20 | Reward: -6.03 | Avg Reward: -11.24 | Trades: 105 | Epsilon: 0.531 | Time: 7.70s
+2025-02-02 17:54:46,250 - Main_code - INFO - Episode 7/20 | Reward: -2.62 | Avg Reward: -8.54 | Trades: 89 | Epsilon: 0.478 | Time: 9.01s
+2025-02-02 17:54:47,564 - Main_code - INFO - Episode 8/20 | Reward: -2.61 | Avg Reward: -6.40 | Trades: 83 | Epsilon: 0.430 | Time: 10.32s
+2025-02-02 17:54:48,913 - Main_code - INFO - Episode 9/20 | Reward: -4.79 | Avg Reward: -5.36 | Trades: 90 | Epsilon: 0.387 | Time: 11.67s
+2025-02-02 17:54:50,278 - Main_code - INFO - Episode 10/20 | Reward: -1.47 | Avg Reward: -3.50 | Trades: 81 | Epsilon: 0.349 | Time: 13.04s
+2025-02-02 17:54:51,618 - Main_code - INFO - Episode 11/20 | Reward: -2.75 | Avg Reward: -2.85 | Trades: 75 | Epsilon: 0.314 | Time: 14.38s
+2025-02-02 17:54:52,945 - Main_code - INFO - Episode 12/20 | Reward: -1.40 | Avg Reward: -2.60 | Trades: 88 | Epsilon: 0.282 | Time: 15.70s
+2025-02-02 17:54:54,237 - Main_code - INFO - Episode 13/20 | Reward: -3.69 | Avg Reward: -2.82 | Trades: 69 | Epsilon: 0.254 | Time: 16.99s
+2025-02-02 17:54:55,564 - Main_code - INFO - Episode 14/20 | Reward: -3.96 | Avg Reward: -2.66 | Trades: 73 | Epsilon: 0.229 | Time: 18.32s
+2025-02-02 17:54:56,965 - Main_code - INFO - Episode 15/20 | Reward: 1.06 | Avg Reward: -2.15 | Trades: 67 | Epsilon: 0.206 | Time: 19.72s
+2025-02-02 17:54:58,441 - Main_code - INFO - Episode 16/20 | Reward: -6.17 | Avg Reward: -2.83 | Trades: 55 | Epsilon: 0.185 | Time: 21.20s
+2025-02-02 17:54:59,834 - Main_code - INFO - Episode 17/20 | Reward: -2.39 | Avg Reward: -3.03 | Trades: 61 | Epsilon: 0.167 | Time: 22.59s
+2025-02-02 17:55:01,142 - Main_code - INFO - Episode 18/20 | Reward: -4.06 | Avg Reward: -3.10 | Trades: 56 | Epsilon: 0.150 | Time: 23.90s
+2025-02-02 17:55:02,471 - Main_code - INFO - Episode 19/20 | Reward: 1.19 | Avg Reward: -2.07 | Trades: 60 | Epsilon: 0.135 | Time: 25.23s
+2025-02-02 17:55:03,836 - Main_code - INFO - Episode 20/20 | Reward: -3.35 | Avg Reward: -2.95 | Trades: 51 | Epsilon: 0.122 | Time: 26.59s
+2025-02-02 17:55:03,837 - __main__ - INFO - Evaluating model performance
+2025-02-02 17:55:03,846 - __main__ - INFO - Generating trading recommendations
+2025-02-02 17:55:03,850 - __main__ - INFO - Saving results for DELL
+2025-02-02 17:55:03,852 - __main__ - INFO - Successfully processed DELL
+2025-02-02 17:55:03,859 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:03] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 17:55:03,959 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:03] "GET /results HTTP/1.1" 200 -
+2025-02-02 17:55:04,071 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:55:31,640 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:31] "GET / HTTP/1.1" 200 -
+2025-02-02 17:55:31,697 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 17:55:31,698 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 17:55:31,782 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 17:55:31,834 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:31] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 17:55:34,007 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 17:55:34] "GET /static/doc/Stock%20Trading%20Using%20Reinforcement%20Learning.pdf HTTP/1.1" 200 -
+2025-02-02 18:27:18,266 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 18:27:18,266 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 18:27:18,268 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 18:27:22,878 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 18:27:22,886 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 18:27:34,927 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:34] "GET / HTTP/1.1" 200 -
+2025-02-02 18:27:35,098 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:27:35,099 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:27:35,306 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:27:35,330 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-02 18:27:35,408 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:35] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:27:39,211 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:27:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:29:42,003 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:29:42] "GET / HTTP/1.1" 200 -
+2025-02-02 18:29:42,074 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:29:42] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:29:42,076 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:29:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:29:42,284 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:29:42,373 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:29:42] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:29:45,511 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:29:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:33:05,593 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:33:05] "GET / HTTP/1.1" 200 -
+2025-02-02 18:33:05,665 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:33:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:33:05,666 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:33:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:33:05,768 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:33:05,862 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:33:05] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:36:52,266 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:36:52] "GET / HTTP/1.1" 200 -
+2025-02-02 18:36:52,333 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:36:52] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:36:52,335 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:36:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:36:52,582 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:36:52,674 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:36:52] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:37:49,940 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:37:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:39:02,656 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:02] "GET / HTTP/1.1" 200 -
+2025-02-02 18:39:02,724 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:02] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:39:02,728 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:39:02,972 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:39:03,107 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:03] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:39:12,401 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:12] "GET / HTTP/1.1" 200 -
+2025-02-02 18:39:12,463 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:39:12,464 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:39:12,597 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:39:12,720 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:39:35,268 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:35] "GET / HTTP/1.1" 200 -
+2025-02-02 18:39:35,295 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:39:35,304 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:39:35,421 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:39:35,509 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:35] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:39:59,808 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:39:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:47:36,099 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:47:36] "GET / HTTP/1.1" 200 -
+2025-02-02 18:47:36,158 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:47:36] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:47:36,166 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:47:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:47:36,314 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:47:36,407 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:47:36] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:52:14,527 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:14] "GET / HTTP/1.1" 200 -
+2025-02-02 18:52:14,567 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:14] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:52:14,570 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:52:14,686 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:52:14,779 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:14] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:52:22,969 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:22] "GET / HTTP/1.1" 200 -
+2025-02-02 18:52:23,014 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:52:23,019 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:52:23,141 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:52:23,249 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:52:23] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:53:22,461 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:22] "GET / HTTP/1.1" 200 -
+2025-02-02 18:53:22,500 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:53:22,502 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:53:22,606 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:53:22,703 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:22] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:53:56,085 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:56] "GET / HTTP/1.1" 200 -
+2025-02-02 18:53:56,121 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:53:56,123 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:53:56,216 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:53:56,288 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:53:56] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:54:24,214 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:24] "GET / HTTP/1.1" 200 -
+2025-02-02 18:54:24,273 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 18:54:24,277 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:54:24,385 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:54:24,485 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:54:41,509 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:41] "GET / HTTP/1.1" 200 -
+2025-02-02 18:54:41,550 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 18:54:41,553 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 18:54:41,655 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:54:41,742 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:54:41] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 18:54:57,931 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 18:54:57,934 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 18:54:57,935 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 18:54:57,935 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 18:54:57,936 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 18:54:57,936 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 18:55:00,841 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 18:55:00,881 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 18:55:00,882 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 18:55:00,945 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 18:55:00,946 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 18:55:00,946 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 18:55:03,150 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 18:55:03,200 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 18:55:03,201 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 18:55:03,225 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 18:55:03,226 - __main__ - INFO - Initializing training environment
+2025-02-02 18:55:03,227 - __main__ - INFO - Initializing testing environment
+2025-02-02 18:55:03,228 - __main__ - INFO - Initializing trading agent
+2025-02-02 18:55:05,610 - __main__ - INFO - Training model for INTC
+2025-02-02 18:55:07,253 - Main_code - INFO - Episode 1/20 | Reward: -17.94 | Avg Reward: -17.94 | Trades: 160 | Epsilon: 0.900 | Time: 1.64s
+2025-02-02 18:55:08,781 - Main_code - INFO - Episode 2/20 | Reward: -14.06 | Avg Reward: -16.00 | Trades: 136 | Epsilon: 0.810 | Time: 3.17s
+2025-02-02 18:55:10,082 - Main_code - INFO - Episode 3/20 | Reward: -17.22 | Avg Reward: -16.41 | Trades: 146 | Epsilon: 0.729 | Time: 4.47s
+2025-02-02 18:55:11,420 - Main_code - INFO - Episode 4/20 | Reward: -13.16 | Avg Reward: -15.60 | Trades: 121 | Epsilon: 0.656 | Time: 5.81s
+2025-02-02 18:55:12,588 - Main_code - INFO - Episode 5/20 | Reward: -7.48 | Avg Reward: -13.97 | Trades: 102 | Epsilon: 0.590 | Time: 6.98s
+2025-02-02 18:55:14,035 - Main_code - INFO - Episode 6/20 | Reward: -9.69 | Avg Reward: -12.32 | Trades: 99 | Epsilon: 0.531 | Time: 8.42s
+2025-02-02 18:55:15,340 - Main_code - INFO - Episode 7/20 | Reward: -3.86 | Avg Reward: -10.28 | Trades: 82 | Epsilon: 0.478 | Time: 9.73s
+2025-02-02 18:55:16,952 - Main_code - INFO - Episode 8/20 | Reward: -12.54 | Avg Reward: -9.35 | Trades: 89 | Epsilon: 0.430 | Time: 11.34s
+2025-02-02 18:55:18,054 - Main_code - INFO - Episode 9/20 | Reward: -12.24 | Avg Reward: -9.16 | Trades: 77 | Epsilon: 0.387 | Time: 12.44s
+2025-02-02 18:55:19,169 - Main_code - INFO - Episode 10/20 | Reward: -4.63 | Avg Reward: -8.59 | Trades: 72 | Epsilon: 0.349 | Time: 13.56s
+2025-02-02 18:55:20,865 - Main_code - INFO - Episode 11/20 | Reward: -0.26 | Avg Reward: -6.71 | Trades: 58 | Epsilon: 0.314 | Time: 15.25s
+2025-02-02 18:55:22,362 - Main_code - INFO - Episode 12/20 | Reward: 1.32 | Avg Reward: -5.67 | Trades: 47 | Epsilon: 0.282 | Time: 16.75s
+2025-02-02 18:55:23,696 - Main_code - INFO - Episode 13/20 | Reward: -1.78 | Avg Reward: -3.52 | Trades: 65 | Epsilon: 0.254 | Time: 18.09s
+2025-02-02 18:55:25,205 - Main_code - INFO - Episode 14/20 | Reward: -5.47 | Avg Reward: -2.17 | Trades: 59 | Epsilon: 0.229 | Time: 19.59s
+2025-02-02 18:55:26,250 - Main_code - INFO - Episode 15/20 | Reward: -11.79 | Avg Reward: -3.60 | Trades: 64 | Epsilon: 0.206 | Time: 20.64s
+2025-02-02 18:55:27,433 - Main_code - INFO - Episode 16/20 | Reward: -9.32 | Avg Reward: -5.41 | Trades: 56 | Epsilon: 0.185 | Time: 21.82s
+2025-02-02 18:55:28,725 - Main_code - INFO - Early stopping at episode 17 due to no improvement
+2025-02-02 18:55:28,726 - __main__ - INFO - Evaluating model performance
+2025-02-02 18:55:28,738 - __main__ - INFO - Generating trading recommendations
+2025-02-02 18:55:28,741 - __main__ - INFO - Saving results for INTC
+2025-02-02 18:55:28,743 - __main__ - INFO - Successfully processed INTC
+2025-02-02 18:55:28,747 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:55:28] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 18:55:28,824 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:55:28] "GET /results HTTP/1.1" 200 -
+2025-02-02 18:55:28,858 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 18:55:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 19:09:07,340 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:09:07] "GET / HTTP/1.1" 200 -
+2025-02-02 19:09:07,495 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:09:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 19:09:07,511 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:09:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 19:09:07,725 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 19:09:07,824 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:09:07] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 19:09:17,593 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:09:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 19:14:11,858 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:14:11] "GET / HTTP/1.1" 200 -
+2025-02-02 19:14:11,936 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:14:11] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 19:14:11,941 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:14:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 19:14:12,136 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 19:14:12,213 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:14:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 19:14:23,760 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:14:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 19:15:48,358 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:15:48] "GET / HTTP/1.1" 200 -
+2025-02-02 19:15:48,405 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:15:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 19:15:48,409 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:15:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 19:15:48,595 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 19:15:48,694 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:15:48] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 19:16:04,210 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:16:04] "GET / HTTP/1.1" 200 -
+2025-02-02 19:16:04,246 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:16:04] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 19:16:04,248 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:16:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 19:16:04,374 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 19:16:04,455 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 19:16:04] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:22:06,138 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 22:22:06,139 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 22:22:06,144 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 22:22:09,707 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 22:22:09,712 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 22:22:09,741 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:22:09] "GET / HTTP/1.1" 200 -
+2025-02-02 22:22:09,840 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:22:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:22:09,841 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:22:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:22:10,241 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:22:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-02 22:22:10,305 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:22:10,350 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:22:10] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:46:01,227 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:01] "GET / HTTP/1.1" 200 -
+2025-02-02 22:46:01,270 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:01] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:46:01,317 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:46:01,380 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:46:01,423 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:01] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:46:11,044 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "GET / HTTP/1.1" 200 -
+2025-02-02 22:46:11,094 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 22:46:11,101 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:46:11,203 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:46:11,250 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:46:11,511 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "GET / HTTP/1.1" 200 -
+2025-02-02 22:46:11,536 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 22:46:11,539 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:46:11,609 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:46:11,653 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:11] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:46:14,082 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:46:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 22:48:17,065 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:48:17] "GET / HTTP/1.1" 200 -
+2025-02-02 22:48:17,108 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:48:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:48:17,115 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:48:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:48:17,200 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:48:17,247 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:48:17] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:49:30,187 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:49:30] "GET / HTTP/1.1" 200 -
+2025-02-02 22:49:30,232 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:49:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:49:30,242 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:49:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:49:30,336 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:49:30,388 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:49:30] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:50:31,329 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:50:31] "GET / HTTP/1.1" 200 -
+2025-02-02 22:50:31,379 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:50:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:50:31,384 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:50:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:50:31,481 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:50:31,538 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:50:31] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:52:06,417 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:52:06] "GET / HTTP/1.1" 200 -
+2025-02-02 22:52:06,457 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:52:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:52:06,471 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:52:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:52:06,577 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:52:06,622 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:52:06] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:53:40,688 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:53:40] "GET / HTTP/1.1" 200 -
+2025-02-02 22:53:40,735 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:53:40] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:53:40,740 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:53:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:53:40,834 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:53:40,885 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:53:40] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:56:26,263 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:26] "GET / HTTP/1.1" 200 -
+2025-02-02 22:56:26,404 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:56:26,415 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:56:26,489 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:56:26,537 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:26] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:56:33,839 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:33] "GET / HTTP/1.1" 200 -
+2025-02-02 22:56:33,947 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 22:56:33,950 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:56:34,036 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:56:34,089 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:56:34] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 22:57:54,941 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:57:54] "GET / HTTP/1.1" 200 -
+2025-02-02 22:57:54,989 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:57:54] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 22:57:54,992 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:57:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 22:57:55,153 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 22:57:55,232 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 22:57:55] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 23:00:58,773 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 23:00:58] "GET / HTTP/1.1" 200 -
+2025-02-02 23:00:58,818 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 23:00:58] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-02 23:00:58,833 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 23:00:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 23:00:58,937 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 23:00:59,070 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 23:00:59] "GET /get_stock_data HTTP/1.1" 200 -
