@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuanTxAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .suggestions-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .suggestion-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #333;
+            color: #fff;
+        }
+        
+        .suggestion-item:hover {
+            background: #333;
+        }
+        
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            color: #666;
+            z-index: 1;
+        }
+        
+        #companyName {
+            width: 100%;
+            padding: 10px;
+            padding-left: 35px !important;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 4px;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-screen.hidden {
+            display: none;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-up {
+            transform: translateY(50px);
+        }
+        
+        .fade-right {
+            transform: translateX(-50px);
+        }
+        
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+        
+        .workflow-step {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        .workflow-step .step-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .technical-details {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        .algorithm-info {
+            margin-bottom: 10px;
+        }
+        
+        .algorithm-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        .algorithm-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(0, 255, 157, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .algorithm-info {
+            flex: 1;
+        }
+
+        .neural-network {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .neural-network svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .node {
+            fill: var(--primary-color);
+            opacity: 0;
+            animation: nodeAppear 0.5s ease forwards;
+        }
+
+        .connection {
+            stroke: var(--primary-color);
+            stroke-width: 1;
+            opacity: 0;
+            animation: connectionFlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes nodeAppear {
+            from {
+                opacity: 0;
+                r: 0;
+            }
+            to {
+                opacity: 1;
+                r: 5;
+            }
+        }
+
+        @keyframes connectionFlow {
+            0% {
+                stroke-dashoffset: 100;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                stroke-dashoffset: -100;
+                opacity: 0;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+            color: var(--primary-color);
+        }
+
+        .algo-name {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .algorithm-description {
+            margin-top: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        
+        .research-paper {
+            margin-top: 50px;
+        }
+        
+        .download-button {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+            <h1 class="glitch" data-text="quant Ai">QuanT AI</h1>
+            <p class="subtitle">Powered by Advanced Reinforcement Learning</p>
+            <div class="market-stats">
+                <div class="stat">
+                    <i class="fas fa-robot"></i>
+                    <span>AI-Powered Analysis</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-brain"></i>
+                    <span>Deep Learning</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-bolt"></i>
+                    <span>Real-Time Data</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-frame">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                    <form id="stockForm" action="{{ url_for('process_stock') }}" method="post" onsubmit="analyzeStock(event)">
+                        <div class="input-group">
+                            <input type="text" 
+                                   id="companyName" 
+                                   name="companyName" 
+                                   class="form-control" 
+                                   placeholder="Enter company name or symbol" 
+                                   autocomplete="off"
+                                   required>
+                            <input type="hidden" 
+                                   id="symbol" 
+                                   name="symbol">
+                            <div id="suggestions" class="suggestions-box"></div>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="alert alert-danger mt-3">
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loading Screen -->
+            <div id="loading" class="loading-screen hidden">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <p>Analyzing stock data and generating predictions...</p>
+                </div>
+            </div>
+
+            <div id="results" class="hidden">
+                <div class="results-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h2 id="stockSymbol"></h2>
+                    </div>
+                    <div class="price-info">
+                        <span id="currentPrice" class="price"></span>
+                        <span id="priceChange" class="change"></span>
+                    </div>
+                    <div class="recommendation">
+                        <h3>AI Recommendation</h3>
+                        <div id="action" class="action"></div>
+                        <div class="metrics">
+                            <div class="metric">
+                                <i class="fas fa-percentage"></i>
+                                <label>Confidence</label>
+                                <span id="confidence"></span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-chart-line"></i>
+                                <label>Expected Return</label>
+                                <span id="expectedReturn"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="resetForm()" class="reset-btn">
+                    <i class="fas fa-redo"></i>
+                    <span>Analyze Another Stock</span>
+                </button>
+            </div>
+            
+            <!-- Research Paper Download Section -->
+            <div class="research-paper scroll-animate fade-up">
+                <h2>Research Paper</h2>
+                <p class="paper-description">Explore the technical implementation details and mathematical foundations of our Double Deep Q-Network (DDQN) trading algorithm in this comprehensive research paper.</p>
+                <a href="{{ url_for('static', filename='doc/Stock Trading Using Reinforcement Learning.pdf') }}" 
+                   class="download-button" 
+                   download="Stock Trading Using Reinforcement Learning.pdf">
+                    <i class="fas fa-file-pdf"></i>
+                    Download Research Paper
+                </a>
+            </div>
+
+            <div class="how-it-works">
+                <h2 class="scroll-animate fade-up">How the Bot Works</h2>
+                
+                <div class="process-description scroll-animate fade-up">
+                    <div class="typing-text"></div>
+                </div>
+
+                <div class="date-info scroll-animate fade-up">
+                    <div class="date-block">
+                        <h3>Training Period</h3>
+                        <p id="trainingPeriod"></p>
+                    </div>
+                    <div class="date-block">
+                        <h3>Testing Period</h3>
+                        <p id="testingPeriod"></p>
+                    </div>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="workflow-step scroll-animate fade-up" data-delay="0">
+                        <div class="step-number">1</div>
+                        <h3>Data Collection</h3>
+                        <p>Gathers historical stock data and technical indicators from reliable sources</p>
+                    </div>
+                    <div class="workflow-step scroll-animate fade-up" data-delay="200">
+                        <div class="step-number">2</div>
+                        <h3>Training Phase</h3>
+                        <p>Uses reinforcement learning to train on historical market patterns</p>
+                    </div>
+                    <div class="workflow-step scroll-animate fade-up" data-delay="400">
+                        <div class="step-number">3</div>
+                        <h3>Analysis</h3>
+                        <p>Processes current market conditions using trained model</p>
+                    </div>
+                    <div class="workflow-step scroll-animate fade-up" data-delay="600">
+                        <div class="step-number">4</div>
+                        <h3>Decision Making</h3>
+                        <p>Generates buy/sell recommendations based on learned strategies</p>
+                    </div>
+                </div>
+                
+                <div class="technical-details scroll-animate fade-up">
+                    <h3>Technical Implementation</h3>
+                    <div class="algorithm-container">
+                        <div class="algorithm-info scroll-animate fade-right">
+                            <strong>Algorithm:</strong> <span class="algo-name"></span>
+                            <div class="algorithm-description"></div>
+                        </div>
+                        <div class="neural-network">
+                            <svg viewBox="0 0 500 400">
+                                <!-- Root Node -->
+                                <circle class="node input-node" cx="50" cy="200" r="5" />
+
+                                <!-- Hidden Layer 1 -->
+                                <circle class="node" cx="140" cy="80" r="5" />
+                                <circle class="node" cx="140" cy="160" r="5" />
+                                <circle class="node" cx="140" cy="240" r="5" />
+                                <circle class="node" cx="140" cy="320" r="5" />
+
+                                <!-- Hidden Layer 2 -->
+                                <circle class="node" cx="230" cy="30" r="5" />
+                                <circle class="node" cx="230" cy="130" r="5" />
+                                <circle class="node" cx="230" cy="210" r="5" />
+                                <circle class="node" cx="230" cy="290" r="5" />
+                                <circle class="node" cx="230" cy="380" r="5" />
+
+                                <!-- Hidden Layer 3 -->
+                                <circle class="node" cx="320" cy="80" r="5" />
+                                <circle class="node" cx="320" cy="160" r="5" />
+                                <circle class="node" cx="320" cy="240" r="5" />
+                                <circle class="node" cx="320" cy="320" r="5" />
+
+                                <!-- Output Node -->
+                                <circle class="node output-node" cx="410" cy="200" r="5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p><i class="fas fa-shield-alt"></i> AI-Powered Stock Analysis</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Use at your own risk. Past performance does not guarantee future results.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typing animation text
+            const text = "The trading bot analyzes one year of historical data, excluding the most recent week. It trains on this extensive dataset to learn patterns and strategies. The final week is used as a testing period to validate the bot's performance and generate current trading recommendations.";
+            const typingText = document.querySelector('.typing-text');
+            let charIndex = 0;
+
+            function typeWriter() {
+                if (charIndex < text.length) {
+                    typingText.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 30);
+                }
+            }
+
+            // Scroll animation observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        if (entry.target.classList.contains('typing-text')) {
+                            if (charIndex === 0) { // Only start typing if not already started
+                                typeWriter();
+                            }
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe all elements with scroll-animate class
+            document.querySelectorAll('.scroll-animate, .typing-text').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Calculate and display date ranges
+            function formatDate(date) {
+                return date.toISOString().split('T')[0];
+            }
+
+            function updateDateRanges() {
+                const today = new Date();
+                
+                // Testing period: Last 7 days
+                const testEnd = new Date(today);
+                const testStart = new Date(today);
+                testStart.setDate(testStart.getDate() - 7);
+                
+                // Training period: Previous year excluding last 7 days
+                const trainEnd = new Date(testStart);
+                trainEnd.setDate(trainEnd.getDate() - 1);
+                const trainStart = new Date(trainEnd);
+                trainStart.setFullYear(trainStart.getFullYear() - 1);
+
+                document.getElementById('trainingPeriod').textContent = 
+                    `${formatDate(trainStart)} to ${formatDate(trainEnd)}`;
+                document.getElementById('testingPeriod').textContent = 
+                    `${formatDate(testStart)} to ${formatDate(testEnd)}`;
+            }
+
+            updateDateRanges();
+
+            // Update the observer to use the new animation function
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        typeAlgoName();
+                        typeAlgoDescription();
+                        setTimeout(createConnections, 1000); // Start after text animations
+                    }
+                });
+            });
+
+            observer2.observe(document.querySelector('.algorithm-container'));
+        });
+    </script>
+    <script>
+        function createConnections() {
+            const svg = document.querySelector('.neural-network svg');
+            
+            // Clear existing connections
+            const existingPaths = svg.querySelectorAll('path');
+            existingPaths.forEach(path => path.remove());
+            
+            // Define layer coordinates
+            const rootNode = [50, 200];
+            const layer1 = [[140,80], [140,160], [140,240], [140,320]];
+            const layer2 = [[230,30], [230,130], [230,210], [230,290], [230,380]];
+            const layer3 = [[320,80], [320,160], [320,240], [320,320]];
+            const outputNode = [410, 200];
+            
+            // Create all paths first but keep them invisible
+            const paths = {
+                layer1: [],
+                layer2: [],
+                layer3: [],
+                layer4: []
+            };
+            
+            function createPath(x1, y1, x2, y2, layerClass) {
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("class", `connection ${layerClass}`);
+                path.setAttribute("d", `M${x1},${y1} L${x2},${y2}`);
+                svg.insertBefore(path, svg.firstChild);
+                return path;
+            }
+            
+            // Create all paths initially hidden
+            // Layer 1: Root to first hidden layer
+            layer1.forEach(node => {
+                paths.layer1.push(createPath(rootNode[0], rootNode[1], node[0], node[1], 'layer-1'));
+            });
+            
+            // Layer 2: First to second hidden layer
+            layer1.forEach(node1 => {
+                layer2.forEach(node2 => {
+                    paths.layer2.push(createPath(node1[0], node1[1], node2[0], node2[1], 'layer-2'));
+                });
+            });
+            
+            // Layer 3: Second to third hidden layer
+            layer2.forEach(node2 => {
+                layer3.forEach(node3 => {
+                    paths.layer3.push(createPath(node2[0], node2[1], node3[0], node3[1], 'layer-3'));
+                });
+            });
+            
+            // Layer 4: Third layer to output
+            layer3.forEach(node => {
+                paths.layer4.push(createPath(node[0], node[1], outputNode[0], outputNode[1], 'layer-4'));
+            });
+
+            // Function to animate a single path
+            function animatePath(path, delay) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        path.classList.add('active');
+                        path.style.animation = 'connectionFlow 0.8s linear forwards';
+                        setTimeout(() => {
+                            path.classList.remove('active');
+                            path.classList.add('fixed');
+                            resolve();
+                        }, 800);
+                    }, delay);
+                });
+            }
+
+            // Function to animate a layer of paths
+            async function animateLayer(layerPaths, initialDelay = 0) {
+                await new Promise(resolve => setTimeout(resolve, initialDelay));
+                const promises = layerPaths.map((path, index) => 
+                    animatePath(path, index * 100)
+                );
+                await Promise.all(promises);
+                await new Promise(resolve => setTimeout(resolve, 300)); // Gap between layers
+            }
+
+            // Start the sequential animation after a delay
+            setTimeout(async () => {
+                await animateLayer(paths.layer1, 100);  // Root to first layer
+                await animateLayer(paths.layer2);       // First to second layer
+                await animateLayer(paths.layer3);       // Second to third layer
+                await animateLayer(paths.layer4);       // Third layer to output
+            }, 500);
+        }
+
+        // Initialize connections when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Only rely on the observer to trigger it
+            window.addEventListener('resize', () => {
+                const container = document.querySelector('.algorithm-container');
+                if (container.classList.contains('show')) {
+                    createConnections();
+                }
+            });
+        });
+    </script>
+    <script>
+        // Typing animation for algorithm name and description
+        const algoName = "DDQN (Double Deep Q-Network)";
+        const algoDesc = "An advanced reinforcement learning algorithm that uses deep neural networks with additional hidden layers to better capture complex market patterns and make more sophisticated trading decisions.";
+        
+        const nameElement = document.querySelector('.algo-name');
+        const descElement = document.querySelector('.algorithm-description');
+        let nameIndex = 0;
+        let descIndex = 0;
+
+        function typeAlgoName() {
+            if (nameIndex < algoName.length) {
+                nameElement.textContent += algoName.charAt(nameIndex);
+                nameIndex++;
+                setTimeout(typeAlgoName, 50);
+            } else {
+                setTimeout(typeAlgoDescription, 800);
+            }
+        }
+
+        function typeAlgoDescription() {
+            if (descIndex < algoDesc.length) {
+                descElement.textContent += algoDesc.charAt(descIndex);
+                descIndex++;
+                setTimeout(typeAlgoDescription, 30);
+            }
+        }
+    </script>
+</body>
+</html>

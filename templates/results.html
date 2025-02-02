@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Results - {{ results.symbol }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+        <div class="market-line"></div>
+    </div>
+    <div class="container results-container">
+        <header>
+            <h1 class="glitch" data-text="Trading Results">Trading Results</h1>
+            <div class="symbol-display">
+                <i class="fas fa-chart-line"></i>
+                <span class="ticker">{{ results.symbol }}</span>
+            </div>
+        </header>
+
+        <div class="results-grid">
+            <!-- Left side: Trading Signal -->
+            <div class="result-card recommendation fade-in">
+                <h3><i class="fas fa-chart-line"></i> Prediction</h3>
+                <!-- Final Decision -->
+                <div class="action-display">
+                    <div class="action">
+                        {% if results.recommendation and results.recommendation.signal %}
+                            <i class="fas fa-{{ 'arrow-up' if results.recommendation.signal == 'BUY' 
+                                        else 'arrow-down' if results.recommendation.signal == 'SELL' 
+                                        else 'equals' }}"></i>
+                            {{ results.recommendation.signal }}
+                        {% else %}
+                            <i class="fas fa-equals"></i>
+                            HOLD
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Probability Bars -->
+                <div class="probabilities">
+                    <h3>Probability Analysis</h3>
+                    {% if results.recommendation and results.recommendation.action_probabilities %}
+                        <div class="prob-bar">
+                            <span class="label">Buy</span>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <div class="fill buy" style="width: {{ (results.recommendation.action_probabilities.buy|float * 100)|round(1) }}%"></div>
+                                </div>
+                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.buy|float * 100) }}%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prob-bar">
+                            <span class="label">Hold</span>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <div class="fill hold" style="width: {{ (results.recommendation.action_probabilities.hold|float * 100)|round(1) }}%"></div>
+                                </div>
+                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.hold|float * 100) }}%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="prob-bar">
+                            <span class="label">Sell</span>
+                            <div class="bar-container">
+                                <div class="bar">
+                                    <div class="fill sell" style="width: {{ (results.recommendation.action_probabilities.sell|float * 100)|round(1) }}%"></div>
+                                </div>
+                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.sell|float * 100) }}%</span>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="no-data">Probability data not available</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Right side: Model Performance -->
+            <div class="result-card model-performance fade-in">
+                <h3><i class="fas fa-brain"></i> Model Performance</h3>
+                <div class="trust-score">
+                    <h4>AI Trust Score</h4>
+                    <div class="score {{ 'high-trust' if results.training_return|default(0) > 5 
+                                        else 'medium-trust' if results.training_return|default(0) > 0 
+                                        else 'low-trust' }}">
+                        {% if results.training_return|default(0) > 5 %}
+                            <i class="fas fa-shield-alt"></i> High Trust (85-95%)
+                        {% elif results.training_return|default(0) > 0 %}
+                            <i class="fas fa-shield-alt"></i> Medium Trust (65-75%)
+                        {% else %}
+                            <i class="fas fa-shield-alt"></i> Low Trust (40-50%)
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="performance-stats">
+                    {% if results.model_performance %}
+                        <div class="stat">
+                            <span class="label">Sharpe Ratio</span>
+                            <span class="value">{{ "%.2f"|format(results.model_performance.sharpe_ratio|default(0)) }}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Max Drawdown</span>
+                            <span class="value">{{ "%.2f"|format((results.model_performance.max_drawdown|default(0) * 100)) }}%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Avg Reward</span>
+                            <span class="value">{{ "%.2f"|format(results.model_performance.avg_reward|default(0)) }}</span>
+                        </div>
+                    {% else %}
+                        <div class="no-data">Performance metrics not available</div>
+                    {% endif %}
+                </div>
+                
+                <div class="trust-description typing-text"></div>
+            </div>
+        </div>
+
+        <div class="action-buttons fade-in">
+            <a href="/" class="btn glow-effect">
+                <i class="fas fa-home"></i> New Analysis
+            </a>
+        </div>
+
+        <!-- Bot Performance Section -->
+        <div class="result-card bot-performance fade-in">
+            <h3><i class="fas fa-robot"></i> Bot Performance</h3>
+            <div class="performance-metrics">
+                <div class="metric">
+                    <div class="metric-label">Initial Portfolio</div>
+                    <div class="metric-value">$1,000.00</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">Final Portfolio</div>
+                    <div class="metric-value">${{ "%.2f"|format(results.final_portfolio_value) }}</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">Total Return</div>
+                    <div class="metric-value {{ 'positive' if results.training_return > 0 else 'negative' }}">
+                        {{ "+" if results.training_return > 0 else "" }}{{ "%.2f"|format(results.training_return) }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-card fade-in">
+            <h3><i class="fas fa-history"></i> Trading History</h3>
+            {% if results.trading_history %}
+                {% for trade in results.trading_history %}
+                    <div class="trade-item">
+                        <div class="trade-date">{{ trade.date }}</div>
+                        <div class="trade-action {{ trade.action }}">{{ trade.action|upper }}</div>
+                        <div class="trade-details">
+                            <div>Shares: {{ "%.2f"|format(trade.shares) }}</div>
+                            <div>Price: ${{ "%.2f"|format(trade.price) }}</div>
+                            <div>{{ 'Cost' if trade.action == 'buy' else 'Value' }}: ${{ "%.2f"|format(trade.cost if trade.action == 'buy' else trade.value) }}</div>
+                            <div>Portfolio Value: ${{ "%.2f"|format(trade.portfolio_value) }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-trades">No trades were executed during this period.</div>
+            {% endif %}
+        </div>
+
+        <style>
+            :root {
+                --primary-color: #00ff9d;
+                --background-color: #000000;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Share Tech Mono', monospace;
+                background-color: var(--background-color);
+                color: #fff;
+                line-height: 1.6;
+                min-height: 100vh;
+                position: relative;
+            }
+
+            .background-animation {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                overflow: hidden;
+            }
+
+            .market-line {
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    var(--primary-color) 50%,
+                    transparent 100%
+                );
+                box-shadow: 0 0 15px var(--primary-color);
+                animation: marketLine 8s infinite;
+                opacity: 0;
+            }
+
+            .market-line:nth-child(1) { left: 10%; animation-delay: 0s; }
+            .market-line:nth-child(2) { left: 20%; animation-delay: 0.8s; }
+            .market-line:nth-child(3) { left: 30%; animation-delay: 1.6s; }
+            .market-line:nth-child(4) { left: 40%; animation-delay: 2.4s; }
+            .market-line:nth-child(5) { left: 50%; animation-delay: 3.2s; }
+            .market-line:nth-child(6) { left: 60%; animation-delay: 4.0s; }
+            .market-line:nth-child(7) { left: 70%; animation-delay: 4.8s; }
+            .market-line:nth-child(8) { left: 80%; animation-delay: 5.6s; }
+            .market-line:nth-child(9) { left: 90%; animation-delay: 6.4s; }
+            .market-line:nth-child(10) { left: 95%; animation-delay: 7.2s; }
+
+            @keyframes marketLine {
+                0% {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+            }
+
+            .container {
+                position: relative;
+                z-index: 1;
+                padding: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .market-lines {
+                display: none;
+            }
+
+            .results-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .bot-performance {
+                background: #1a1a1a;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .performance-metrics {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .metric {
+                background: #222;
+                padding: 1rem;
+                border-radius: 6px;
+                border: 1px solid #444;
+            }
+            
+            .metric-label {
+                color: #888;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .metric-value {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #fff;
+            }
+            
+            .metric-value.positive {
+                color: #4caf50;
+            }
+            
+            .metric-value.negative {
+                color: #f44336;
+            }
+            
+            .performance-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+                margin: 1.2rem 0;
+                padding: 1.2rem;
+                background: #222;
+                border-radius: 8px;
+                border: 1px solid #333;
+            }
+            
+            .stat {
+                text-align: center;
+                padding: 0.8rem;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 80px;
+            }
+            
+            .stat .label {
+                display: block;
+                color: #888;
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            .stat .value {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #fff;
+                font-family: 'Share Tech Mono', monospace;
+            }
+            
+            /* Trading History Styles */
+            .trade-item {
+                background: #222;
+                border-radius: 8px;
+                margin: 1rem 0;
+                padding: 1.5rem;
+                border: 1px solid #444;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .trade-item::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+            }
+            
+            .trade-item .trade-action.buy::before {
+                background-color: #4caf50;
+            }
+            
+            .trade-item .trade-action.sell::before {
+                background-color: #f44336;
+            }
+            
+            .trade-date {
+                color: #888;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .trade-action {
+                display: inline-block;
+                padding: 0.25rem 0.75rem;
+                border-radius: 4px;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+            
+            .trade-action.buy {
+                background: rgba(76, 175, 80, 0.1);
+                color: #4caf50;
+            }
+            
+            .trade-action.sell {
+                background: rgba(244, 67, 54, 0.1);
+                color: #f44336;
+            }
+            
+            .trade-details {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .trade-details > div {
+                background: #2a2a2a;
+                padding: 0.75rem;
+                border-radius: 4px;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .no-trades {
+                text-align: center;
+                padding: 2rem;
+                color: #888;
+                font-style: italic;
+            }
+            
+            .trust-score {
+                background: #222;
+                padding: 1.2rem;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .trust-score h4 {
+                margin: 0;
+                color: #888;
+                font-size: 1.1rem;
+            }
+            
+            .score {
+                font-size: 1.2rem;
+                font-weight: bold;
+                padding: 1.5rem;
+                border-radius: 6px;
+                border: 1px solid #444;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 0.8rem;
+            }
+            
+            .score i {
+                font-size: 2rem;
+            }
+            
+            .trust-description {
+                color: #fff;
+                font-size: 1.3rem;
+                line-height: 1.5;
+                text-align: center;
+                padding: 1.2rem;
+                margin: 1rem 0 0 0;
+                min-height: 3em;
+                letter-spacing: 0.5px;
+            }
+            
+            .typing-text {
+                border-top: 1px solid #333;
+                padding-top: 1.2rem;
+                font-size: 1.3rem;
+                color: #fff;
+                line-height: 1.5;
+                letter-spacing: 0.5px;
+            }
+            
+            .model-performance {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .model-performance h3 {
+                margin-bottom: 0.8rem;
+            }
+            
+            .high-trust {
+                background: #1b3a1b;
+                border-color: #2e5a2e;
+                color: #4caf50;
+            }
+            
+            .medium-trust {
+                background: #3a3a1b;
+                border-color: #5a5a2e;
+                color: #ffd700;
+            }
+            
+            .low-trust {
+                background: #3a1b1b;
+                border-color: #5a2e2e;
+                color: #f44336;
+            }
+            
+            .probabilities {
+                margin-top: 1.5rem;
+                padding: 1rem;
+                background: #222;
+                border-radius: 8px;
+                border: 1px solid #333;
+            }
+            
+            .probabilities h3 {
+                margin-bottom: 1rem;
+                color: #888;
+                font-size: 1rem;
+                text-align: center;
+            }
+            
+            .prob-bar {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            .prob-bar:last-child {
+                margin-bottom: 0;
+            }
+            
+            .prob-bar .label {
+                width: 60px;
+                color: #888;
+                font-size: 0.9rem;
+            }
+            
+            .bar-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .bar {
+                flex: 1;
+                height: 24px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            
+            .fill {
+                height: 100%;
+                width: 0;
+                transition: width 1s ease-out;
+            }
+            
+            .fill.buy {
+                background: #4caf50;
+            }
+            
+            .fill.hold {
+                background: #ffd700;
+            }
+            
+            .fill.sell {
+                background: #f44336;
+            }
+            
+            .prob-bar .value {
+                width: 60px;
+                color: #fff;
+                font-size: 0.9rem;
+                font-family: 'Share Tech Mono', monospace;
+                text-align: right;
+            }
+            
+            /* Add button styles */
+            .action-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 24px;
+                background: linear-gradient(45deg, #00ff9d, #00b36b);
+                border: none;
+                border-radius: 5px;
+                color: #000;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                margin-top: 2rem;
+                box-shadow: 0 4px 15px rgba(0, 255, 157, 0.2);
+            }
+
+            .action-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 255, 157, 0.3);
+            }
+
+            .action-button i {
+                margin-right: 8px;
+            }
+
+            .button-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: 2rem 0;
+            }
+        </style>
+
+        <script>
+            // Handle redirect from process_stock
+            $(document).ready(function() {
+                // Check if we were redirected with results
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('redirect')) {
+                    // Refresh the page to load results
+                    window.location.href = "{{ url_for('results') }}";
+                }
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const trustText = {% if results.training_return > 5 %}
+                    "Strong positive returns indicate reliable model predictions"
+                {% elif results.training_return > 0 %}
+                    "Moderate positive returns suggest reasonable reliability"
+                {% else %}
+                    "Negative returns indicate cautious consideration needed"
+                {% endif %};
+                
+                const typingText = document.querySelector('.typing-text');
+                let charIndex = 0;
+
+                function typeWriter() {
+                    if (charIndex < trustText.length) {
+                        typingText.textContent += trustText.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, 30);
+                    }
+                }
+
+                typeWriter();
+            });
+        </script>
+    </div>
+    
+    <!-- Add New Analysis button -->
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="action-button">
+            <i class="fas fa-search"></i>
+            New Analysis
+        </a>
+    </div>
+</body>
+</html>
