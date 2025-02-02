@@ -197,27 +197,19 @@ class StockDataProcessor:
         return df
 
 class DQN(nn.Module):
+    """Simplified DQN architecture with proper initialization."""
     def __init__(self, state_size: int, action_size: int):
         super(DQN, self).__init__()
-        
-        # Ensure state_size is correct
-        assert state_size == 12, f"Expected state size of 12, got {state_size}"
-        
-        # Define network architecture
         self.fc1 = nn.Linear(12, 64)
         self.fc2 = nn.Linear(64, 32)
         self.fc3 = nn.Linear(32, action_size)
         
-        # Initialize weights
-        self.apply(self._init_weights)
-        
-    def _init_weights(self, module):
-        if isinstance(module, nn.Linear):
-            nn.init.kaiming_normal_(module.weight, mode='fan_in', nonlinearity='relu')
-            if module.bias is not None:
-                nn.init.constant_(module.bias, 0)
+        # Initialize weights using Xavier/Glorot initialization
+        nn.init.xavier_uniform_(self.fc1.weight)
+        nn.init.xavier_uniform_(self.fc2.weight)
+        nn.init.xavier_uniform_(self.fc3.weight)
     
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         return self.fc3(x)
@@ -329,15 +321,9 @@ class StockTradingEnvironment:
         # Execute trading action
         if action == 1:  # Buy
             if self.balance >= current_price and self.shares_held == 0:  # Only buy if we don't have a position
-                # Calculate optimal position size based on risk
-                risk_factor = min(0.8, max(0.2, 1.0 - volatility))  # Risk between 20% and 80%
-                
-                # Increase position size if market conditions are favorable
-                if rsi < 40 and macd > macd_signal and current_price > sma20:
-                    risk_factor *= 1.2
-                
-                available_cash = self.balance * risk_factor
-                shares_to_buy = int(available_cash // current_price)
+                # Dynamic position sizing based on volatility
+                risk_factor = min(0.5, 0.1 / (volatility + 0.01))
+                shares_to_buy = int((self.balance * risk_factor) / current_price)
                 
                 if shares_to_buy > 0:
                     transaction_cost = shares_to_buy * current_price * self.transaction_fee
@@ -357,18 +343,19 @@ class StockTradingEnvironment:
                             'portfolio_value': self._portfolio_value
                         }
                         
-                        # Calculate buy reward based on indicators
+                        # Improved reward calculation for buys
                         reward = 0
-                        if rsi < 40:  # Oversold condition
+                        if rsi < 30:  # Stronger oversold condition
+                            reward += 2.0
+                        if macd > macd_signal and abs(macd - macd_signal) > 0.01:  # Significant MACD crossover
+                            reward += 1.5
+                        if current_price > sma20 and momentum > 0:  # Trend confirmation
                             reward += 1.0
-                        if macd > macd_signal:  # MACD crossover
-                            reward += 1.0
-                        if current_price > sma20:  # Price above SMA20
+                        if volatility < 0.02:  # Low volatility bonus
                             reward += 0.5
-                        if momentum > 0:  # Positive momentum
-                            reward += 0.5
-                        if volatility < 0.02:  # Low volatility
-                            reward += 0.5
+                        
+                        # Scale reward by risk
+                        reward /= (volatility + 0.01)
                 
         elif action == 2:  # Sell
             if self.shares_held > 0:
@@ -389,26 +376,17 @@ class StockTradingEnvironment:
                     'portfolio_value': self._portfolio_value
                 }
                 
-                # Calculate sell reward based on indicators and profit/loss
-                reward = price_change * 100  # Base reward on actual return
+                # Risk-adjusted reward for sells
+                reward = price_change * 100  # Base reward
                 
-                if force_sell:
-                    if price_change > 0:
-                        reward *= 1.5  # Bonus for take profit
-                    else:
-                        reward *= 0.5  # Reduced penalty for stop loss
-                else:
-                    # Additional rewards for good selling conditions
-                    if rsi > 70:  # Overbought condition
-                        reward += 1.0
-                    if macd < macd_signal:  # MACD crossover
-                        reward += 1.0
-                    if current_price < sma20:  # Price below SMA20
-                        reward += 0.5
-                    if momentum < 0:  # Negative momentum
-                        reward += 0.5
-                    if volatility > 0.02:  # High volatility
-                        reward += 0.5
+                # Bonus for selling at resistance
+                if rsi > 70:
+                    reward *= 1.2
+                if macd < macd_signal:
+                    reward *= 1.1
+                
+                # Penalize high volatility trades
+                reward /= (volatility + 0.01)
                 
                 self.shares_held = 0
                 self.entry_price = 0
@@ -447,13 +425,13 @@ class TradingAgent:
         self.state_size = state_size
         self.action_size = action_size
         self.memory = deque(maxlen=1000)
-        self.gamma = 0.97    # Increased discount rate
-        self.epsilon = 1.0   # exploration rate
-        self.epsilon_min = 0.1  # Increased minimum exploration
-        self.epsilon_decay = 0.95  # Slower decay
-        self.batch_size = 64   # Increased batch size
-        self.learning_rate = 0.0005  # Reduced learning rate for stability
-        self.tau = 0.001
+        self.gamma = 0.95    # Slightly reduced discount rate
+        self.epsilon = 1.0   # Start with full exploration
+        self.epsilon_min = 0.15  # Higher minimum exploration
+        self.epsilon_decay = 0.85  # Faster decay
+        self.batch_size = 32   # Smaller batch size
+        self.learning_rate = 0.001  # Increased learning rate
+        self.tau = 0.005  # Faster target network updates
         self.device = torch.device(device)
         
         # Initialize networks with correct state size

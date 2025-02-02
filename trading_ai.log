@@ -5838,3 +5838,72 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:06:49,647 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:06:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:07:08,600 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:07:08] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:07:08,639 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:07:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:23:56,764 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 15:23:56,765 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 15:23:56,767 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:24:00,296 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:24:00,299 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:24:00,395 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:24:00] "GET / HTTP/1.1" 200 -
+2025-02-02 15:24:00,502 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:24:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:24:00,503 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:24:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:24:00,658 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:24:00,659 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:24:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-02 15:24:00,703 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:24:00] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:34:37,067 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 15:34:37,068 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 15:34:37,069 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:34:41,092 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:34:41,097 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:34:41,131 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:41] "GET / HTTP/1.1" 200 -
+2025-02-02 15:34:41,228 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:34:41,230 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:34:41,402 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:34:41,498 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:41] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:34:46,052 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:34:46,055 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 15:34:46,056 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:34:46,057 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:34:46,058 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 15:34:46,058 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:34:48,304 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:34:48,334 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:34:48,335 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:34:48,404 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 15:34:48,404 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 15:34:48,405 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:34:50,840 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:34:50,865 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:34:50,865 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:34:50,877 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 15:34:50,878 - __main__ - INFO - Initializing training environment
+2025-02-02 15:34:50,878 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:34:50,878 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:34:52,602 - __main__ - INFO - Training model for INTC
+2025-02-02 15:34:53,126 - Main_code - INFO - Episode 1/20 | Reward: 1778.87 | Avg Reward: 1778.87 | Trades: 159 | Epsilon: 0.900 | Time: 0.52s
+2025-02-02 15:34:53,638 - Main_code - INFO - Episode 2/20 | Reward: 1790.52 | Avg Reward: 1784.69 | Trades: 175 | Epsilon: 0.810 | Time: 1.04s
+2025-02-02 15:34:54,148 - Main_code - INFO - Episode 3/20 | Reward: 4170.95 | Avg Reward: 2580.11 | Trades: 197 | Epsilon: 0.729 | Time: 1.55s
+2025-02-02 15:34:54,665 - Main_code - INFO - Episode 4/20 | Reward: 3140.49 | Avg Reward: 2720.21 | Trades: 192 | Epsilon: 0.656 | Time: 2.06s
+2025-02-02 15:34:55,181 - Main_code - INFO - Episode 5/20 | Reward: 3038.81 | Avg Reward: 2783.93 | Trades: 201 | Epsilon: 0.590 | Time: 2.58s
+2025-02-02 15:34:55,687 - Main_code - INFO - Episode 6/20 | Reward: 3931.95 | Avg Reward: 3214.54 | Trades: 198 | Epsilon: 0.531 | Time: 3.09s
+2025-02-02 15:34:56,192 - Main_code - INFO - Episode 7/20 | Reward: 4104.76 | Avg Reward: 3677.39 | Trades: 207 | Epsilon: 0.478 | Time: 3.59s
+2025-02-02 15:34:56,701 - Main_code - INFO - Episode 8/20 | Reward: 4654.56 | Avg Reward: 3774.11 | Trades: 209 | Epsilon: 0.430 | Time: 4.10s
+2025-02-02 15:34:57,210 - Main_code - INFO - Episode 9/20 | Reward: 4585.81 | Avg Reward: 4063.18 | Trades: 219 | Epsilon: 0.387 | Time: 4.61s
+2025-02-02 15:34:57,718 - Main_code - INFO - Episode 10/20 | Reward: 4010.35 | Avg Reward: 4257.49 | Trades: 213 | Epsilon: 0.349 | Time: 5.12s
+2025-02-02 15:34:58,231 - Main_code - INFO - Episode 11/20 | Reward: 4301.36 | Avg Reward: 4331.37 | Trades: 219 | Epsilon: 0.314 | Time: 5.63s
+2025-02-02 15:34:58,739 - Main_code - INFO - Episode 12/20 | Reward: 4204.85 | Avg Reward: 4351.39 | Trades: 225 | Epsilon: 0.282 | Time: 6.14s
+2025-02-02 15:34:59,252 - Main_code - INFO - Early stopping at episode 13 due to no improvement
+2025-02-02 15:34:59,253 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:34:59,258 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:34:59,259 - __main__ - INFO - Saving results for INTC
+2025-02-02 15:34:59,261 - __main__ - INFO - Successfully processed INTC
+2025-02-02 15:34:59,263 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:59] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:34:59,323 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:59] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:34:59,350 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:34:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:36:16,828 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:16] "GET / HTTP/1.1" 200 -
+2025-02-02 15:36:16,895 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:36:16,895 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:36:16,983 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:36:17,046 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:17] "GET /get_stock_data HTTP/1.1" 200 -
