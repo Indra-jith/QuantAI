@@ -5825,3 +5825,16 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:00:52,020 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:00:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:02:53,093 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:02:53] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:02:53,144 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:02:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:04:18,301 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:04:18] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:04:18,337 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:04:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:04:29,122 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:04:29] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:04:29,172 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:04:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:04:38,614 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:04:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:05:22,200 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:05:22] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:05:22,256 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:05:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:06:35,463 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:06:35] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:06:35,522 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:06:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:06:49,606 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:06:49] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:06:49,647 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:06:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:07:08,600 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:07:08] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:07:08,639 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:07:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
