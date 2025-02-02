@@ -6417,3 +6417,13 @@ jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'value'
 2025-02-02 15:49:46,167 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:49:49,163 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:49] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:49:49,190 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:51:21,384 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 15:51:21,385 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 15:51:21,386 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:51:24,711 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:51:24,714 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:51:26,612 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:51:26] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:51:26,716 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:51:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:52:02,925 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:52:02] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:52:02,972 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:52:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
