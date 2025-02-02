@@ -6167,3 +6167,253 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:43:54,297 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "POST /process_stock HTTP/1.1" 200 -
 2025-02-02 15:43:54,347 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:43:54,383 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:45:25,404 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:45:25,854 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:45:32,436 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:45:32,443 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:45:32,496 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:32] "GET / HTTP/1.1" 200 -
+2025-02-02 15:45:32,644 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:45:32,645 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:45:32,720 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:45:32,775 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:32] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:45:37,474 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:45:37,478 - __main__ - INFO - Processing stock data for DELL
+2025-02-02 15:45:37,478 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:45:37,479 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:45:37,480 - __main__ - INFO - Fetching training data for DELL
+2025-02-02 15:45:37,480 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 15:45:39,831 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:45:39,842 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 15:45:39,843 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:45:39,862 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-02 15:45:39,863 - __main__ - INFO - Fetching testing data for DELL
+2025-02-02 15:45:39,863 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 15:45:41,818 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:45:41,829 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 15:45:41,829 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:45:41,845 - Main_code - INFO - Got 8 days of data for DELL
+2025-02-02 15:45:41,846 - __main__ - INFO - Initializing training environment
+2025-02-02 15:45:41,847 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:45:41,847 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:45:42,691 - __main__ - INFO - Training model for DELL
+2025-02-02 15:45:43,272 - Main_code - INFO - Episode 1/20 | Reward: 720.81 | Avg Reward: 720.81 | Trades: 169 | Epsilon: 0.900 | Time: 0.58s
+2025-02-02 15:45:43,810 - Main_code - INFO - Episode 2/20 | Reward: 1393.98 | Avg Reward: 1057.39 | Trades: 180 | Epsilon: 0.810 | Time: 1.12s
+2025-02-02 15:45:44,338 - Main_code - INFO - Episode 3/20 | Reward: 1505.51 | Avg Reward: 1206.77 | Trades: 186 | Epsilon: 0.729 | Time: 1.65s
+2025-02-02 15:45:44,888 - Main_code - INFO - Episode 4/20 | Reward: 1324.06 | Avg Reward: 1236.09 | Trades: 184 | Epsilon: 0.656 | Time: 2.20s
+2025-02-02 15:45:45,431 - Main_code - INFO - Episode 5/20 | Reward: 1011.60 | Avg Reward: 1191.19 | Trades: 194 | Epsilon: 0.590 | Time: 2.74s
+2025-02-02 15:45:45,991 - Main_code - INFO - Episode 6/20 | Reward: 1618.27 | Avg Reward: 1370.68 | Trades: 205 | Epsilon: 0.531 | Time: 3.30s
+2025-02-02 15:45:46,538 - Main_code - INFO - Episode 7/20 | Reward: 1489.94 | Avg Reward: 1389.88 | Trades: 203 | Epsilon: 0.478 | Time: 3.85s
+2025-02-02 15:45:47,093 - Main_code - INFO - Episode 8/20 | Reward: 1547.31 | Avg Reward: 1398.24 | Trades: 203 | Epsilon: 0.430 | Time: 4.40s
+2025-02-02 15:45:47,624 - Main_code - INFO - Episode 9/20 | Reward: 1755.30 | Avg Reward: 1484.48 | Trades: 209 | Epsilon: 0.387 | Time: 4.93s
+2025-02-02 15:45:48,180 - Main_code - INFO - Episode 10/20 | Reward: 1538.57 | Avg Reward: 1589.88 | Trades: 217 | Epsilon: 0.349 | Time: 5.49s
+2025-02-02 15:45:48,721 - Main_code - INFO - Episode 11/20 | Reward: 1548.50 | Avg Reward: 1575.92 | Trades: 220 | Epsilon: 0.314 | Time: 6.03s
+2025-02-02 15:45:49,271 - Main_code - INFO - Episode 12/20 | Reward: 1418.14 | Avg Reward: 1561.56 | Trades: 219 | Epsilon: 0.282 | Time: 6.58s
+2025-02-02 15:45:49,820 - Main_code - INFO - Episode 13/20 | Reward: 1419.92 | Avg Reward: 1536.08 | Trades: 216 | Epsilon: 0.254 | Time: 7.13s
+2025-02-02 15:45:50,380 - Main_code - INFO - Early stopping at episode 14 due to no improvement
+2025-02-02 15:45:50,380 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:45:50,389 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:45:50,391 - __main__ - INFO - Saving results for DELL
+2025-02-02 15:45:50,393 - __main__ - INFO - Successfully processed DELL
+2025-02-02 15:45:50,396 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:50] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:45:50,471 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:50] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:45:50,501 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:45:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:46:17,295 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:46:18,109 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:46:21,561 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:46:21,565 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:47:05,217 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:47:05,725 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:47:12,377 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:47:12,384 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:47:12,452 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:12] "GET / HTTP/1.1" 200 -
+2025-02-02 15:47:12,648 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:47:12,649 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:47:12,714 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:47:12,763 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:47:15,876 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:47:15,878 - __main__ - INFO - Processing stock data for DELL
+2025-02-02 15:47:15,879 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:47:15,880 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:47:15,881 - __main__ - INFO - Fetching training data for DELL
+2025-02-02 15:47:15,882 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 15:47:18,037 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:47:18,054 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 15:47:18,055 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:47:18,083 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-02 15:47:18,085 - __main__ - INFO - Fetching testing data for DELL
+2025-02-02 15:47:18,086 - Main_code - INFO - Downloading data for DELL...
+2025-02-02 15:47:20,160 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:47:20,180 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-02 15:47:20,182 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:47:20,199 - Main_code - INFO - Got 8 days of data for DELL
+2025-02-02 15:47:20,200 - __main__ - INFO - Initializing training environment
+2025-02-02 15:47:20,200 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:47:20,201 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:47:21,098 - __main__ - INFO - Training model for DELL
+2025-02-02 15:47:21,722 - Main_code - INFO - Episode 1/20 | Reward: 1075.37 | Avg Reward: 1075.37 | Trades: 179 | Epsilon: 0.900 | Time: 0.62s
+2025-02-02 15:47:22,293 - Main_code - INFO - Episode 2/20 | Reward: 1133.20 | Avg Reward: 1104.29 | Trades: 170 | Epsilon: 0.810 | Time: 1.19s
+2025-02-02 15:47:22,883 - Main_code - INFO - Episode 3/20 | Reward: 1568.09 | Avg Reward: 1258.89 | Trades: 174 | Epsilon: 0.729 | Time: 1.78s
+2025-02-02 15:47:23,463 - Main_code - INFO - Episode 4/20 | Reward: 859.74 | Avg Reward: 1159.10 | Trades: 188 | Epsilon: 0.656 | Time: 2.36s
+2025-02-02 15:47:24,048 - Main_code - INFO - Episode 5/20 | Reward: 815.22 | Avg Reward: 1090.32 | Trades: 195 | Epsilon: 0.590 | Time: 2.95s
+2025-02-02 15:47:24,643 - Main_code - INFO - Episode 6/20 | Reward: 1002.28 | Avg Reward: 1075.70 | Trades: 203 | Epsilon: 0.531 | Time: 3.54s
+2025-02-02 15:47:25,243 - Main_code - INFO - Episode 7/20 | Reward: 1384.96 | Avg Reward: 1126.06 | Trades: 198 | Epsilon: 0.478 | Time: 4.14s
+2025-02-02 15:47:25,845 - Main_code - INFO - Early stopping at episode 8 due to no improvement
+2025-02-02 15:47:25,845 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:47:25,855 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:47:25,858 - __main__ - INFO - Saving results for DELL
+2025-02-02 15:47:25,859 - __main__ - INFO - Successfully processed DELL
+2025-02-02 15:47:25,861 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:25] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:47:25,920 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:25] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:47:25,945 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:47:33,210 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:33] "GET / HTTP/1.1" 200 -
+2025-02-02 15:47:33,270 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:47:33,273 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:47:33,377 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:47:33,435 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:33] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:47:36,584 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:47:36,586 - __main__ - INFO - Processing stock data for INTC
+2025-02-02 15:47:36,587 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:47:36,589 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:47:36,590 - __main__ - INFO - Fetching training data for INTC
+2025-02-02 15:47:36,590 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:47:38,753 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:47:38,795 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:47:38,796 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:47:38,822 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-02 15:47:38,823 - __main__ - INFO - Fetching testing data for INTC
+2025-02-02 15:47:38,824 - Main_code - INFO - Downloading data for INTC...
+2025-02-02 15:47:41,570 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:47:41,594 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-02 15:47:41,595 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:47:41,607 - Main_code - INFO - Got 8 days of data for INTC
+2025-02-02 15:47:41,608 - __main__ - INFO - Initializing training environment
+2025-02-02 15:47:41,608 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:47:41,609 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:47:41,611 - __main__ - INFO - Training model for INTC
+2025-02-02 15:47:42,281 - Main_code - INFO - Episode 1/20 | Reward: 1123.77 | Avg Reward: 1123.77 | Trades: 182 | Epsilon: 0.900 | Time: 0.67s
+2025-02-02 15:47:43,022 - Main_code - INFO - Episode 2/20 | Reward: 993.32 | Avg Reward: 1058.54 | Trades: 175 | Epsilon: 0.810 | Time: 1.41s
+2025-02-02 15:47:43,706 - Main_code - INFO - Episode 3/20 | Reward: 962.95 | Avg Reward: 1026.68 | Trades: 178 | Epsilon: 0.729 | Time: 2.10s
+2025-02-02 15:47:44,387 - Main_code - INFO - Episode 4/20 | Reward: 2289.69 | Avg Reward: 1342.43 | Trades: 192 | Epsilon: 0.656 | Time: 2.78s
+2025-02-02 15:47:45,026 - Main_code - INFO - Episode 5/20 | Reward: 1642.20 | Avg Reward: 1402.39 | Trades: 183 | Epsilon: 0.590 | Time: 3.42s
+2025-02-02 15:47:45,689 - Main_code - INFO - Episode 6/20 | Reward: 1927.04 | Avg Reward: 1563.04 | Trades: 196 | Epsilon: 0.531 | Time: 4.08s
+2025-02-02 15:47:46,309 - Main_code - INFO - Episode 7/20 | Reward: 1011.36 | Avg Reward: 1566.65 | Trades: 201 | Epsilon: 0.478 | Time: 4.70s
+2025-02-02 15:47:46,871 - Main_code - INFO - Episode 8/20 | Reward: 2322.32 | Avg Reward: 1838.52 | Trades: 215 | Epsilon: 0.430 | Time: 5.26s
+2025-02-02 15:47:47,459 - Main_code - INFO - Episode 9/20 | Reward: 1908.43 | Avg Reward: 1762.27 | Trades: 218 | Epsilon: 0.387 | Time: 5.85s
+2025-02-02 15:47:48,026 - Main_code - INFO - Episode 10/20 | Reward: 1815.19 | Avg Reward: 1796.87 | Trades: 223 | Epsilon: 0.349 | Time: 6.41s
+2025-02-02 15:47:48,612 - Main_code - INFO - Episode 11/20 | Reward: 2323.72 | Avg Reward: 1876.21 | Trades: 221 | Epsilon: 0.314 | Time: 7.00s
+2025-02-02 15:47:49,188 - Main_code - INFO - Episode 12/20 | Reward: 1736.80 | Avg Reward: 2021.29 | Trades: 222 | Epsilon: 0.282 | Time: 7.58s
+2025-02-02 15:47:49,850 - Main_code - INFO - Episode 13/20 | Reward: 1851.46 | Avg Reward: 1927.12 | Trades: 227 | Epsilon: 0.254 | Time: 8.24s
+2025-02-02 15:47:50,441 - Main_code - INFO - Episode 14/20 | Reward: 1519.83 | Avg Reward: 1849.40 | Trades: 232 | Epsilon: 0.229 | Time: 8.83s
+2025-02-02 15:47:51,017 - Main_code - INFO - Episode 15/20 | Reward: 1378.68 | Avg Reward: 1762.10 | Trades: 228 | Epsilon: 0.206 | Time: 9.41s
+2025-02-02 15:47:51,613 - Main_code - INFO - Early stopping at episode 16 due to no improvement
+2025-02-02 15:47:51,614 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:47:51,621 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:47:51,623 - __main__ - INFO - Saving results for INTC
+2025-02-02 15:47:51,625 - __main__ - INFO - Successfully processed INTC
+2025-02-02 15:47:51,628 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:51] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:47:51,680 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:51] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:47:51,708 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:47:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:48:38,864 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:48:40,391 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:48:47,844 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:48:47,854 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:48:47,910 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:48:47] "GET / HTTP/1.1" 200 -
+2025-02-02 15:48:48,082 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:48:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:48:48,083 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:48:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:48:48,177 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:48:48,246 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:48:48] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:48:53,502 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:48:53,505 - __main__ - INFO - Processing stock data for LYB
+2025-02-02 15:48:53,506 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:48:53,506 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:48:53,507 - __main__ - INFO - Fetching training data for LYB
+2025-02-02 15:48:53,508 - Main_code - INFO - Downloading data for LYB...
+2025-02-02 15:48:56,211 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:48:56,231 - Main_code - INFO - Successfully downloaded and processed data for LYB
+2025-02-02 15:48:56,231 - Main_code - INFO - Data shape: (3715, 10), Date range: 2010-04-28 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:48:56,256 - Main_code - INFO - Got 250 days of data for LYB
+2025-02-02 15:48:56,257 - __main__ - INFO - Fetching testing data for LYB
+2025-02-02 15:48:56,257 - Main_code - INFO - Downloading data for LYB...
+2025-02-02 15:48:58,585 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:48:58,598 - Main_code - INFO - Successfully downloaded and processed data for LYB
+2025-02-02 15:48:58,598 - Main_code - INFO - Data shape: (3715, 10), Date range: 2010-04-28 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:48:58,612 - Main_code - INFO - Got 8 days of data for LYB
+2025-02-02 15:48:58,613 - __main__ - INFO - Initializing training environment
+2025-02-02 15:48:58,613 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:48:58,614 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:48:59,258 - __main__ - INFO - Training model for LYB
+2025-02-02 15:48:59,760 - Main_code - INFO - Episode 1/20 | Reward: -18.68 | Avg Reward: -18.68 | Trades: 169 | Epsilon: 0.900 | Time: 0.50s
+2025-02-02 15:49:00,327 - Main_code - INFO - Episode 2/20 | Reward: -14.89 | Avg Reward: -16.79 | Trades: 148 | Epsilon: 0.810 | Time: 1.07s
+2025-02-02 15:49:00,875 - Main_code - INFO - Episode 3/20 | Reward: -15.09 | Avg Reward: -16.22 | Trades: 149 | Epsilon: 0.729 | Time: 1.62s
+2025-02-02 15:49:01,471 - Main_code - INFO - Episode 4/20 | Reward: -9.95 | Avg Reward: -14.65 | Trades: 119 | Epsilon: 0.656 | Time: 2.21s
+2025-02-02 15:49:01,999 - Main_code - INFO - Episode 5/20 | Reward: -13.50 | Avg Reward: -14.42 | Trades: 134 | Epsilon: 0.590 | Time: 2.74s
+2025-02-02 15:49:02,566 - Main_code - INFO - Episode 6/20 | Reward: -6.20 | Avg Reward: -11.93 | Trades: 103 | Epsilon: 0.531 | Time: 3.31s
+2025-02-02 15:49:03,107 - Main_code - INFO - Episode 7/20 | Reward: -2.05 | Avg Reward: -9.36 | Trades: 82 | Epsilon: 0.478 | Time: 3.85s
+2025-02-02 15:49:03,671 - Main_code - INFO - Episode 8/20 | Reward: -3.57 | Avg Reward: -7.05 | Trades: 90 | Epsilon: 0.430 | Time: 4.41s
+2025-02-02 15:49:04,234 - Main_code - INFO - Episode 9/20 | Reward: -2.42 | Avg Reward: -5.55 | Trades: 76 | Epsilon: 0.387 | Time: 4.98s
+2025-02-02 15:49:04,792 - Main_code - INFO - Episode 10/20 | Reward: -2.32 | Avg Reward: -3.31 | Trades: 74 | Epsilon: 0.349 | Time: 5.53s
+2025-02-02 15:49:05,411 - Main_code - INFO - Episode 11/20 | Reward: 1.02 | Avg Reward: -1.87 | Trades: 62 | Epsilon: 0.314 | Time: 6.15s
+2025-02-02 15:49:05,973 - Main_code - INFO - Episode 12/20 | Reward: 1.20 | Avg Reward: -1.22 | Trades: 57 | Epsilon: 0.282 | Time: 6.71s
+2025-02-02 15:49:06,555 - Main_code - INFO - Episode 13/20 | Reward: 2.89 | Avg Reward: 0.07 | Trades: 51 | Epsilon: 0.254 | Time: 7.30s
+2025-02-02 15:49:07,124 - Main_code - INFO - Episode 14/20 | Reward: 3.58 | Avg Reward: 1.27 | Trades: 49 | Epsilon: 0.229 | Time: 7.87s
+2025-02-02 15:49:07,706 - Main_code - INFO - Episode 15/20 | Reward: 4.20 | Avg Reward: 2.58 | Trades: 46 | Epsilon: 0.206 | Time: 8.45s
+2025-02-02 15:49:08,258 - Main_code - INFO - Episode 16/20 | Reward: 4.56 | Avg Reward: 3.29 | Trades: 44 | Epsilon: 0.185 | Time: 9.00s
+2025-02-02 15:49:08,833 - Main_code - INFO - Episode 17/20 | Reward: 4.96 | Avg Reward: 4.04 | Trades: 38 | Epsilon: 0.167 | Time: 9.57s
+2025-02-02 15:49:09,393 - Main_code - INFO - Episode 18/20 | Reward: 6.05 | Avg Reward: 4.67 | Trades: 32 | Epsilon: 0.150 | Time: 10.14s
+2025-02-02 15:49:09,961 - Main_code - INFO - Episode 19/20 | Reward: 5.85 | Avg Reward: 5.12 | Trades: 33 | Epsilon: 0.135 | Time: 10.70s
+2025-02-02 15:49:10,522 - Main_code - INFO - Episode 20/20 | Reward: 5.45 | Avg Reward: 5.37 | Trades: 39 | Epsilon: 0.122 | Time: 11.26s
+2025-02-02 15:49:10,523 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:49:10,530 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:49:10,532 - __main__ - INFO - Saving results for LYB
+2025-02-02 15:49:10,534 - __main__ - INFO - Successfully processed LYB
+2025-02-02 15:49:10,537 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:10] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:49:10,606 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'value'
+2025-02-02 15:49:10,646 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 196, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 175, in top-level template code
+    <div>{{ 'Cost' if trade.action == 'buy' else 'Value' }}: ${{ "%.2f"|format(trade.cost if trade.action == 'buy' else trade.value) }}</div>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'value'
+
+2025-02-02 15:49:10,654 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:10] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:49:10,679 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:49:17,416 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:49:17,944 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:49:21,907 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:49:21,912 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:49:46,082 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'value'
+2025-02-02 15:49:46,084 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 196, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 178, in top-level template code
+    <div>{{ 'Cost' if trade.action == 'buy' else 'Value' }}: ${{ "%.2f"|format(trade.cost if trade.action == 'buy' else trade.value) }}</div>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'value'
+
+2025-02-02 15:49:46,091 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:46] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:49:46,167 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:49:49,163 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:49] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:49:49,190 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:49:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

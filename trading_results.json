@@ -1,90 +1,55 @@
 {
-    "symbol": "AGIX",
-    "training_return": -2.048700000000008,
-    "final_portfolio_value": 979.5129999999999,
+    "symbol": "LYB",
+    "training_return": -0.39502199999999443,
+    "final_portfolio_value": 996.04978,
     "recommendation": {
-        "signal": "SELL",
-        "confidence": 100.0,
-        "risk": "Medium",
+        "signal": "BUY",
+        "confidence": 43.31672523255027,
+        "risk": "Low",
         "action_probabilities": {
-            "hold": 5.989371265736039e-21,
-            "buy": 7.189136441350028e-25,
-            "sell": 1.0
+            "hold": 0.24720822498065956,
+            "buy": 0.4331672523255027,
+            "sell": 0.3196245226938377
         },
         "technical_indicators": {
             "RSI": 0.0,
-            "MACD": -0.11025625141798656,
-            "MACD_Signal": -0.06058382455969751,
-            "Volatility": 0.0226145621261965
+            "MACD": 0.09493581962284736,
+            "MACD_Signal": 0.10436163830797776,
+            "Volatility": 0.012875701152145529
         }
     },
     "trading_history": [
         {
-            "date": "2025-01-22",
-            "action": "buy",
-            "shares": 16,
-            "price": 30.45,
-            "cost": 487.4436,
-            "portfolio_value": 1000
-        },
-        {
             "date": "2025-01-23",
-            "action": "sell",
-            "shares": 16,
-            "price": 30.48,
-            "value": 487.43616000000003,
-            "return": 0.09852216748768847,
-            "portfolio_value": 1000.2364
-        },
-        {
-            "date": "2025-01-24",
             "action": "buy",
-            "shares": 16,
-            "price": 30.345,
-            "cost": 485.76275999999996,
-            "portfolio_value": 999.9925599999999
-        },
-        {
-            "date": "2025-01-27",
-            "action": "sell",
-            "shares": 16,
-            "price": 29.25,
-            "value": 467.766,
-            "return": -3.608502224419176,
-            "portfolio_value": 982.2298
-        },
-        {
-            "date": "2025-01-28",
-            "action": "buy",
-            "shares": 16,
-            "price": 30.27,
-            "cost": 484.56216,
-            "portfolio_value": 981.9957999999999
+            "shares": 3,
+            "price": 77.36,
+            "cost": 232.19603999999998,
+            "portfolio_value": 999.8839599999999
         },
         {
             "date": "2025-01-29",
             "action": "sell",
-            "shares": 16,
-            "price": 30.07,
-            "value": 480.87944,
-            "return": -0.6607201850016495,
-            "portfolio_value": 978.5536399999999
+            "shares": 3,
+            "price": 77.86,
+            "cost": 0,
+            "portfolio_value": 1001.3839599999999
         },
         {
             "date": "2025-01-30",
-            "action": "buy",
-            "shares": 16,
-            "price": 30.01,
-            "cost": 480.40008,
-            "portfolio_value": 978.3130799999999
+            "action": "sell",
+            "shares": 0,
+            "price": 76.12,
+            "cost": 0,
+            "portfolio_value": 996.04978
         }
     ],
     "model_performance": {
-        "avg_reward": 57.19386030446611,
+        "avg_reward": 0.19537487651647165,
         "final_epsilon": 0.12157665459056936,
         "training_episodes": 20,
-        "sharpe_ratio": -7.507161590149723,
-        "max_drawdown": 0.0219181385520464
+        "sharpe_ratio": -3.296627400839833,
+        "max_drawdown": 0.007734680238955729
     },
     "dates": {
         "training_start": "2024-01-23",

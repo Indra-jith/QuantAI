@@ -162,23 +162,55 @@
             </div>
         </div>
 
-        <div class="result-card fade-in">
-            <h3><i class="fas fa-history"></i> Trading History</h3>
+        <!-- Trade History Section with Enhanced Styling -->
+        <div class="trade-history">
+            <h3><i class="fas fa-history"></i> Trade History</h3>
             {% if results.trading_history %}
                 {% for trade in results.trading_history %}
-                    <div class="trade-item">
-                        <div class="trade-date">{{ trade.date }}</div>
-                        <div class="trade-action {{ trade.action }}">{{ trade.action|upper }}</div>
+                    <div class="trade-item {{ trade.action|lower }}-trade">
+                        <div class="trade-header">
+                            <span class="trade-date">
+                                <i class="fas fa-calendar"></i> {{ trade.date }}
+                            </span>
+                            <span class="trade-action {{ trade.action|lower }}">
+                                <i class="fas fa-{{ 'arrow-up' if trade.action|lower == 'buy' else 'arrow-down' }}"></i>
+                                {{ trade.action|upper }}
+                            </span>
+                        </div>
                         <div class="trade-details">
-                            <div>Shares: {{ "%.2f"|format(trade.shares) }}</div>
-                            <div>Price: ${{ "%.2f"|format(trade.price) }}</div>
-                            <div>{{ 'Cost' if trade.action == 'buy' else 'Value' }}: ${{ "%.2f"|format(trade.cost if trade.action == 'buy' else trade.value) }}</div>
-                            <div>Portfolio Value: ${{ "%.2f"|format(trade.portfolio_value) }}</div>
+                            <div class="trade-detail">
+                                <span class="detail-label">
+                                    <i class="fas fa-chart-line"></i> Shares
+                                </span>
+                                <span class="detail-value">{{ trade.shares }}</span>
+                            </div>
+                            <div class="trade-detail">
+                                <span class="detail-label">
+                                    <i class="fas fa-dollar-sign"></i> Price
+                                </span>
+                                <span class="detail-value">${{ "%.2f"|format(trade.price) }}</span>
+                            </div>
+                            <div class="trade-detail">
+                                <span class="detail-label">
+                                    <i class="fas fa-coins"></i> 
+                                    {% if trade.action|lower == 'buy' %}Cost{% else %}Revenue{% endif %}
+                                </span>
+                                <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+                            </div>
+                            <div class="trade-detail">
+                                <span class="detail-label">
+                                    <i class="fas fa-wallet"></i> Portfolio
+                                </span>
+                                <span class="detail-value">${{ "%.2f"|format(trade.portfolio_value) }}</span>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
             {% else %}
-                <div class="no-trades">No trades were executed during this period.</div>
+                <div class="no-trades">
+                    <i class="fas fa-info-circle"></i>
+                    No trades executed
+                </div>
             {% endif %}
         </div>
 
@@ -349,77 +381,138 @@
             }
             
             /* Trading History Styles */
+            .trade-history {
+                margin-top: 2rem;
+                padding: 1rem;
+            }
+
+            .trade-history h3 {
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+
             .trade-item {
-                background: #222;
-                border-radius: 8px;
+                background: rgba(30, 30, 30, 0.9);
+                border-radius: 10px;
                 margin: 1rem 0;
                 padding: 1.5rem;
-                border: 1px solid #444;
+                border: 1px solid #333;
                 position: relative;
                 overflow: hidden;
+                transition: all 0.3s ease;
             }
-            
-            .trade-item::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 4px;
+
+            .trade-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
             }
-            
-            .trade-item .trade-action.buy::before {
-                background-color: #4caf50;
+
+            .buy-trade {
+                border-left: 4px solid #4caf50;
             }
-            
-            .trade-item .trade-action.sell::before {
-                background-color: #f44336;
+
+            .sell-trade {
+                border-left: 4px solid #f44336;
             }
-            
+
+            .trade-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                padding-bottom: 0.8rem;
+                border-bottom: 1px solid #333;
+            }
+
             .trade-date {
                 color: #888;
                 font-size: 0.9rem;
-                margin-bottom: 0.5rem;
             }
-            
+
             .trade-action {
-                display: inline-block;
-                padding: 0.25rem 0.75rem;
-                border-radius: 4px;
+                padding: 0.4rem 1rem;
+                border-radius: 20px;
                 font-weight: bold;
-                margin-bottom: 1rem;
+                font-size: 0.9rem;
             }
-            
+
             .trade-action.buy {
                 background: rgba(76, 175, 80, 0.1);
                 color: #4caf50;
             }
-            
+
             .trade-action.sell {
                 background: rgba(244, 67, 54, 0.1);
                 color: #f44336;
             }
-            
+
             .trade-details {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 1rem;
+                margin-top: 1rem;
             }
-            
-            .trade-details > div {
-                background: #2a2a2a;
-                padding: 0.75rem;
-                border-radius: 4px;
+
+            .trade-detail {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1rem;
+                border-radius: 8px;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
             }
-            
+
+            .detail-label {
+                color: #888;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .detail-value {
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
             .no-trades {
                 text-align: center;
                 padding: 2rem;
                 color: #888;
                 font-style: italic;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
             }
+
+            .fa-arrow-up, .fa-arrow-down {
+                margin-right: 0.5rem;
+            }
+
+            /* Animations */
+            .trade-item {
+                animation: fadeInUp 0.5s ease forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Stagger animation delay for trade items */
+            {% for trade in results.trading_history %}
+            .trade-item:nth-child({{ loop.index }}) {
+                animation-delay: {{ loop.index * 0.1 }}s;
+            }
+            {% endfor %}
             
             /* Updated Trust Score Styles */
             .trust-score {

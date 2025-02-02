@@ -303,119 +303,114 @@ class StockTradingEnvironment:
         momentum = self.data.iloc[self.current_step]['Momentum5']
         volatility = self.data.iloc[self.current_step]['Volatility']
         
-        # Calculate position value before action
-        position_value = self.shares_held * current_price
-        total_value_before = self.balance + position_value
+        # Calculate price trend
+        price_trend = (current_price - self.data.iloc[self.current_step-5:self.current_step]['close'].mean()) / current_price
         
-        # Check stop loss and take profit if we have a position
-        force_sell = False
-        if self.shares_held > 0:
-            price_change = (current_price - self.entry_price) / self.entry_price
-            if price_change <= -self.stop_loss or price_change >= self.take_profit:
-                action = 2  # Force sell
-                force_sell = True
-
-        trade_info = None
         reward = 0
-        
-        # Execute trading action
         if action == 1:  # Buy
-            if self.balance >= current_price and self.shares_held == 0:  # Only buy if we don't have a position
-                # Dynamic position sizing based on volatility
-                risk_factor = min(0.5, 0.1 / (volatility + 0.01))
-                shares_to_buy = int((self.balance * risk_factor) / current_price)
+            # Strict buying conditions
+            buy_signal = (
+                rsi < 40 and                     # Oversold condition
+                macd > macd_signal and           # Positive MACD crossover
+                self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5'] and          # Above average volume
+                self.data.iloc[self.current_step]['EMA5'] > self.data.iloc[self.current_step]['EMA20'] and                 # Upward trend
+                self.shares_held == 0                 # No existing position
+            )
+            
+            if buy_signal:
+                # Calculate position size based on volatility
+                risk_factor = max(0.3, 1.0 - (volatility * 10))  # Reduce position size in high volatility
+                max_shares = int((self.balance * risk_factor) / current_price)
+                shares_to_buy = min(max_shares, int(self.balance * 0.3 / current_price))  # Max 30% of balance
                 
                 if shares_to_buy > 0:
-                    transaction_cost = shares_to_buy * current_price * self.transaction_fee
-                    total_cost = shares_to_buy * current_price + transaction_cost
-                    
-                    if self.balance >= total_cost:
-                        self.balance -= total_cost
+                    cost = shares_to_buy * current_price * (1 + self.transaction_fee)
+                    if cost <= self.balance:
+                        self.balance -= cost
                         self.shares_held = shares_to_buy
-                        self.entry_price = current_price  # Track entry price
+                        self.entry_price = current_price
+                        reward = 1.0  # Base reward for successful buy
                         
-                        trade_info = {
-                            'date': current_date.strftime('%Y-%m-%d'),
-                            'action': 'buy',
-                            'shares': shares_to_buy,
-                            'price': current_price,
-                            'cost': total_cost,
-                            'portfolio_value': self._portfolio_value
-                        }
-                        
-                        # Improved reward calculation for buys
-                        reward = 0
-                        if rsi < 30:  # Stronger oversold condition
-                            reward += 2.0
-                        if macd > macd_signal and abs(macd - macd_signal) > 0.01:  # Significant MACD crossover
-                            reward += 1.5
-                        if current_price > sma20 and momentum > 0:  # Trend confirmation
-                            reward += 1.0
-                        if volatility < 0.02:  # Low volatility bonus
+                        # Additional rewards for good entry conditions
+                        if rsi < 30:
                             reward += 0.5
-                        
-                        # Scale reward by risk
-                        reward /= (volatility + 0.01)
+                        if self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5'] * 1.2:
+                            reward += 0.3
+                    else:
+                        reward = -0.1  # Penalty for failed buy attempt
+                
+            else:
+                reward = -0.2  # Penalty for buying in poor conditions
                 
         elif action == 2:  # Sell
             if self.shares_held > 0:
-                transaction_cost = self.shares_held * current_price * self.transaction_fee
-                total_value = self.shares_held * current_price - transaction_cost
-                self.balance += total_value
-                
-                # Calculate return on trade
+                # Calculate profit/loss
                 price_change = (current_price - self.entry_price) / self.entry_price
                 
-                trade_info = {
-                    'date': current_date.strftime('%Y-%m-%d'),
-                    'action': 'sell',
-                    'shares': self.shares_held,
-                    'price': current_price,
-                    'value': total_value,
-                    'return': price_change * 100,  # Store return percentage
-                    'portfolio_value': self._portfolio_value
-                }
+                # Sell signal conditions
+                sell_signal = (
+                    rsi > 60 or                              # Overbought
+                    price_change > 0.02 or                   # 2% profit
+                    (price_change < -0.01 and rsi < 30) or   # Stop loss with oversold
+                    (macd < macd_signal and price_change > 0)  # MACD crossover with profit
+                )
                 
-                # Risk-adjusted reward for sells
-                reward = price_change * 100  # Base reward
+                if sell_signal:
+                    revenue = self.shares_held * current_price * (1 - self.transaction_fee)
+                    self.balance += revenue
+                    
+                    # Base reward on actual profit/loss
+                    reward = price_change * 25  # Reduced multiplier
+                    
+                    # Additional rewards for good exit conditions
+                    if rsi > 70:
+                        reward *= 1.2
+                    if self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5']:
+                        reward *= 1.1
+                    
+                    self.shares_held = 0
+                    self.entry_price = 0
                 
-                # Bonus for selling at resistance
-                if rsi > 70:
-                    reward *= 1.2
-                if macd < macd_signal:
-                    reward *= 1.1
+            else:
+                reward = -0.1  # Small penalty for attempting to sell with no shares
                 
-                # Penalize high volatility trades
-                reward /= (volatility + 0.01)
-                
-                self.shares_held = 0
-                self.entry_price = 0
-
+        else:  # Hold
+            if self.shares_held > 0:
+                # Reward for holding during uptrend
+                if self.data.iloc[self.current_step]['EMA5'] > self.data.iloc[self.current_step]['EMA20'] and price_trend > 0:
+                    reward = 0.2
+                # Small penalty for holding during downtrend
+                elif self.data.iloc[self.current_step]['EMA5'] < self.data.iloc[self.current_step]['EMA20'] and price_trend < 0:
+                    reward = -0.1
+            else:
+                # Small reward for holding cash during downtrend
+                if self.data.iloc[self.current_step]['EMA5'] < self.data.iloc[self.current_step]['EMA20'] and price_trend < 0:
+                    reward = 0.1
+        
+        # Apply volatility penalty to all rewards
+        reward *= (1 / (1 + volatility))
+        
+        # Update portfolio value
+        self._portfolio_value = self.balance + (self.shares_held * current_price)
+        
+        # Check if episode is done
+        done = (self.current_step >= len(self.data) - 1) or (self._portfolio_value < self.initial_balance * 0.5)
+        
         # Record trade if any happened
-        if trade_info:
+        if reward != 0:
+            trade_info = {
+                'date': current_date.strftime('%Y-%m-%d'),
+                'action': 'buy' if action == 1 else 'sell',
+                'shares': abs(self.shares_held),
+                'price': current_price,
+                'cost': abs(self.shares_held) * current_price * (1 + self.transaction_fee) if action == 1 else 0,
+                'portfolio_value': self._portfolio_value
+            }
             self.trading_history.append(trade_info)
 
         # Move to next step
         self.current_step += 1
         
-        # Calculate portfolio value change
-        new_price = self.data.iloc[self.current_step]['close']
-        new_position_value = self.shares_held * new_price
-        total_value_after = self.balance + new_position_value
-        
-        # Update portfolio value
-        self._portfolio_value = total_value_after
-        
-        # Calculate final reward
-        if not trade_info:  # If no trade was made
-            # Small negative reward for holding cash too long
-            if self.shares_held == 0 and rsi < 40 and macd > macd_signal:
-                reward -= 0.1
-            # Small negative reward for not taking profit
-            elif self.shares_held > 0 and rsi > 70 and macd < macd_signal:
-                reward -= 0.1
-        
-        done = self.current_step >= len(self.data) - 1
         return self._get_state(), reward, done
 
     def get_state(self) -> np.ndarray:
@@ -661,35 +656,81 @@ class TradingAgent:
         }
 
 def generate_trading_recommendations(agent: TradingAgent, env: StockTradingEnvironment) -> Dict:
-    """Generate trading recommendations based on the trained agent."""
-    state = env._get_state()
-    action_probs = agent.get_action_probabilities(state)
+    """Generate more balanced trading recommendations."""
+    state = env.get_state()
     
-    # Get current technical indicators
-    current_step = env.current_step - 1  # Since we've already stepped
+    with torch.no_grad():
+        state_tensor = torch.FloatTensor(state).unsqueeze(0)
+        action_values = agent.model(state_tensor)
+        
+    # Get market indicators
+    current_step = env.current_step - 1
     rsi = env.data.iloc[current_step]['RSI']
     macd = env.data.iloc[current_step]['MACD']
     macd_signal = env.data.iloc[current_step]['MACD_Signal']
+    volatility = env.data.iloc[current_step]['Volatility']
+    volume = env.data.iloc[current_step]['volume']
+    volume_ma5 = env.data.iloc[current_step]['Volume_MA5']
     
-    # Determine signal and confidence
-    action_idx = np.argmax(action_probs)
-    confidence = float(action_probs[action_idx] * 100)
+    # Use lower temperature for softer probabilities
+    temperature = 1.5
+    scaled_values = action_values / temperature
+    base_probs = F.softmax(scaled_values, dim=1).squeeze().numpy()
     
+    # Initialize balanced probabilities
+    adjusted_probs = np.array([0.34, 0.33, 0.33])  # Start with nearly equal probabilities
+    
+    # Market condition adjustments
+    trend_strength = abs(macd - macd_signal) / (abs(macd) + 1e-6)
+    
+    # RSI-based adjustments
+    if rsi > 70:  # Overbought
+        adjusted_probs[2] += 0.15  # Increase sell
+        adjusted_probs[1] -= 0.10  # Decrease buy
+        adjusted_probs[0] -= 0.05  # Slightly decrease hold
+    elif rsi < 30:  # Oversold
+        adjusted_probs[1] += 0.15  # Increase buy
+        adjusted_probs[2] -= 0.10  # Decrease sell
+        adjusted_probs[0] -= 0.05  # Slightly decrease hold
+    
+    # Volume-based adjustments
+    if volume > volume_ma5 * 1.5:  # Significant volume increase
+        if macd > macd_signal:
+            adjusted_probs[1] += 0.1  # Increase buy on high volume uptrend
+        else:
+            adjusted_probs[2] += 0.1  # Increase sell on high volume downtrend
+        adjusted_probs[0] -= 0.1  # Decrease hold
+    
+    # Volatility adjustments
+    if volatility > 0.02:
+        adjusted_probs[0] += 0.1  # Increase hold probability
+        adjusted_probs[1] -= 0.05  # Decrease buy
+        adjusted_probs[2] -= 0.05  # Decrease sell
+    
+    # Combine with base probabilities
+    final_probs = (0.6 * adjusted_probs + 0.4 * base_probs)
+    
+    # Ensure minimum probability
+    min_prob = 0.15
+    final_probs = np.maximum(final_probs, min_prob)
+    final_probs = final_probs / final_probs.sum()
+    
+    # Determine signal
+    action_idx = np.argmax(final_probs)
     signals = ['HOLD', 'BUY', 'SELL']
     signal = signals[action_idx]
     
-    # Determine risk level based on volatility and indicators
-    volatility = env.data.iloc[current_step]['Volatility']
-    risk_level = 'High' if volatility > 0.03 else 'Medium' if volatility > 0.02 else 'Low'
+    # Calculate confidence (capped at 90%)
+    confidence = float(min(final_probs[action_idx] * 100, 90.0))
     
     recommendation = {
         'signal': signal,
         'confidence': confidence,
-        'risk': risk_level,
+        'risk': 'High' if volatility > 0.03 else 'Medium' if volatility > 0.02 else 'Low',
         'action_probabilities': {
-            'hold': float(action_probs[0]),
-            'buy': float(action_probs[1]),
-            'sell': float(action_probs[2])
+            'hold': float(final_probs[0]),
+            'buy': float(final_probs[1]),
+            'sell': float(final_probs[2])
         },
         'technical_indicators': {
             'RSI': float(rsi),
