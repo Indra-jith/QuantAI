@@ -6109,3 +6109,61 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:43:24,672 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:24] "GET /results HTTP/1.1" 200 -
 2025-02-02 15:43:24,711 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:43:33,101 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-02 15:43:33,549 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 15:43:38,708 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 15:43:38,715 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 15:43:38,785 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:38] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:43:38,907 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:43:39,711 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:39] "GET / HTTP/1.1" 200 -
+2025-02-02 15:43:39,769 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:43:39,772 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:43:39,845 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:43:39,897 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:39] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:43:45,150 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:43:45,154 - __main__ - INFO - Processing stock data for AGIX
+2025-02-02 15:43:45,155 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:43:45,156 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:43:45,157 - __main__ - INFO - Fetching training data for AGIX
+2025-02-02 15:43:45,157 - Main_code - INFO - Downloading data for AGIX...
+2025-02-02 15:43:46,590 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:43:46,605 - Main_code - INFO - Successfully downloaded and processed data for AGIX
+2025-02-02 15:43:46,606 - Main_code - INFO - Data shape: (136, 10), Date range: 2024-07-18 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:43:46,634 - Main_code - INFO - Got 128 days of data for AGIX
+2025-02-02 15:43:46,636 - __main__ - INFO - Fetching testing data for AGIX
+2025-02-02 15:43:46,636 - Main_code - INFO - Downloading data for AGIX...
+2025-02-02 15:43:47,657 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:43:47,663 - Main_code - INFO - Successfully downloaded and processed data for AGIX
+2025-02-02 15:43:47,664 - Main_code - INFO - Data shape: (136, 10), Date range: 2024-07-18 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:43:47,683 - Main_code - INFO - Got 8 days of data for AGIX
+2025-02-02 15:43:47,684 - __main__ - INFO - Initializing training environment
+2025-02-02 15:43:47,685 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:43:47,685 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:43:48,544 - __main__ - INFO - Training model for AGIX
+2025-02-02 15:43:48,814 - Main_code - INFO - Episode 1/20 | Reward: 1867.72 | Avg Reward: 1867.72 | Trades: 81 | Epsilon: 0.900 | Time: 0.27s
+2025-02-02 15:43:49,170 - Main_code - INFO - Episode 2/20 | Reward: 2342.08 | Avg Reward: 2104.90 | Trades: 93 | Epsilon: 0.810 | Time: 0.63s
+2025-02-02 15:43:49,493 - Main_code - INFO - Episode 3/20 | Reward: 3022.87 | Avg Reward: 2410.89 | Trades: 96 | Epsilon: 0.729 | Time: 0.95s
+2025-02-02 15:43:49,786 - Main_code - INFO - Episode 4/20 | Reward: 2632.32 | Avg Reward: 2466.25 | Trades: 100 | Epsilon: 0.656 | Time: 1.24s
+2025-02-02 15:43:50,119 - Main_code - INFO - Episode 5/20 | Reward: 3525.27 | Avg Reward: 2678.05 | Trades: 96 | Epsilon: 0.590 | Time: 1.57s
+2025-02-02 15:43:50,463 - Main_code - INFO - Episode 6/20 | Reward: 3550.33 | Avg Reward: 3014.57 | Trades: 111 | Epsilon: 0.531 | Time: 1.92s
+2025-02-02 15:43:50,784 - Main_code - INFO - Episode 7/20 | Reward: 4035.13 | Avg Reward: 3353.18 | Trades: 107 | Epsilon: 0.478 | Time: 2.24s
+2025-02-02 15:43:51,102 - Main_code - INFO - Episode 8/20 | Reward: 4287.92 | Avg Reward: 3606.19 | Trades: 112 | Epsilon: 0.430 | Time: 2.56s
+2025-02-02 15:43:51,366 - Main_code - INFO - Episode 9/20 | Reward: 3797.01 | Avg Reward: 3839.13 | Trades: 101 | Epsilon: 0.387 | Time: 2.82s
+2025-02-02 15:43:51,640 - Main_code - INFO - Episode 10/20 | Reward: 4380.39 | Avg Reward: 4010.15 | Trades: 113 | Epsilon: 0.349 | Time: 3.10s
+2025-02-02 15:43:51,902 - Main_code - INFO - Episode 11/20 | Reward: 4143.58 | Avg Reward: 4128.80 | Trades: 109 | Epsilon: 0.314 | Time: 3.36s
+2025-02-02 15:43:52,181 - Main_code - INFO - Episode 12/20 | Reward: 4719.57 | Avg Reward: 4265.69 | Trades: 113 | Epsilon: 0.282 | Time: 3.64s
+2025-02-02 15:43:52,443 - Main_code - INFO - Episode 13/20 | Reward: 4460.29 | Avg Reward: 4300.17 | Trades: 118 | Epsilon: 0.254 | Time: 3.90s
+2025-02-02 15:43:52,707 - Main_code - INFO - Episode 14/20 | Reward: 4269.87 | Avg Reward: 4394.74 | Trades: 118 | Epsilon: 0.229 | Time: 4.16s
+2025-02-02 15:43:52,966 - Main_code - INFO - Episode 15/20 | Reward: 5236.94 | Avg Reward: 4566.05 | Trades: 118 | Epsilon: 0.206 | Time: 4.42s
+2025-02-02 15:43:53,234 - Main_code - INFO - Episode 16/20 | Reward: 4560.15 | Avg Reward: 4649.37 | Trades: 118 | Epsilon: 0.185 | Time: 4.69s
+2025-02-02 15:43:53,493 - Main_code - INFO - Episode 17/20 | Reward: 4063.81 | Avg Reward: 4518.21 | Trades: 118 | Epsilon: 0.167 | Time: 4.95s
+2025-02-02 15:43:53,758 - Main_code - INFO - Episode 18/20 | Reward: 4181.37 | Avg Reward: 4462.43 | Trades: 120 | Epsilon: 0.150 | Time: 5.21s
+2025-02-02 15:43:54,016 - Main_code - INFO - Episode 19/20 | Reward: 4462.89 | Avg Reward: 4501.03 | Trades: 117 | Epsilon: 0.135 | Time: 5.47s
+2025-02-02 15:43:54,281 - Main_code - INFO - Episode 20/20 | Reward: 5288.94 | Avg Reward: 4511.43 | Trades: 118 | Epsilon: 0.122 | Time: 5.74s
+2025-02-02 15:43:54,283 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:43:54,288 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:43:54,290 - __main__ - INFO - Saving results for AGIX
+2025-02-02 15:43:54,293 - __main__ - INFO - Successfully processed AGIX
+2025-02-02 15:43:54,297 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:43:54,347 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:43:54,383 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:43:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
