@@ -5907,3 +5907,104 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 15:36:16,895 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-02 15:36:16,983 - __main__ - INFO - Loaded 11712 stock symbols
 2025-02-02 15:36:17,046 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:36:17] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:37:21,607 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:37:21,610 - __main__ - INFO - Processing stock data for MSFT
+2025-02-02 15:37:21,611 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:37:21,612 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:37:21,613 - __main__ - INFO - Fetching training data for MSFT
+2025-02-02 15:37:21,614 - Main_code - INFO - Downloading data for MSFT...
+2025-02-02 15:37:24,068 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:37:24,092 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-02 15:37:24,093 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:37:24,108 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-02 15:37:24,109 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-02 15:37:24,110 - Main_code - INFO - Downloading data for MSFT...
+2025-02-02 15:37:26,733 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:37:26,754 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-02 15:37:26,756 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:37:26,769 - Main_code - INFO - Got 8 days of data for MSFT
+2025-02-02 15:37:26,770 - __main__ - INFO - Initializing training environment
+2025-02-02 15:37:26,771 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:37:26,772 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:37:26,774 - __main__ - INFO - Training model for MSFT
+2025-02-02 15:37:27,219 - Main_code - INFO - Episode 1/20 | Reward: 5025.91 | Avg Reward: 5025.91 | Trades: 155 | Epsilon: 0.900 | Time: 0.44s
+2025-02-02 15:37:27,704 - Main_code - INFO - Episode 2/20 | Reward: 6428.12 | Avg Reward: 5727.01 | Trades: 183 | Epsilon: 0.810 | Time: 0.93s
+2025-02-02 15:37:28,193 - Main_code - INFO - Episode 3/20 | Reward: 5229.02 | Avg Reward: 5561.02 | Trades: 180 | Epsilon: 0.729 | Time: 1.42s
+2025-02-02 15:37:28,685 - Main_code - INFO - Episode 4/20 | Reward: 5779.96 | Avg Reward: 5615.75 | Trades: 176 | Epsilon: 0.656 | Time: 1.91s
+2025-02-02 15:37:29,185 - Main_code - INFO - Episode 5/20 | Reward: 7112.69 | Avg Reward: 5915.14 | Trades: 196 | Epsilon: 0.590 | Time: 2.41s
+2025-02-02 15:37:29,680 - Main_code - INFO - Episode 6/20 | Reward: 8295.95 | Avg Reward: 6569.15 | Trades: 196 | Epsilon: 0.531 | Time: 2.91s
+2025-02-02 15:37:30,181 - Main_code - INFO - Episode 7/20 | Reward: 7706.54 | Avg Reward: 6824.83 | Trades: 209 | Epsilon: 0.478 | Time: 3.41s
+2025-02-02 15:37:30,676 - Main_code - INFO - Episode 8/20 | Reward: 9135.03 | Avg Reward: 7606.03 | Trades: 207 | Epsilon: 0.430 | Time: 3.90s
+2025-02-02 15:37:31,177 - Main_code - INFO - Episode 9/20 | Reward: 9558.51 | Avg Reward: 8361.74 | Trades: 217 | Epsilon: 0.387 | Time: 4.40s
+2025-02-02 15:37:31,677 - Main_code - INFO - Episode 10/20 | Reward: 9521.26 | Avg Reward: 8843.46 | Trades: 222 | Epsilon: 0.349 | Time: 4.90s
+2025-02-02 15:37:32,176 - Main_code - INFO - Episode 11/20 | Reward: 9968.03 | Avg Reward: 9177.87 | Trades: 225 | Epsilon: 0.314 | Time: 5.40s
+2025-02-02 15:37:32,681 - Main_code - INFO - Episode 12/20 | Reward: 9712.96 | Avg Reward: 9579.16 | Trades: 224 | Epsilon: 0.282 | Time: 5.91s
+2025-02-02 15:37:33,187 - Main_code - INFO - Episode 13/20 | Reward: 9923.61 | Avg Reward: 9736.88 | Trades: 226 | Epsilon: 0.254 | Time: 6.41s
+2025-02-02 15:37:33,700 - Main_code - INFO - Episode 14/20 | Reward: 10479.85 | Avg Reward: 9921.14 | Trades: 230 | Epsilon: 0.229 | Time: 6.93s
+2025-02-02 15:37:34,205 - Main_code - INFO - Episode 15/20 | Reward: 10398.55 | Avg Reward: 10096.60 | Trades: 228 | Epsilon: 0.206 | Time: 7.43s
+2025-02-02 15:37:34,706 - Main_code - INFO - Episode 16/20 | Reward: 10021.91 | Avg Reward: 10107.38 | Trades: 218 | Epsilon: 0.185 | Time: 7.93s
+2025-02-02 15:37:35,215 - Main_code - INFO - Episode 17/20 | Reward: 10183.25 | Avg Reward: 10201.43 | Trades: 218 | Epsilon: 0.167 | Time: 8.44s
+2025-02-02 15:37:35,722 - Main_code - INFO - Episode 18/20 | Reward: 10613.77 | Avg Reward: 10339.47 | Trades: 234 | Epsilon: 0.150 | Time: 8.95s
+2025-02-02 15:37:36,240 - Main_code - INFO - Episode 19/20 | Reward: 11117.62 | Avg Reward: 10467.02 | Trades: 230 | Epsilon: 0.135 | Time: 9.47s
+2025-02-02 15:37:36,738 - Main_code - INFO - Episode 20/20 | Reward: 11208.15 | Avg Reward: 10628.94 | Trades: 235 | Epsilon: 0.122 | Time: 9.96s
+2025-02-02 15:37:36,739 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:37:36,744 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:37:36,745 - __main__ - INFO - Saving results for MSFT
+2025-02-02 15:37:36,747 - __main__ - INFO - Successfully processed MSFT
+2025-02-02 15:37:36,749 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:37:36] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:37:36,800 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:37:36] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:37:36,832 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:37:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:38:00,178 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:38:00] "GET / HTTP/1.1" 200 -
+2025-02-02 15:38:00,238 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:38:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:38:00,242 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:38:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 15:38:00,330 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:38:00,378 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:38:00] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 15:38:50,413 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 15:38:50,417 - __main__ - INFO - Processing stock data for AAPL
+2025-02-02 15:38:50,419 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 15:38:50,419 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 15:38:50,420 - __main__ - INFO - Fetching training data for AAPL
+2025-02-02 15:38:50,421 - Main_code - INFO - Downloading data for AAPL...
+2025-02-02 15:38:52,999 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:38:53,022 - Main_code - INFO - Successfully downloaded and processed data for AAPL
+2025-02-02 15:38:53,023 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:38:53,033 - Main_code - INFO - Got 250 days of data for AAPL
+2025-02-02 15:38:53,034 - __main__ - INFO - Fetching testing data for AAPL
+2025-02-02 15:38:53,034 - Main_code - INFO - Downloading data for AAPL...
+2025-02-02 15:38:55,839 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 15:38:55,861 - Main_code - INFO - Successfully downloaded and processed data for AAPL
+2025-02-02 15:38:55,862 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 15:38:55,878 - Main_code - INFO - Got 8 days of data for AAPL
+2025-02-02 15:38:55,879 - __main__ - INFO - Initializing training environment
+2025-02-02 15:38:55,880 - __main__ - INFO - Initializing testing environment
+2025-02-02 15:38:55,881 - __main__ - INFO - Initializing trading agent
+2025-02-02 15:38:55,882 - __main__ - INFO - Training model for AAPL
+2025-02-02 15:38:56,448 - Main_code - INFO - Episode 1/20 | Reward: 4768.33 | Avg Reward: 4768.33 | Trades: 154 | Epsilon: 0.900 | Time: 0.57s
+2025-02-02 15:38:56,996 - Main_code - INFO - Episode 2/20 | Reward: 4927.73 | Avg Reward: 4848.03 | Trades: 170 | Epsilon: 0.810 | Time: 1.11s
+2025-02-02 15:38:57,509 - Main_code - INFO - Episode 3/20 | Reward: 6163.30 | Avg Reward: 5286.45 | Trades: 191 | Epsilon: 0.729 | Time: 1.63s
+2025-02-02 15:38:58,012 - Main_code - INFO - Episode 4/20 | Reward: 6159.21 | Avg Reward: 5504.64 | Trades: 191 | Epsilon: 0.656 | Time: 2.13s
+2025-02-02 15:38:58,528 - Main_code - INFO - Episode 5/20 | Reward: 7314.59 | Avg Reward: 5866.63 | Trades: 199 | Epsilon: 0.590 | Time: 2.64s
+2025-02-02 15:38:59,031 - Main_code - INFO - Episode 6/20 | Reward: 7425.18 | Avg Reward: 6398.00 | Trades: 207 | Epsilon: 0.531 | Time: 3.15s
+2025-02-02 15:38:59,545 - Main_code - INFO - Episode 7/20 | Reward: 7482.20 | Avg Reward: 6908.89 | Trades: 214 | Epsilon: 0.478 | Time: 3.66s
+2025-02-02 15:39:00,049 - Main_code - INFO - Episode 8/20 | Reward: 8120.44 | Avg Reward: 7300.32 | Trades: 217 | Epsilon: 0.430 | Time: 4.17s
+2025-02-02 15:39:00,563 - Main_code - INFO - Episode 9/20 | Reward: 9644.79 | Avg Reward: 7997.44 | Trades: 210 | Epsilon: 0.387 | Time: 4.68s
+2025-02-02 15:39:01,063 - Main_code - INFO - Episode 10/20 | Reward: 8569.96 | Avg Reward: 8248.51 | Trades: 211 | Epsilon: 0.349 | Time: 5.18s
+2025-02-02 15:39:01,578 - Main_code - INFO - Episode 11/20 | Reward: 8720.80 | Avg Reward: 8507.64 | Trades: 218 | Epsilon: 0.314 | Time: 5.69s
+2025-02-02 15:39:02,083 - Main_code - INFO - Episode 12/20 | Reward: 9476.24 | Avg Reward: 8906.45 | Trades: 220 | Epsilon: 0.282 | Time: 6.20s
+2025-02-02 15:39:02,599 - Main_code - INFO - Episode 13/20 | Reward: 10018.84 | Avg Reward: 9286.13 | Trades: 227 | Epsilon: 0.254 | Time: 6.72s
+2025-02-02 15:39:03,096 - Main_code - INFO - Episode 14/20 | Reward: 10073.46 | Avg Reward: 9371.86 | Trades: 235 | Epsilon: 0.229 | Time: 7.21s
+2025-02-02 15:39:03,613 - Main_code - INFO - Episode 15/20 | Reward: 9516.02 | Avg Reward: 9561.07 | Trades: 222 | Epsilon: 0.206 | Time: 7.73s
+2025-02-02 15:39:04,126 - Main_code - INFO - Episode 16/20 | Reward: 10494.51 | Avg Reward: 9915.82 | Trades: 231 | Epsilon: 0.185 | Time: 8.24s
+2025-02-02 15:39:04,636 - Main_code - INFO - Episode 17/20 | Reward: 10682.91 | Avg Reward: 10157.15 | Trades: 232 | Epsilon: 0.167 | Time: 8.75s
+2025-02-02 15:39:05,154 - Main_code - INFO - Episode 18/20 | Reward: 9487.13 | Avg Reward: 10050.81 | Trades: 232 | Epsilon: 0.150 | Time: 9.27s
+2025-02-02 15:39:05,669 - Main_code - INFO - Episode 19/20 | Reward: 11358.74 | Avg Reward: 10307.86 | Trades: 231 | Epsilon: 0.135 | Time: 9.79s
+2025-02-02 15:39:06,208 - Main_code - INFO - Episode 20/20 | Reward: 10157.23 | Avg Reward: 10436.10 | Trades: 230 | Epsilon: 0.122 | Time: 10.32s
+2025-02-02 15:39:06,209 - __main__ - INFO - Evaluating model performance
+2025-02-02 15:39:06,215 - __main__ - INFO - Generating trading recommendations
+2025-02-02 15:39:06,217 - __main__ - INFO - Saving results for AAPL
+2025-02-02 15:39:06,218 - __main__ - INFO - Successfully processed AAPL
+2025-02-02 15:39:06,222 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 15:39:06,279 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:39:06,306 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:39:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
