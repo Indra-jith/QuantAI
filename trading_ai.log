@@ -5761,3 +5761,67 @@ Testing period: 2025-01-22 to 2025-01-31
 2025-02-02 14:47:56,888 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:47:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2025-02-02 14:47:56,910 - __main__ - INFO - Loaded 11712 stock symbols
 2025-02-02 14:47:56,951 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:47:56] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 14:52:36,078 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-02 14:52:36,080 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-02 14:52:36,081 - werkzeug - INFO -  * Restarting with stat
+2025-02-02 14:52:39,296 - werkzeug - WARNING -  * Debugger is active!
+2025-02-02 14:52:39,303 - werkzeug - INFO -  * Debugger PIN: 122-773-204
+2025-02-02 14:52:39,334 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:52:39] "GET / HTTP/1.1" 200 -
+2025-02-02 14:52:39,449 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:52:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:52:39,451 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:52:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-02 14:52:39,555 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 14:52:39,594 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:52:39] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-02 14:52:43,721 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-02 14:52:43,724 - __main__ - INFO - Processing stock data for RELI
+2025-02-02 14:52:43,724 - Main_code - INFO - Training period: 2024-01-23 to 2025-01-21
+Testing period: 2025-01-22 to 2025-01-31
+2025-02-02 14:52:43,724 - __main__ - INFO - Date ranges - Training: ('2024-01-23', '2025-01-21'), Testing: ('2025-01-22', '2025-01-31')
+2025-02-02 14:52:43,725 - __main__ - INFO - Fetching training data for RELI
+2025-02-02 14:52:43,725 - Main_code - INFO - Downloading data for RELI...
+2025-02-02 14:52:46,305 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 14:52:46,342 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-02 14:52:46,344 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 14:52:46,417 - Main_code - INFO - Got 250 days of data for RELI
+2025-02-02 14:52:46,419 - __main__ - INFO - Fetching testing data for RELI
+2025-02-02 14:52:46,419 - Main_code - INFO - Downloading data for RELI...
+2025-02-02 14:52:48,640 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-02 14:52:48,660 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-02 14:52:48,661 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-02 14:52:48,679 - Main_code - INFO - Got 8 days of data for RELI
+2025-02-02 14:52:48,680 - __main__ - INFO - Initializing training environment
+2025-02-02 14:52:48,680 - __main__ - INFO - Initializing testing environment
+2025-02-02 14:52:48,680 - __main__ - INFO - Initializing trading agent
+2025-02-02 14:52:51,520 - __main__ - INFO - Training model for RELI
+2025-02-02 14:52:52,823 - Main_code - INFO - Episode 1/20 | Reward: 346.05 | Avg Reward: 346.05 | Trades: 170 | Epsilon: 0.900 | Time: 1.30s
+2025-02-02 14:52:54,217 - Main_code - INFO - Episode 2/20 | Reward: 302.83 | Avg Reward: 324.44 | Trades: 186 | Epsilon: 0.810 | Time: 2.70s
+2025-02-02 14:52:55,408 - Main_code - INFO - Episode 3/20 | Reward: 3243.07 | Avg Reward: 1297.32 | Trades: 180 | Epsilon: 0.729 | Time: 3.89s
+2025-02-02 14:52:56,479 - Main_code - INFO - Episode 4/20 | Reward: 214.15 | Avg Reward: 1026.53 | Trades: 186 | Epsilon: 0.656 | Time: 4.96s
+2025-02-02 14:52:57,560 - Main_code - INFO - Episode 5/20 | Reward: 3178.32 | Avg Reward: 1456.89 | Trades: 176 | Epsilon: 0.590 | Time: 6.04s
+2025-02-02 14:52:58,713 - Main_code - INFO - Episode 6/20 | Reward: 315.67 | Avg Reward: 1450.81 | Trades: 189 | Epsilon: 0.531 | Time: 7.19s
+2025-02-02 14:52:59,840 - Main_code - INFO - Episode 7/20 | Reward: 364.67 | Avg Reward: 1463.18 | Trades: 195 | Epsilon: 0.478 | Time: 8.32s
+2025-02-02 14:53:00,985 - Main_code - INFO - Early stopping at episode 8 due to no improvement
+2025-02-02 14:53:00,986 - __main__ - INFO - Evaluating model performance
+2025-02-02 14:53:00,996 - __main__ - INFO - Generating trading recommendations
+2025-02-02 14:53:01,001 - __main__ - INFO - Saving results for RELI
+2025-02-02 14:53:01,003 - __main__ - INFO - Successfully processed RELI
+2025-02-02 14:53:01,006 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:53:01] "POST /process_stock HTTP/1.1" 200 -
+2025-02-02 14:53:01,094 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:53:01] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:53:01,148 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:53:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:54:54,855 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:54:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:55:56,236 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:55:56] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:55:56,296 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:55:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:56:28,015 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:56:28] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:56:28,046 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:56:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:56:42,206 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:56:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:57:12,271 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:57:12] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:57:12,329 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:57:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:58:45,569 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:58:45] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:58:45,646 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:58:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:59:02,275 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:59:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 14:59:38,109 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:59:38] "GET /results HTTP/1.1" 200 -
+2025-02-02 14:59:38,143 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 14:59:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:00:51,959 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:00:51] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:00:52,020 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:00:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-02 15:02:53,093 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:02:53] "GET /results HTTP/1.1" 200 -
+2025-02-02 15:02:53,144 - werkzeug - INFO - 127.0.0.1 - - [02/Feb/2025 15:02:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

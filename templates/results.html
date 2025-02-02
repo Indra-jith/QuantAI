@@ -38,50 +38,58 @@
                 <h3><i class="fas fa-chart-line"></i> Prediction</h3>
                 <!-- Final Decision -->
                 <div class="action-display">
-                    <div class="action">
-                        {% if results.recommendation and results.recommendation.signal %}
-                            <i class="fas fa-{{ 'arrow-up' if results.recommendation.signal == 'BUY' 
-                                        else 'arrow-down' if results.recommendation.signal == 'SELL' 
-                                        else 'equals' }}"></i>
-                            {{ results.recommendation.signal }}
-                        {% else %}
-                            <i class="fas fa-equals"></i>
-                            HOLD
-                        {% endif %}
+                    <div class="action-card {{ results.recommendation.signal|lower }}-card">
+                        <div class="action {{ results.recommendation.signal|lower }}-text">
+                            {% if results.recommendation and results.recommendation.signal %}
+                                <i class="fas fa-{{ 'arrow-up' if results.recommendation.signal == 'BUY' 
+                                            else 'arrow-down' if results.recommendation.signal == 'SELL' 
+                                            else 'equals' }}"></i>
+                                {{ results.recommendation.signal }}
+                            {% else %}
+                                <i class="fas fa-equals"></i>
+                                HOLD
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Probability Bars -->
+                <!-- Probability Analysis -->
                 <div class="probabilities">
                     <h3>Probability Analysis</h3>
                     {% if results.recommendation and results.recommendation.action_probabilities %}
                         <div class="prob-bar">
-                            <span class="label">Buy</span>
+                            <span class="label buy-label">Buy</span>
                             <div class="bar-container">
-                                <div class="bar">
-                                    <div class="fill buy" style="width: {{ (results.recommendation.action_probabilities.buy|float * 100)|round(1) }}%"></div>
+                                <div class="progress-bar">
+                                    <div class="progress buy-progress" 
+                                         style="width: {{ (results.recommendation.action_probabilities.buy|float * 100)|round(1) }}%">
+                                        <span class="progress-value">{{ "%.1f"|format(results.recommendation.action_probabilities.buy|float * 100) }}%</span>
+                                    </div>
                                 </div>
-                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.buy|float * 100) }}%</span>
                             </div>
                         </div>
                         
                         <div class="prob-bar">
-                            <span class="label">Hold</span>
+                            <span class="label hold-label">Hold</span>
                             <div class="bar-container">
-                                <div class="bar">
-                                    <div class="fill hold" style="width: {{ (results.recommendation.action_probabilities.hold|float * 100)|round(1) }}%"></div>
+                                <div class="progress-bar">
+                                    <div class="progress hold-progress" 
+                                         style="width: {{ (results.recommendation.action_probabilities.hold|float * 100)|round(1) }}%">
+                                        <span class="progress-value">{{ "%.1f"|format(results.recommendation.action_probabilities.hold|float * 100) }}%</span>
+                                    </div>
                                 </div>
-                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.hold|float * 100) }}%</span>
                             </div>
                         </div>
                         
                         <div class="prob-bar">
-                            <span class="label">Sell</span>
+                            <span class="label sell-label">Sell</span>
                             <div class="bar-container">
-                                <div class="bar">
-                                    <div class="fill sell" style="width: {{ (results.recommendation.action_probabilities.sell|float * 100)|round(1) }}%"></div>
+                                <div class="progress-bar">
+                                    <div class="progress sell-progress" 
+                                         style="width: {{ (results.recommendation.action_probabilities.sell|float * 100)|round(1) }}%">
+                                        <span class="progress-value">{{ "%.1f"|format(results.recommendation.action_probabilities.sell|float * 100) }}%</span>
+                                    </div>
                                 </div>
-                                <span class="value">{{ "%.1f"|format(results.recommendation.action_probabilities.sell|float * 100) }}%</span>
                             </div>
                         </div>
                     {% else %}
@@ -129,12 +137,6 @@
                 
                 <div class="trust-description typing-text"></div>
             </div>
-        </div>
-
-        <div class="action-buttons fade-in">
-            <a href="/" class="btn glow-effect">
-                <i class="fas fa-home"></i> New Analysis
-            </a>
         </div>
 
         <!-- Bot Performance Section -->
@@ -419,26 +421,29 @@
                 font-style: italic;
             }
             
+            /* Updated Trust Score Styles */
             .trust-score {
                 background: #222;
-                padding: 1.2rem;
+                padding: 1.5rem;
                 border-radius: 8px;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
+                min-height: 200px;  /* Increased height */
                 display: flex;
                 flex-direction: column;
-                gap: 0.5rem;
             }
-            
+
             .trust-score h4 {
                 margin: 0;
                 color: #888;
                 font-size: 1.1rem;
+                margin-bottom: 1rem;
             }
-            
+
             .score {
+                flex-grow: 1;  /* Takes up available space */
                 font-size: 1.2rem;
                 font-weight: bold;
-                padding: 1.5rem;
+                padding: 2rem;  /* Increased padding */
                 border-radius: 6px;
                 border: 1px solid #444;
                 display: flex;
@@ -446,21 +451,21 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                gap: 0.8rem;
+                gap: 1rem;
             }
-            
+
             .score i {
-                font-size: 2rem;
+                font-size: 2.5rem;  /* Increased icon size */
+                margin-bottom: 0.5rem;
             }
-            
+
             .trust-description {
-                color: #fff;
-                font-size: 1.3rem;
-                line-height: 1.5;
-                text-align: center;
+                margin-top: auto;  /* Pushes description to bottom */
                 padding: 1.2rem;
-                margin: 1rem 0 0 0;
-                min-height: 3em;
+                border-top: 1px solid #333;
+                font-size: 1.3rem;
+                color: #fff;
+                line-height: 1.5;
                 letter-spacing: 0.5px;
             }
             
@@ -501,75 +506,143 @@
             }
             
             .probabilities {
-                margin-top: 1.5rem;
-                padding: 1rem;
-                background: #222;
-                border-radius: 8px;
-                border: 1px solid #333;
+                margin-top: 30px;
+                padding: 25px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 15px;
             }
             
             .probabilities h3 {
-                margin-bottom: 1rem;
-                color: #888;
-                font-size: 1rem;
-                text-align: center;
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+                color: #fff;
             }
             
             .prob-bar {
-                display: flex;
-                align-items: center;
-                margin-bottom: 1rem;
+                margin: 20px 0;
             }
             
-            .prob-bar:last-child {
-                margin-bottom: 0;
+            .label {
+                font-size: 1.3rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                display: block;
             }
             
-            .prob-bar .label {
-                width: 60px;
-                color: #888;
-                font-size: 0.9rem;
-            }
+            .buy-label { color: #4caf50; }
+            .hold-label { color: #ffd700; }
+            .sell-label { color: #f44336; }
             
             .bar-container {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
+                width: 100%;
             }
             
-            .bar {
-                flex: 1;
-                height: 24px;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 12px;
+            .progress-bar {
+                width: 100%;
+                height: 30px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 15px;
                 overflow: hidden;
+                position: relative;
+                border: 1px solid rgba(255, 255, 255, 0.2);
             }
             
-            .fill {
+            .progress {
                 height: 100%;
-                width: 0;
-                transition: width 1s ease-out;
+                transition: width 1s ease-in-out;
+                position: relative;
             }
             
-            .fill.buy {
-                background: #4caf50;
-            }
-            
-            .fill.hold {
-                background: #ffd700;
-            }
-            
-            .fill.sell {
-                background: #f44336;
-            }
-            
-            .prob-bar .value {
-                width: 60px;
-                color: #fff;
+            .progress-value {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
                 font-size: 0.9rem;
-                font-family: 'Share Tech Mono', monospace;
-                text-align: right;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                white-space: nowrap;
+                z-index: 2;
+            }
+            
+            .buy-progress {
+                background: linear-gradient(90deg, #388e3c, #4caf50);
+                box-shadow: inset 0 0 10px rgba(76, 175, 80, 0.3);
+            }
+            
+            .hold-progress {
+                background: linear-gradient(90deg, #ffc107, #ffd700);
+                box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+            
+            .sell-progress {
+                background: linear-gradient(90deg, #d32f2f, #f44336);
+                box-shadow: inset 0 0 10px rgba(244, 67, 54, 0.3);
+            }
+            
+            /* Add shine effect to progress bars */
+            .progress::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+            
+            /* Action card styles */
+            .action-card {
+                padding: 30px;
+                border-radius: 15px;
+                margin: 20px 0;
+                transition: all 0.3s ease;
+            }
+
+            .buy-card {
+                background: rgba(76, 175, 80, 0.1);
+                border: 2px solid #4caf50;
+            }
+
+            .sell-card {
+                background: rgba(244, 67, 54, 0.1);
+                border: 2px solid #f44336;
+            }
+
+            .hold-card {
+                background: rgba(255, 215, 0, 0.1);
+                border: 2px solid #ffd700;
+            }
+
+            /* Action text styles */
+            .action {
+                font-size: 2.8rem;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 0 0 10px currentColor;
+            }
+
+            .buy-text {
+                color: #4caf50;
+            }
+
+            .sell-text {
+                color: #f44336;
+            }
+
+            .hold-text {
+                color: #ffd700;
+            }
+
+            .action i {
+                font-size: 2.8rem;
+                margin-right: 15px;
             }
             
             /* Add button styles */
@@ -649,9 +722,8 @@
     
     <!-- Add New Analysis button -->
     <div class="button-container">
-        <a href="{{ url_for('index') }}" class="action-button">
-            <i class="fas fa-search"></i>
-            New Analysis
+        <a href="/" class="action-button">
+            <i class="fas fa-home"></i> New Analysis
         </a>
     </div>
 </body>

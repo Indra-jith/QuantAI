@@ -1,90 +1,90 @@
 {
-    "symbol": "BALI",
-    "training_return": -1.892332500000009,
-    "final_portfolio_value": 981.0766749999999,
+    "symbol": "RELI",
+    "training_return": -5.377467000000013,
+    "final_portfolio_value": 946.2253299999999,
     "recommendation": {
         "signal": "SELL",
-        "confidence": 61.86777949333191,
-        "risk": "Low",
+        "confidence": 70.9601640701294,
+        "risk": "High",
         "action_probabilities": {
-            "hold": 0.10270743072032928,
-            "buy": 0.27861469984054565,
-            "sell": 0.6186777949333191
+            "hold": 0.17505110800266266,
+            "buy": 0.11534730345010757,
+            "sell": 0.709601640701294
         },
         "technical_indicators": {
             "RSI": 0.0,
-            "MACD": -0.04005375758184471,
-            "MACD_Signal": -0.016734274536226612,
-            "Volatility": 0.005535595452328898
+            "MACD": -0.018100136585889715,
+            "MACD_Signal": -0.008237213711311319,
+            "Volatility": 0.05074072073388838
         }
     },
     "trading_history": [
         {
             "date": "2025-01-22",
             "action": "buy",
-            "shares": 25,
-            "price": 31.16,
-            "cost": 779.3895,
+            "shares": 370,
+            "price": 2.16,
+            "cost": 799.5996,
             "portfolio_value": 1000
         },
         {
             "date": "2025-01-23",
             "action": "sell",
-            "shares": 25,
-            "price": 31.23,
-            "value": 780.359625,
-            "return": 0.2246469833119393,
-            "portfolio_value": 1001.3605
+            "shares": 370,
+            "price": 2.21,
+            "value": 817.2911499999999,
+            "return": 2.3148148148148064,
+            "portfolio_value": 1018.1003999999999
         },
         {
             "date": "2025-01-24",
             "action": "buy",
-            "shares": 30,
-            "price": 31.17,
-            "cost": 935.56755,
-            "portfolio_value": 1000.970125
+            "shares": 444,
+            "price": 2.2,
+            "cost": 977.2884,
+            "portfolio_value": 1017.6915499999999
         },
         {
             "date": "2025-01-27",
             "action": "sell",
-            "shares": 30,
-            "price": 30.91,
-            "value": 926.8363499999999,
-            "return": -0.8341353865896746,
-            "portfolio_value": 992.702575
+            "shares": 444,
+            "price": 2.02,
+            "value": 896.43156,
+            "return": -8.181818181818189,
+            "portfolio_value": 937.2831499999999
         },
         {
             "date": "2025-01-28",
             "action": "buy",
-            "shares": 25,
-            "price": 31.09,
-            "cost": 777.638625,
-            "portfolio_value": 992.238925
+            "shares": 374,
+            "price": 2.0,
+            "cost": 748.374,
+            "portfolio_value": 936.8347099999999
         },
         {
             "date": "2025-01-29",
             "action": "sell",
-            "shares": 25,
-            "price": 30.9,
-            "value": 772.11375,
-            "return": -0.6111289803795473,
-            "portfolio_value": 987.1003
+            "shares": 374,
+            "price": 2.14,
+            "value": 799.95982,
+            "return": 7.000000000000006,
+            "portfolio_value": 988.8207099999998
         },
         {
             "date": "2025-01-30",
             "action": "buy",
-            "shares": 25,
-            "price": 30.99,
-            "cost": 775.137375,
-            "portfolio_value": 986.7140499999999
+            "shares": 380,
+            "price": 2.08,
+            "cost": 790.7952,
+            "portfolio_value": 988.4205299999999
         }
     ],
     "model_performance": {
-        "avg_reward": 1.4684832309061024,
-        "final_epsilon": 0.12157665459056936,
+        "avg_reward": 2.3891293891293883,
+        "final_epsilon": 0.43046721000000016,
         "training_episodes": 20,
-        "sharpe_ratio": -12.91229606966229,
-        "max_drawdown": 0.02025626634963142
+        "sharpe_ratio": -2.8098904047495026,
+        "max_drawdown": 0.0798208997855222
     },
     "dates": {
         "training_start": "2024-01-23",
