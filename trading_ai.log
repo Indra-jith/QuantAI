@@ -8802,3 +8802,11 @@ Testing period: 2025-01-23 to 2025-02-03
 2025-02-03 23:05:26,376 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "POST /process_stock HTTP/1.1" 200 -
 2025-02-03 23:05:26,404 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "GET /results HTTP/1.1" 200 -
 2025-02-03 23:05:26,443 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:18:20,915 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:18:20] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:18:20,955 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:18:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 23:19:50,953 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:19:50] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:19:51,078 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:19:51] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 23:20:08,088 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:20:08] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:20:08,137 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:20:08] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 23:20:26,546 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:20:26] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:20:26,586 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:20:26] "GET /static/css/style.css HTTP/1.1" 200 -

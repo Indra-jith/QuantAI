@@ -1,0 +1,8 @@
+Flask
+pandas
+numpy
+torch
+torchvision
+sklearn
+requests
+gunicorn
