@@ -7157,3 +7157,163 @@ Testing period: 2025-01-23 to 2025-02-03
 2025-02-03 11:27:27,671 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 11:27:27] "GET /static/css/style.css HTTP/1.1" 200 -
 2025-02-03 11:30:17,867 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 11:30:17] "GET /results HTTP/1.1" 200 -
 2025-02-03 11:30:17,916 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 11:30:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:30:47,750 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 14:30:47,751 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 14:30:47,755 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 14:30:51,761 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 14:30:51,765 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 14:30:51,797 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:51] "GET / HTTP/1.1" 200 -
+2025-02-03 14:30:51,919 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:51] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:30:51,923 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 14:30:52,087 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-03 14:30:52,097 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 14:30:52,155 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:30:52] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 14:31:14,588 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 14:31:14,590 - __main__ - INFO - Processing stock data for DELL
+2025-02-03 14:31:14,590 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 14:31:14,590 - __main__ - INFO - Date ranges - Training: ('2024-01-24', '2025-01-22'), Testing: ('2025-01-23', '2025-02-03')
+2025-02-03 14:31:14,590 - __main__ - INFO - Fetching training data for DELL
+2025-02-03 14:31:14,591 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 14:31:16,766 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 14:31:16,794 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 14:31:16,797 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 14:31:16,857 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-03 14:31:16,857 - __main__ - INFO - Fetching testing data for DELL
+2025-02-03 14:31:16,858 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 14:31:19,323 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 14:31:19,334 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 14:31:19,335 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 14:31:19,352 - Main_code - INFO - Got 7 days of data for DELL
+2025-02-03 14:31:19,352 - __main__ - INFO - Initializing training environment
+2025-02-03 14:31:19,352 - __main__ - INFO - Initializing testing environment
+2025-02-03 14:31:19,353 - __main__ - INFO - Initializing trading agent
+2025-02-03 14:31:22,020 - __main__ - INFO - Training model for DELL
+2025-02-03 14:31:23,708 - Main_code - INFO - Episode 1/20 | Reward: -20.24 | Avg Reward: -20.24 | Trades: 176 | Epsilon: 0.900 | Time: 1.69s
+2025-02-03 14:31:24,581 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:31:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 14:31:25,629 - Main_code - INFO - Episode 2/20 | Reward: -17.06 | Avg Reward: -18.65 | Trades: 146 | Epsilon: 0.810 | Time: 3.61s
+2025-02-03 14:31:27,565 - Main_code - INFO - Episode 3/20 | Reward: -15.32 | Avg Reward: -17.54 | Trades: 135 | Epsilon: 0.729 | Time: 5.54s
+2025-02-03 14:31:29,245 - Main_code - INFO - Episode 4/20 | Reward: -7.95 | Avg Reward: -15.14 | Trades: 115 | Epsilon: 0.656 | Time: 7.22s
+2025-02-03 14:31:30,594 - Main_code - INFO - Episode 5/20 | Reward: -11.60 | Avg Reward: -14.43 | Trades: 115 | Epsilon: 0.590 | Time: 8.57s
+2025-02-03 14:31:32,242 - Main_code - INFO - Episode 6/20 | Reward: 6.47 | Avg Reward: -9.09 | Trades: 95 | Epsilon: 0.531 | Time: 10.22s
+2025-02-03 14:31:33,484 - Main_code - INFO - Episode 7/20 | Reward: -4.91 | Avg Reward: -6.66 | Trades: 78 | Epsilon: 0.478 | Time: 11.46s
+2025-02-03 14:31:34,750 - Main_code - INFO - Episode 8/20 | Reward: -2.30 | Avg Reward: -4.06 | Trades: 91 | Epsilon: 0.430 | Time: 12.73s
+2025-02-03 14:31:35,855 - Main_code - INFO - Episode 9/20 | Reward: -3.26 | Avg Reward: -3.12 | Trades: 92 | Epsilon: 0.387 | Time: 13.83s
+2025-02-03 14:31:36,993 - Main_code - INFO - Episode 10/20 | Reward: -5.44 | Avg Reward: -1.89 | Trades: 74 | Epsilon: 0.349 | Time: 14.97s
+2025-02-03 14:31:38,052 - Main_code - INFO - Early stopping at episode 11 due to no improvement
+2025-02-03 14:31:38,052 - __main__ - INFO - Evaluating model performance
+2025-02-03 14:31:38,062 - __main__ - INFO - Generating trading recommendations
+2025-02-03 14:31:38,072 - __main__ - INFO - Saving results for DELL
+2025-02-03 14:31:38,075 - __main__ - INFO - Successfully processed DELL
+2025-02-03 14:31:38,080 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:31:38] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 14:31:38,176 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:31:38] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:31:38,239 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:31:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 14:34:16,368 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:34:16] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:34:16,415 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:34:16] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:34:48,964 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:34:48] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:34:49,003 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:34:49] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:35:33,804 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:35:33] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:35:33,852 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:35:33] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:36:30,447 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:36:30] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:36:30,498 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:36:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:40:25,745 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:40:25] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:40:25,785 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:40:25] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:40:38,357 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:40:38] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:40:38,395 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:40:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:42:34,477 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:42:34] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:42:34,520 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:42:34] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:43:03,007 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 14:43:03,007 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 14:43:03,009 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 14:43:06,458 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 14:43:06,461 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 14:44:56,237 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:44:56] "GET / HTTP/1.1" 200 -
+2025-02-03 14:44:56,944 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:44:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:44:56,959 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:44:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 14:44:57,031 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 14:44:57,076 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:44:57] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 14:44:57,101 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:44:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-03 14:45:05,914 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:05] "GET / HTTP/1.1" 200 -
+2025-02-03 14:45:05,948 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 14:45:05,956 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 14:45:06,064 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 14:45:06,104 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:06] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 14:45:09,813 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 14:45:09,816 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 14:45:09,816 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 14:45:09,817 - __main__ - INFO - Date ranges - Training: ('2024-01-24', '2025-01-22'), Testing: ('2025-01-23', '2025-02-03')
+2025-02-03 14:45:09,817 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 14:45:09,817 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 14:45:12,399 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 14:45:12,424 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 14:45:12,425 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 14:45:12,442 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 14:45:12,442 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 14:45:12,443 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 14:45:16,029 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 14:45:16,063 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 14:45:16,065 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 14:45:16,088 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 14:45:16,089 - __main__ - INFO - Initializing training environment
+2025-02-03 14:45:16,089 - __main__ - INFO - Initializing testing environment
+2025-02-03 14:45:16,089 - __main__ - INFO - Initializing trading agent
+2025-02-03 14:45:16,093 - __main__ - INFO - Training model for INTC
+2025-02-03 14:45:17,148 - Main_code - INFO - Episode 1/20 | Reward: -26.62 | Avg Reward: -26.62 | Trades: 190 | Epsilon: 0.900 | Time: 1.06s
+2025-02-03 14:45:18,348 - Main_code - INFO - Episode 2/20 | Reward: -17.38 | Avg Reward: -22.00 | Trades: 148 | Epsilon: 0.810 | Time: 2.25s
+2025-02-03 14:45:19,588 - Main_code - INFO - Episode 3/20 | Reward: -11.97 | Avg Reward: -18.66 | Trades: 120 | Epsilon: 0.729 | Time: 3.50s
+2025-02-03 14:45:20,692 - Main_code - INFO - Episode 4/20 | Reward: -11.65 | Avg Reward: -16.90 | Trades: 120 | Epsilon: 0.656 | Time: 4.60s
+2025-02-03 14:45:21,838 - Main_code - INFO - Episode 5/20 | Reward: -9.88 | Avg Reward: -15.50 | Trades: 110 | Epsilon: 0.590 | Time: 5.75s
+2025-02-03 14:45:22,973 - Main_code - INFO - Episode 6/20 | Reward: -10.04 | Avg Reward: -12.18 | Trades: 117 | Epsilon: 0.531 | Time: 6.88s
+2025-02-03 14:45:24,039 - Main_code - INFO - Episode 7/20 | Reward: -16.22 | Avg Reward: -11.95 | Trades: 100 | Epsilon: 0.478 | Time: 7.95s
+2025-02-03 14:45:25,242 - Main_code - INFO - Episode 8/20 | Reward: -8.05 | Avg Reward: -11.17 | Trades: 95 | Epsilon: 0.430 | Time: 9.15s
+2025-02-03 14:45:26,409 - Main_code - INFO - Episode 9/20 | Reward: -5.73 | Avg Reward: -9.98 | Trades: 87 | Epsilon: 0.387 | Time: 10.31s
+2025-02-03 14:45:27,575 - Main_code - INFO - Episode 10/20 | Reward: -6.62 | Avg Reward: -9.33 | Trades: 86 | Epsilon: 0.349 | Time: 11.48s
+2025-02-03 14:45:28,709 - Main_code - INFO - Episode 11/20 | Reward: -1.99 | Avg Reward: -7.72 | Trades: 58 | Epsilon: 0.314 | Time: 12.62s
+2025-02-03 14:45:29,849 - Main_code - INFO - Episode 12/20 | Reward: -2.34 | Avg Reward: -4.95 | Trades: 67 | Epsilon: 0.282 | Time: 13.76s
+2025-02-03 14:45:31,368 - Main_code - INFO - Episode 13/20 | Reward: -3.61 | Avg Reward: -4.06 | Trades: 54 | Epsilon: 0.254 | Time: 15.28s
+2025-02-03 14:45:32,228 - Main_code - INFO - Episode 14/20 | Reward: -0.00 | Avg Reward: -2.91 | Trades: 52 | Epsilon: 0.229 | Time: 16.14s
+2025-02-03 14:45:33,439 - Main_code - INFO - Episode 15/20 | Reward: -10.24 | Avg Reward: -3.64 | Trades: 62 | Epsilon: 0.206 | Time: 17.35s
+2025-02-03 14:45:34,923 - Main_code - INFO - Episode 16/20 | Reward: -0.63 | Avg Reward: -3.36 | Trades: 58 | Epsilon: 0.185 | Time: 18.83s
+2025-02-03 14:45:36,143 - Main_code - INFO - Episode 17/20 | Reward: 2.26 | Avg Reward: -2.44 | Trades: 36 | Epsilon: 0.167 | Time: 20.05s
+2025-02-03 14:45:37,144 - Main_code - INFO - Episode 18/20 | Reward: 4.71 | Avg Reward: -0.78 | Trades: 32 | Epsilon: 0.150 | Time: 21.05s
+2025-02-03 14:45:37,870 - Main_code - INFO - Episode 19/20 | Reward: 1.81 | Avg Reward: -0.42 | Trades: 43 | Epsilon: 0.135 | Time: 21.78s
+2025-02-03 14:45:38,863 - Main_code - INFO - Episode 20/20 | Reward: -7.84 | Avg Reward: 0.06 | Trades: 49 | Epsilon: 0.122 | Time: 22.77s
+2025-02-03 14:45:38,864 - __main__ - INFO - Evaluating model performance
+2025-02-03 14:45:38,872 - __main__ - INFO - Generating trading recommendations
+2025-02-03 14:45:38,874 - __main__ - INFO - Saving results for INTC
+2025-02-03 14:45:38,875 - __main__ - INFO - Successfully processed INTC
+2025-02-03 14:45:38,879 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:38] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 14:45:38,933 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:38] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:45:38,985 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 14:45:44,457 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:45:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 14:47:30,088 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:47:30] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:47:30,127 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:47:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:50:58,308 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:50:58] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:50:58,350 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:50:58] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 14:51:53,367 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:51:53] "GET /results HTTP/1.1" 200 -
+2025-02-03 14:51:53,405 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 14:51:53] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 16:48:25,515 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:48:25] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:48:25,566 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:48:25] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 16:54:03,161 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:54:03] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:54:03,230 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:54:03] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 16:55:44,025 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:55:44] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:55:44,085 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:55:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 16:57:31,232 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:57:31] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:57:31,283 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:57:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 16:57:52,591 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:57:52] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:57:52,639 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:57:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 16:58:05,101 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:58:05] "GET /results HTTP/1.1" 200 -
+2025-02-03 16:58:05,139 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 16:58:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:01:14,679 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:01:14] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:01:14,718 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:01:14] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:08:02,588 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:08:02] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:08:02,632 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:08:02] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:09:43,296 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:09:43] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:09:43,346 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:09:43] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:09:53,704 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:09:53] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:09:53,746 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:09:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:10:50,494 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:10:50] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:10:50,539 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:10:50] "GET /static/css/style.css HTTP/1.1" 200 -

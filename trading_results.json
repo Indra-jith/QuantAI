@@ -4,12 +4,12 @@
     "final_portfolio_value": 1000.0,
     "recommendation": {
         "signal": "BUY",
-        "confidence": 42.45853906509347,
+        "confidence": 43.303138154475135,
         "risk": "Low",
         "action_probabilities": {
-            "hold": 0.3117339596088597,
-            "buy": 0.4245853906509347,
-            "sell": 0.26368064974020555
+            "hold": 0.29989977949768115,
+            "buy": 0.43303138154475135,
+            "sell": 0.26706883895756756
         },
         "technical_indicators": {
             "RSI": 0.0,
