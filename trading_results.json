@@ -1,60 +1,44 @@
 {
-    "symbol": "LYB",
-    "training_return": -0.39502199999999443,
-    "final_portfolio_value": 996.04978,
+    "symbol": "INTC",
+    "training_return": 0.0,
+    "final_portfolio_value": 1000.0,
     "recommendation": {
         "signal": "BUY",
-        "confidence": 43.31672523255027,
+        "confidence": 42.45853906509347,
         "risk": "Low",
         "action_probabilities": {
-            "hold": 0.24720822498065956,
-            "buy": 0.4331672523255027,
-            "sell": 0.3196245226938377
+            "hold": 0.3117339596088597,
+            "buy": 0.4245853906509347,
+            "sell": 0.26368064974020555
         },
         "technical_indicators": {
             "RSI": 0.0,
-            "MACD": 0.09493581962284736,
-            "MACD_Signal": 0.10436163830797776,
-            "Volatility": 0.012875701152145529
+            "MACD": -0.38120182433641503,
+            "MACD_Signal": -0.18307919344528123,
+            "Volatility": 0.019521513164928037
         }
     },
     "trading_history": [
         {
-            "date": "2025-01-23",
-            "action": "buy",
-            "shares": 3,
-            "price": 77.36,
-            "cost": 232.19603999999998,
-            "portfolio_value": 999.8839599999999
-        },
-        {
-            "date": "2025-01-29",
-            "action": "sell",
-            "shares": 3,
-            "price": 77.86,
-            "cost": 0,
-            "portfolio_value": 1001.3839599999999
-        },
-        {
             "date": "2025-01-30",
             "action": "sell",
             "shares": 0,
-            "price": 76.12,
+            "price": 20.01,
             "cost": 0,
-            "portfolio_value": 996.04978
+            "portfolio_value": 1000.0
         }
     ],
     "model_performance": {
-        "avg_reward": 0.19537487651647165,
+        "avg_reward": 0.014012175418806769,
         "final_epsilon": 0.12157665459056936,
         "training_episodes": 20,
-        "sharpe_ratio": -3.296627400839833,
-        "max_drawdown": 0.007734680238955729
+        "sharpe_ratio": 0.0,
+        "max_drawdown": 0.0
     },
     "dates": {
-        "training_start": "2024-01-23",
-        "training_end": "2025-01-21",
-        "testing_start": "2025-01-22",
-        "testing_end": "2025-01-31"
+        "training_start": "2024-01-24",
+        "training_end": "2025-01-22",
+        "testing_start": "2025-01-23",
+        "testing_end": "2025-02-03"
     }
 }
