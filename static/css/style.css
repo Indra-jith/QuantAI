@@ -787,9 +787,8 @@ footer {
 }
 
 .results-grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -2027,10 +2026,9 @@ input:focus, select:focus {
 
 /* Enhanced responsive styles for results page */
 .results-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
     gap: 2rem;
-    width: 100%;
     margin: 2rem 0;
 }
 
@@ -2115,10 +2113,9 @@ input:focus, select:focus {
 
 /* Results Grid Layout */
 .results-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
     gap: 2rem;
-    width: 100%;
     margin: 2rem 0;
 }
 
@@ -2413,6 +2410,39 @@ input:focus, select:focus {
 @media screen and (max-width: 576px) {
     .metric-card.highlight {
         min-height: 100px;
+    }
+}
+
+/* Results Grid Layout */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns by default */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Responsive breakpoint for tablets and mobile */
+@media screen and (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem; /* Slightly reduced gap for mobile */
+    }
+
+    .result-card.recommendation,
+    .result-card.model-performance {
+        width: 100%;
+    }
+}
+
+/* Additional mobile optimizations */
+@media screen and (max-width: 576px) {
+    .results-grid {
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .result-card {
+        padding: 1rem;
     }
 }
 
