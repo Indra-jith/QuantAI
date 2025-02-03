@@ -3,6 +3,6 @@ pandas
 numpy
 torch
 torchvision
-sklearn
+scikit-learn
 requests
 gunicorn
