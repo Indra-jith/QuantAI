@@ -7317,3 +7317,12 @@ Testing period: 2025-01-23 to 2025-02-03
 2025-02-03 17:09:53,746 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:09:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-03 17:10:50,494 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:10:50] "GET /results HTTP/1.1" 200 -
 2025-02-03 17:10:50,539 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:10:50] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:30:47,520 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:30:47] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:30:47,569 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:30:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 17:34:28,695 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:28] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:34:28,743 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:34:31,306 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "GET / HTTP/1.1" 200 -
+2025-02-03 17:34:31,356 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:34:31,359 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:34:31,528 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:34:31,694 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "GET /get_stock_data HTTP/1.1" 200 -
