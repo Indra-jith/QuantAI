@@ -8380,3 +8380,425 @@ Testing period: 2025-01-23 to 2025-02-03
 ValueError: No data returned for DELL. Please verify the symbol is correct.
 
 2025-02-03 19:23:46,299 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:23:46] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 21:31:30,693 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 21:31:30,694 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 21:31:30,697 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 21:31:35,865 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 21:31:35,876 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 21:31:36,016 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:36] "GET / HTTP/1.1" 200 -
+2025-02-03 21:31:36,169 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 21:31:36,193 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 21:31:36,387 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-03 21:31:36,393 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 21:31:36,467 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:36] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 21:31:44,383 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:31:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 21:32:10,657 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 21:32:10,660 - __main__ - INFO - Processing stock data for RELI
+2025-02-03 21:32:10,661 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 21:32:10,661 - __main__ - INFO - Fetching training data for RELI
+2025-02-03 21:32:10,661 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 21:32:12,782 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-03 21:32:12,782 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'}
+2025-02-03 21:32:12,783 - Main_code - ERROR - Data processing error: No data returned for RELI. Please verify the symbol is correct.
+2025-02-03 21:32:12,783 - Main_code - ERROR - Error getting data for period: No data returned for RELI. Please verify the symbol is correct.
+2025-02-03 21:32:12,784 - __main__ - ERROR - Error processing RELI: No data returned for RELI. Please verify the symbol is correct.
+2025-02-03 21:32:12,785 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 70, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 74, in get_stock_data
+    raise ValueError(f"No data returned for {symbol}. Please verify the symbol is correct.")
+ValueError: No data returned for RELI. Please verify the symbol is correct.
+
+2025-02-03 21:32:12,791 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:32:12] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 21:34:03,476 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 21:34:03,478 - __main__ - INFO - Processing stock data for RELI
+2025-02-03 21:34:03,479 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 21:34:03,480 - __main__ - INFO - Fetching training data for RELI
+2025-02-03 21:34:03,480 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 21:34:06,289 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 21:34:06,333 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 21:34:06,335 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 21:34:06,416 - Main_code - INFO - Got 250 days of data for RELI
+2025-02-03 21:34:06,416 - __main__ - INFO - Fetching testing data for RELI
+2025-02-03 21:34:06,417 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 21:34:09,094 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 21:34:09,113 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 21:34:09,114 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 21:34:09,138 - Main_code - INFO - Got 7 days of data for RELI
+2025-02-03 21:34:09,138 - __main__ - INFO - Initializing environments
+2025-02-03 21:34:09,140 - __main__ - INFO - Training model
+2025-02-03 21:34:13,147 - Main_code - INFO - Episode: 1/20, Total Reward: 111.36349920102136
+2025-02-03 21:34:14,226 - Main_code - INFO - Episode: 2/20, Total Reward: 185.68252913887383
+2025-02-03 21:34:15,372 - Main_code - INFO - Episode: 3/20, Total Reward: 194.5693891084515
+2025-02-03 21:34:16,557 - Main_code - INFO - Episode: 4/20, Total Reward: 325.633125722787
+2025-02-03 21:34:17,618 - Main_code - INFO - Episode: 5/20, Total Reward: 241.23316913488205
+2025-02-03 21:34:18,719 - Main_code - INFO - Episode: 6/20, Total Reward: 358.11969212518113
+2025-02-03 21:34:19,904 - Main_code - INFO - Episode: 7/20, Total Reward: 365.3092394472227
+2025-02-03 21:34:20,959 - Main_code - INFO - Episode: 8/20, Total Reward: 407.0095079519677
+2025-02-03 21:34:22,075 - Main_code - INFO - Episode: 9/20, Total Reward: 394.1586349453781
+2025-02-03 21:34:23,321 - Main_code - INFO - Episode: 10/20, Total Reward: 348.7766675310221
+2025-02-03 21:34:24,395 - Main_code - INFO - Episode: 11/20, Total Reward: 393.68137389749256
+2025-02-03 21:34:25,478 - Main_code - INFO - Episode: 12/20, Total Reward: 305.53821567841675
+2025-02-03 21:34:26,680 - Main_code - INFO - Episode: 13/20, Total Reward: 322.80620907898043
+2025-02-03 21:34:27,774 - Main_code - INFO - Episode: 14/20, Total Reward: 252.79393643928256
+2025-02-03 21:34:28,793 - Main_code - INFO - Episode: 15/20, Total Reward: 283.89222307242346
+2025-02-03 21:34:29,997 - Main_code - INFO - Episode: 16/20, Total Reward: 350.8362058508623
+2025-02-03 21:34:31,128 - Main_code - INFO - Episode: 17/20, Total Reward: 249.69966983597007
+2025-02-03 21:34:32,185 - Main_code - INFO - Episode: 18/20, Total Reward: 279.2835768715142
+2025-02-03 21:34:33,370 - Main_code - INFO - Episode: 19/20, Total Reward: 321.7280783328716
+2025-02-03 21:34:34,517 - Main_code - INFO - Episode: 20/20, Total Reward: 345.56011761380694
+2025-02-03 21:34:34,517 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 21:34:34,535 - __main__ - INFO - Successfully processed RELI
+2025-02-03 21:34:34,538 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:34:34] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 21:34:34,688 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:34:34] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:34:34,736 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:34:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 21:49:06,686 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:49:06] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:49:06,748 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:49:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 21:49:11,172 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:49:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 21:51:25,990 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:51:25] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:51:26,031 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:51:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 21:53:23,436 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:53:23] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:53:23,478 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:53:23] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 21:55:39,847 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:55:39] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:55:39,902 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:55:39] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 21:57:29,484 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:57:29] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:57:29,527 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:57:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 21:59:34,025 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:59:34] "GET /results HTTP/1.1" 200 -
+2025-02-03 21:59:34,079 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 21:59:34] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:02:20,867 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:02:20] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:02:20,915 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:02:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:05:12,775 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:05:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:06:11,977 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:06:11] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:06:12,043 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:06:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:12:29,925 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:12:29] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:12:29,989 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:12:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:15:28,756 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:15:28] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:15:28,810 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:15:28] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 22:17:04,125 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:17:04] "GET / HTTP/1.1" 200 -
+2025-02-03 22:17:04,175 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:17:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:17:04,176 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:17:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 22:17:04,297 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:17:04,383 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:17:04] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 22:17:33,142 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:17:33,145 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 22:17:33,146 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 22:17:33,147 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 22:17:33,147 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 22:17:34,564 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-03 22:17:34,564 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'}
+2025-02-03 22:17:34,565 - Main_code - ERROR - Data processing error: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-03 22:17:34,565 - Main_code - ERROR - Error getting data for period: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-03 22:17:34,566 - __main__ - ERROR - Error processing MSFT: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-03 22:17:34,566 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 70, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 74, in get_stock_data
+    raise ValueError(f"No data returned for {symbol}. Please verify the symbol is correct.")
+ValueError: No data returned for MSFT. Please verify the symbol is correct.
+
+2025-02-03 22:17:34,571 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:17:34] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 22:18:53,728 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:18:53] "GET / HTTP/1.1" 200 -
+2025-02-03 22:18:53,768 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:18:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 22:18:53,769 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:18:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:18:53,859 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:18:53,940 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:18:53] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 22:18:58,147 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:18:58,151 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 22:18:58,153 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 22:18:58,153 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 22:18:58,154 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 22:19:02,696 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:19:02,769 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 22:19:02,770 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:19:02,807 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 22:19:02,808 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 22:19:02,809 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 22:19:07,375 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:19:07,417 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 22:19:07,419 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:19:07,447 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 22:19:07,447 - __main__ - INFO - Initializing environments
+2025-02-03 22:19:07,450 - __main__ - INFO - Training model
+2025-02-03 22:19:08,256 - Main_code - INFO - Episode: 1/20, Total Reward: 0
+2025-02-03 22:19:09,198 - Main_code - INFO - Episode: 2/20, Total Reward: 0
+2025-02-03 22:19:10,176 - Main_code - INFO - Episode: 3/20, Total Reward: 0
+2025-02-03 22:19:11,046 - Main_code - INFO - Episode: 4/20, Total Reward: 0
+2025-02-03 22:19:11,886 - Main_code - INFO - Episode: 5/20, Total Reward: 0
+2025-02-03 22:19:12,938 - Main_code - INFO - Episode: 6/20, Total Reward: 0
+2025-02-03 22:19:13,869 - Main_code - INFO - Episode: 7/20, Total Reward: 0
+2025-02-03 22:19:14,734 - Main_code - INFO - Episode: 8/20, Total Reward: 0
+2025-02-03 22:19:15,672 - Main_code - INFO - Episode: 9/20, Total Reward: 0
+2025-02-03 22:19:16,569 - Main_code - INFO - Episode: 10/20, Total Reward: 0
+2025-02-03 22:19:17,467 - Main_code - INFO - Episode: 11/20, Total Reward: 0
+2025-02-03 22:19:18,310 - Main_code - INFO - Episode: 12/20, Total Reward: 0
+2025-02-03 22:19:19,231 - Main_code - INFO - Episode: 13/20, Total Reward: 0
+2025-02-03 22:19:20,054 - Main_code - INFO - Episode: 14/20, Total Reward: 0
+2025-02-03 22:19:20,943 - Main_code - INFO - Episode: 15/20, Total Reward: 0
+2025-02-03 22:19:21,959 - Main_code - INFO - Episode: 16/20, Total Reward: 0
+2025-02-03 22:19:22,922 - Main_code - INFO - Episode: 17/20, Total Reward: 0
+2025-02-03 22:19:23,709 - Main_code - INFO - Episode: 18/20, Total Reward: 0
+2025-02-03 22:19:24,588 - Main_code - INFO - Episode: 19/20, Total Reward: 0
+2025-02-03 22:19:25,462 - Main_code - INFO - Episode: 20/20, Total Reward: 0
+2025-02-03 22:19:25,462 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 22:19:25,472 - __main__ - INFO - Successfully processed MSFT
+2025-02-03 22:19:25,477 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:25] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 22:19:25,523 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:25] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:19:25,564 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:19:35,116 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:35] "GET / HTTP/1.1" 200 -
+2025-02-03 22:19:35,175 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:19:35,179 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 22:19:35,270 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:19:35,322 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:19:35] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 22:20:32,716 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 22:20:32,717 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 22:20:32,721 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 22:20:38,439 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 22:20:38,444 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 22:20:38,473 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:20:38] "GET / HTTP/1.1" 200 -
+2025-02-03 22:20:38,603 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:20:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 22:20:38,604 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:20:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:20:38,732 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:20:38,785 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:20:38] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 22:20:40,844 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:20:40] "GET /static/doc/Stock%20Trading%20Using%20Reinforcement%20Learning.pdf HTTP/1.1" 200 -
+2025-02-03 22:21:03,853 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:21:03,856 - __main__ - INFO - Processing stock data for DELL
+2025-02-03 22:21:03,857 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 22:21:03,858 - __main__ - INFO - Fetching training data for DELL
+2025-02-03 22:21:03,858 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 22:21:07,082 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:21:07,114 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 22:21:07,115 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:21:07,158 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-03 22:21:07,159 - __main__ - INFO - Fetching testing data for DELL
+2025-02-03 22:21:07,160 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 22:21:09,373 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:21:09,414 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 22:21:09,416 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:21:09,454 - Main_code - INFO - Got 7 days of data for DELL
+2025-02-03 22:21:09,455 - __main__ - INFO - Initializing environments
+2025-02-03 22:21:09,457 - __main__ - INFO - Training model
+2025-02-03 22:21:12,202 - Main_code - INFO - Episode: 1/20, Total Reward: 49.401703800786365
+2025-02-03 22:21:13,490 - Main_code - INFO - Episode: 2/20, Total Reward: 22.0
+2025-02-03 22:21:14,694 - Main_code - INFO - Episode: 3/20, Total Reward: 16.0
+2025-02-03 22:21:15,951 - Main_code - INFO - Episode: 4/20, Total Reward: 22.0
+2025-02-03 22:21:16,958 - Main_code - INFO - Episode: 5/20, Total Reward: 14.0
+2025-02-03 22:21:18,089 - Main_code - INFO - Episode: 6/20, Total Reward: 14.0
+2025-02-03 22:21:19,068 - Main_code - INFO - Episode: 7/20, Total Reward: 43.28308145963878
+2025-02-03 22:21:19,935 - Main_code - INFO - Episode: 8/20, Total Reward: 16.0
+2025-02-03 22:21:20,873 - Main_code - INFO - Episode: 9/20, Total Reward: 45.467379284924434
+2025-02-03 22:21:21,792 - Main_code - INFO - Episode: 10/20, Total Reward: 68.99014267880054
+2025-02-03 22:21:22,765 - Main_code - INFO - Episode: 11/20, Total Reward: 44.82928285618111
+2025-02-03 22:21:23,707 - Main_code - INFO - Episode: 12/20, Total Reward: 22.0
+2025-02-03 22:21:24,689 - Main_code - INFO - Episode: 13/20, Total Reward: 16.0
+2025-02-03 22:21:25,649 - Main_code - INFO - Episode: 14/20, Total Reward: 16.0
+2025-02-03 22:21:26,602 - Main_code - INFO - Episode: 15/20, Total Reward: 20.398206167833884
+2025-02-03 22:21:27,516 - Main_code - INFO - Episode: 16/20, Total Reward: 22.0
+2025-02-03 22:21:28,466 - Main_code - INFO - Episode: 17/20, Total Reward: 86.4908834330619
+2025-02-03 22:21:29,400 - Main_code - INFO - Episode: 18/20, Total Reward: 82.16184238326643
+2025-02-03 22:21:30,507 - Main_code - INFO - Episode: 19/20, Total Reward: 126.16184238326643
+2025-02-03 22:21:31,505 - Main_code - INFO - Episode: 20/20, Total Reward: 59.28308145963878
+2025-02-03 22:21:31,506 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 22:21:31,519 - __main__ - INFO - Successfully processed DELL
+2025-02-03 22:21:31,523 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:21:31] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 22:21:31,601 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:21:31] "GET /results HTTP/1.1" 200 -
+2025-02-03 22:21:31,640 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:21:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:52:17,950 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 22:52:17,951 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 22:52:17,953 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 22:52:20,764 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 22:52:20,769 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 22:52:24,414 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:52:24] "GET / HTTP/1.1" 200 -
+2025-02-03 22:52:24,528 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:52:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 22:52:24,528 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:52:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 22:52:24,676 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:52:24,727 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 22:52:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 22:52:29,291 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 22:52:29,294 - __main__ - INFO - Processing stock data for NVDA
+2025-02-03 22:52:29,295 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 22:52:29,296 - __main__ - INFO - Fetching training data for NVDA
+2025-02-03 22:52:29,296 - Main_code - INFO - Downloading data for NVDA...
+2025-02-03 22:52:31,730 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:52:31,780 - Main_code - INFO - Successfully downloaded and processed data for NVDA
+2025-02-03 22:52:31,783 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:52:31,816 - Main_code - INFO - Got 250 days of data for NVDA
+2025-02-03 22:52:31,818 - __main__ - INFO - Fetching testing data for NVDA
+2025-02-03 22:52:31,818 - Main_code - INFO - Downloading data for NVDA...
+2025-02-03 22:52:34,364 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 22:52:34,400 - Main_code - INFO - Successfully downloaded and processed data for NVDA
+2025-02-03 22:52:34,401 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 22:52:34,418 - Main_code - INFO - Got 7 days of data for NVDA
+2025-02-03 22:52:34,419 - __main__ - INFO - Initializing environments
+2025-02-03 22:52:34,420 - __main__ - INFO - Training model
+2025-02-03 22:52:36,700 - Main_code - INFO - Episode: 1/20, Total Reward: 0
+2025-02-03 22:52:37,492 - Main_code - INFO - Episode: 2/20, Total Reward: 0
+2025-02-03 22:52:38,341 - Main_code - INFO - Episode: 3/20, Total Reward: 0
+2025-02-03 22:52:39,199 - Main_code - INFO - Episode: 4/20, Total Reward: 0
+2025-02-03 23:00:58,114 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 23:00:58,114 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 23:00:58,115 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 23:01:00,480 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 23:01:00,483 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 23:01:01,533 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:01] "GET / HTTP/1.1" 200 -
+2025-02-03 23:01:01,612 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 23:01:01,613 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:01:01,700 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:01:01,736 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:01] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 23:01:11,881 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:11] "GET / HTTP/1.1" 200 -
+2025-02-03 23:01:11,901 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:01:11,908 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 23:01:11,970 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:01:12,012 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 23:01:15,145 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:01:15,146 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 23:01:15,146 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 23:01:15,147 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 23:01:15,147 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 23:01:18,815 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:01:18,861 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 23:01:18,862 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:01:18,890 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 23:01:18,890 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 23:01:18,890 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 23:01:22,389 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:01:22,418 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 23:01:22,419 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:01:22,442 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 23:01:22,443 - __main__ - INFO - Initializing environments
+2025-02-03 23:01:22,443 - __main__ - INFO - Training model
+2025-02-03 23:01:23,833 - Main_code - INFO - Episode: 1/20, Total Reward: 199.95864015179828
+2025-02-03 23:01:24,486 - Main_code - INFO - Episode: 2/20, Total Reward: 299.6891666138217
+2025-02-03 23:01:25,104 - Main_code - INFO - Episode: 3/20, Total Reward: 302.2336150920704
+2025-02-03 23:01:25,684 - Main_code - INFO - Episode: 4/20, Total Reward: 316.2637468700798
+2025-02-03 23:01:26,272 - Main_code - INFO - Episode: 5/20, Total Reward: 307.90097375871966
+2025-02-03 23:01:26,903 - Main_code - INFO - Episode: 6/20, Total Reward: 321.57101256928604
+2025-02-03 23:01:27,492 - Main_code - INFO - Episode: 7/20, Total Reward: 301.2431743055682
+2025-02-03 23:01:28,073 - Main_code - INFO - Episode: 8/20, Total Reward: 307.07077108298904
+2025-02-03 23:01:28,658 - Main_code - INFO - Episode: 9/20, Total Reward: 308.3803266913028
+2025-02-03 23:01:29,261 - Main_code - INFO - Episode: 10/20, Total Reward: 292.25288328621014
+2025-02-03 23:01:29,871 - Main_code - INFO - Episode: 11/20, Total Reward: 288.20256254336687
+2025-02-03 23:01:30,442 - Main_code - INFO - Episode: 12/20, Total Reward: 308.9691766390164
+2025-02-03 23:01:30,999 - Main_code - INFO - Episode: 13/20, Total Reward: 302.248376039244
+2025-02-03 23:01:31,546 - Main_code - INFO - Episode: 14/20, Total Reward: 301.952207354427
+2025-02-03 23:01:32,127 - Main_code - INFO - Episode: 15/20, Total Reward: 310.7767475053737
+2025-02-03 23:01:32,736 - Main_code - INFO - Episode: 16/20, Total Reward: 321.9693953709243
+2025-02-03 23:01:33,316 - Main_code - INFO - Episode: 17/20, Total Reward: 310.51921081046345
+2025-02-03 23:01:33,887 - Main_code - INFO - Episode: 18/20, Total Reward: 309.0767938085256
+2025-02-03 23:01:34,483 - Main_code - INFO - Episode: 19/20, Total Reward: 306.6654586850174
+2025-02-03 23:01:35,123 - Main_code - INFO - Episode: 20/20, Total Reward: 312.5841522740854
+2025-02-03 23:01:35,124 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 23:01:35,139 - __main__ - INFO - Successfully processed INTC
+2025-02-03 23:01:35,142 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:35] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 23:01:35,202 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:35] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:01:35,237 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:01:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:04:03,768 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:03] "GET / HTTP/1.1" 200 -
+2025-02-03 23:04:03,794 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:04:03,795 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 23:04:03,852 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:04:03,887 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:03] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 23:04:07,603 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:04:46,964 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:04:46,966 - __main__ - INFO - Processing stock data for DELL
+2025-02-03 23:04:46,966 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 23:04:46,966 - __main__ - INFO - Fetching training data for DELL
+2025-02-03 23:04:46,967 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 23:04:48,861 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:04:48,869 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 23:04:48,869 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:04:48,880 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-03 23:04:48,881 - __main__ - INFO - Fetching testing data for DELL
+2025-02-03 23:04:48,881 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 23:04:50,692 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:04:50,704 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 23:04:50,704 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:04:50,716 - Main_code - INFO - Got 7 days of data for DELL
+2025-02-03 23:04:50,717 - __main__ - INFO - Initializing environments
+2025-02-03 23:04:50,717 - __main__ - INFO - Training model
+2025-02-03 23:04:51,122 - Main_code - INFO - Episode: 1/20, Total Reward: 134.55565754533475
+2025-02-03 23:04:51,563 - Main_code - INFO - Episode: 2/20, Total Reward: 25.179577295953347
+2025-02-03 23:04:52,030 - Main_code - INFO - Episode: 3/20, Total Reward: 36.01195826760972
+2025-02-03 23:04:52,472 - Main_code - INFO - Episode: 4/20, Total Reward: 26.565432994902025
+2025-02-03 23:04:52,920 - Main_code - INFO - Episode: 5/20, Total Reward: 23.784172916123435
+2025-02-03 23:04:53,377 - Main_code - INFO - Episode: 6/20, Total Reward: 29.04758780756546
+2025-02-03 23:04:53,823 - Main_code - INFO - Episode: 7/20, Total Reward: 91.1009428910666
+2025-02-03 23:04:54,285 - Main_code - INFO - Episode: 8/20, Total Reward: 18.116847121792414
+2025-02-03 23:04:54,738 - Main_code - INFO - Episode: 9/20, Total Reward: 26.565072718005506
+2025-02-03 23:04:55,199 - Main_code - INFO - Episode: 10/20, Total Reward: 32.6299161117659
+2025-02-03 23:04:55,734 - Main_code - INFO - Episode: 11/20, Total Reward: 20.19548887056733
+2025-02-03 23:04:56,226 - Main_code - INFO - Episode: 12/20, Total Reward: 19.49676565986111
+2025-02-03 23:04:56,701 - Main_code - INFO - Episode: 13/20, Total Reward: 29.148773022737906
+2025-02-03 23:04:57,155 - Main_code - INFO - Episode: 14/20, Total Reward: 26.565072718005506
+2025-02-03 23:04:57,589 - Main_code - INFO - Episode: 15/20, Total Reward: 36.11195826760972
+2025-02-03 23:04:58,031 - Main_code - INFO - Episode: 16/20, Total Reward: 27.661137898344997
+2025-02-03 23:04:58,490 - Main_code - INFO - Episode: 17/20, Total Reward: 25.765735767309934
+2025-02-03 23:04:58,919 - Main_code - INFO - Episode: 18/20, Total Reward: 36.11353688919266
+2025-02-03 23:04:59,358 - Main_code - INFO - Episode: 19/20, Total Reward: 25.866727208257107
+2025-02-03 23:04:59,814 - Main_code - INFO - Episode: 20/20, Total Reward: 24.567945177809175
+2025-02-03 23:04:59,814 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 23:04:59,820 - __main__ - INFO - Successfully processed DELL
+2025-02-03 23:04:59,822 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:59] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 23:04:59,852 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:59] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:04:59,887 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:04:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:05:09,150 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:09] "GET / HTTP/1.1" 200 -
+2025-02-03 23:05:09,188 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 23:05:09,189 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 23:05:09,272 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:05:09,306 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:09] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 23:05:13,130 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 23:05:13,132 - __main__ - INFO - Processing stock data for RELI
+2025-02-03 23:05:13,132 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 23:05:13,132 - __main__ - INFO - Fetching training data for RELI
+2025-02-03 23:05:13,133 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 23:05:15,625 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:05:15,636 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 23:05:15,636 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:05:15,647 - Main_code - INFO - Got 250 days of data for RELI
+2025-02-03 23:05:15,648 - __main__ - INFO - Fetching testing data for RELI
+2025-02-03 23:05:15,648 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 23:05:17,439 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 23:05:17,460 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 23:05:17,461 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 23:05:17,473 - Main_code - INFO - Got 7 days of data for RELI
+2025-02-03 23:05:17,473 - __main__ - INFO - Initializing environments
+2025-02-03 23:05:17,474 - __main__ - INFO - Training model
+2025-02-03 23:05:17,849 - Main_code - INFO - Episode: 1/20, Total Reward: 434.7515780661299
+2025-02-03 23:05:18,277 - Main_code - INFO - Episode: 2/20, Total Reward: 323.5464280080881
+2025-02-03 23:05:18,733 - Main_code - INFO - Episode: 3/20, Total Reward: 232.32630243056613
+2025-02-03 23:05:19,185 - Main_code - INFO - Episode: 4/20, Total Reward: 285.3673264492065
+2025-02-03 23:05:19,634 - Main_code - INFO - Episode: 5/20, Total Reward: 395.9282778325143
+2025-02-03 23:05:20,080 - Main_code - INFO - Episode: 6/20, Total Reward: 251.98014187375054
+2025-02-03 23:05:20,539 - Main_code - INFO - Episode: 7/20, Total Reward: 221.6679728427034
+2025-02-03 23:05:20,986 - Main_code - INFO - Episode: 8/20, Total Reward: 213.43841439326542
+2025-02-03 23:05:21,427 - Main_code - INFO - Episode: 9/20, Total Reward: 269.1129850189963
+2025-02-03 23:05:21,892 - Main_code - INFO - Episode: 10/20, Total Reward: 221.33743791219229
+2025-02-03 23:05:22,338 - Main_code - INFO - Episode: 11/20, Total Reward: 265.9222031742313
+2025-02-03 23:05:22,781 - Main_code - INFO - Episode: 12/20, Total Reward: 330.00716857221465
+2025-02-03 23:05:23,234 - Main_code - INFO - Episode: 13/20, Total Reward: 355.7098607777406
+2025-02-03 23:05:23,696 - Main_code - INFO - Episode: 14/20, Total Reward: 366.98451880221637
+2025-02-03 23:05:24,135 - Main_code - INFO - Episode: 15/20, Total Reward: 339.94705043881714
+2025-02-03 23:05:24,600 - Main_code - INFO - Episode: 16/20, Total Reward: 312.72672459711646
+2025-02-03 23:05:25,048 - Main_code - INFO - Episode: 17/20, Total Reward: 482.3044289742636
+2025-02-03 23:05:25,496 - Main_code - INFO - Episode: 18/20, Total Reward: 400.7424199524702
+2025-02-03 23:05:25,934 - Main_code - INFO - Episode: 19/20, Total Reward: 430.0636596113065
+2025-02-03 23:05:26,368 - Main_code - INFO - Episode: 20/20, Total Reward: 374.30139440425694
+2025-02-03 23:05:26,368 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 23:05:26,373 - __main__ - INFO - Successfully processed RELI
+2025-02-03 23:05:26,376 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 23:05:26,404 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "GET /results HTTP/1.1" 200 -
+2025-02-03 23:05:26,443 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 23:05:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

@@ -1090,12 +1090,6 @@ footer {
     margin-top: 2rem;
 }
 
-.probabilities h3 {
-    color: var(--glow-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
 .prob-bar {
     margin: 20px 0;
     display: flex;
@@ -2151,61 +2145,54 @@ input:focus, select:focus {
 
 .trade-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.trade-date-action {
+.trade-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 1rem;
 }
 
-.trade-date {
-    color: #888;
-    width: 100px; /* Fixed width for date */
-}
-
-.action-badge {
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    width: 60px; /* Fixed width for badge */
-    text-align: center;
-}
-
-.trade-shares {
-    margin-left: auto;
-    font-family: 'Share Tech Mono', monospace;
-}
-
-.trade-values {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 15px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.value-item {
+.trade-summary {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center; /* Center horizontally */
+    gap: 1.5rem;
+    margin: 0 auto; /* Center in available space */
+    text-align: center; /* Center text */
 }
 
-.value-label {
-    color: #888;
-    font-size: 0.85em;
-    margin-bottom: 4px;
-}
-
-.value-amount {
+.shares, .price {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1em;
-    color: #00ff9d;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .trade-header {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+    
+    .trade-summary {
+        width: 100%;
+        margin-top: 0.5rem;
+        justify-content: center; /* Keep centered on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .trade-summary {
+        gap: 1rem;
+    }
+    
+    .shares, .price {
+        font-size: 0.9rem;
+    }
 }
 
 /* Probability Bars Layout */
@@ -2370,77 +2357,62 @@ input:focus, select:focus {
     }
 }
 
-/* Bot Performance Card */
-.bot-performance {
+/* Bot Performance Card - Outer Container */
+.result-card.bot-performance {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     width: 100%;
+    padding: 2rem;
     margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 12px;
 }
 
+/* Performance Metrics Grid */
 .performance-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
+    width: 100%;
 }
 
-/* Remove the key-metric class distinction and style all metric cards the same */
-.metric-card {
+/* Individual Metric Cards */
+.metric-card.highlight {
+    flex: 1 1 calc(20% - 1.2rem); /* 5 cards per row initially */
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 255, 157, 0.1);
     border-radius: 10px;
     padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    min-height: 120px;
 }
 
-.metric-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
+/* Responsive Breakpoints */
+@media screen and (max-width: 1400px) {
+    .metric-card.highlight {
+        flex: 1 1 calc(33.333% - 1rem); /* 3 cards per row */
+    }
 }
 
-.metric-title {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+@media screen and (max-width: 1100px) {
+    .metric-card.highlight {
+        flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+    }
 }
 
-.metric-value {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.4rem;
-    color: var(--primary-color);
-}
-
-.metric-value.positive {
-    color: #00ff00;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
-
-.metric-value.negative {
-    color: #ff4444;
-    text-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
-}
-
-/* Enhanced Metrics */
-.metric-card.enhanced {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .performance-metrics {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .result-card.bot-performance {
+        padding: 1rem;
     }
-    
-    .metric-card {
-        padding: 1.2rem;
-    }
-    
-    .metric-value {
-        font-size: 1.2rem;
+    .metric-card.highlight {
+        flex: 1 1 calc(100% - 1rem); /* 1 card per row */
     }
 }
+
+@media screen and (max-width: 576px) {
+    .metric-card.highlight {
+        min-height: 100px;
+    }
+}
+

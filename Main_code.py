@@ -257,10 +257,9 @@ class StockTradingEnvironment:
         # Calculate current portfolio value before action
         old_portfolio_value = self.balance + (self.shares_held * current_price)
         
+        # Modify reward calculation for buy action
         if action == 1:  # Buy
-            # Always try to buy if we don't have shares and have enough balance
             if self.shares_held == 0:
-                # Use 90% of available balance for buying
                 max_shares = int(self.balance * 0.9 / (current_price * (1 + self.transaction_fee)))
                 
                 if max_shares > 0:
@@ -283,15 +282,18 @@ class StockTradingEnvironment:
                             'portfolio_value': self.balance + (self.shares_held * current_price)
                         }
                         self.trading_history.append(trade_info)
-                        reward = 1  # Reward for successful buy
+                        
+                        # Modify reward based on technical indicators
+                        rsi_reward = 1 if rsi < 30 else 0  # Buy when oversold
+                        trend_reward = 1 if macd > macd_signal else 0  # Buy on bullish crossover
+                        reward = 1 + rsi_reward + trend_reward  # Base reward + technical indicators
         
         elif action == 2:  # Sell
-            if self.shares_held > 0:  # Only sell if we have shares
-                # Calculate profit/loss
+            if self.shares_held > 0:
                 price_change = (current_price - self.entry_price) / self.entry_price
                 
-                # Sell if any profit or if loss is too big
-                if price_change >= 0.005 or price_change <= -0.01:  # 0.5% profit or 1% loss
+                # Modify sell conditions
+                if price_change >= 0.005 or price_change <= -0.01:
                     revenue = self.shares_held * current_price * (1 - self.transaction_fee)
                     profit = revenue - (self.shares_held * self.entry_price)
                     
@@ -316,17 +318,28 @@ class StockTradingEnvironment:
                     self.shares_held = 0
                     self.entry_price = 0
                     
-                    # Reward based on profit
-                    reward = max(1.0, price_change * 10)
+                    # Modify reward calculation for sell
+                    reward = max(1.0, abs(price_change) * 10)  # Use absolute price change
+                    if price_change > 0:
+                        reward *= 1.5  # Extra reward for profitable trades
+                
+                # Add small negative reward for holding too long
+                else:
+                    reward = -0.1
         
-        # Calculate portfolio value after action
+        # Add small negative reward for invalid actions
+        else:
+            reward = -0.1 if self.shares_held > 0 else 0  # Penalize holding when should sell
+        
+        # Update portfolio value
         new_portfolio_value = self.balance + (self.shares_held * current_price)
+        portfolio_change = (new_portfolio_value - old_portfolio_value) / old_portfolio_value
+        
+        # Add portfolio change to reward
+        reward += portfolio_change * 10
+        
         self._portfolio_value = new_portfolio_value
-        
-        # Move to next step
         self.current_step += 1
-        
-        # Check if episode is done
         done = (self.current_step >= len(self.data) - 1)
         
         return self._get_state(), reward, done

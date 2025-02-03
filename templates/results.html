@@ -135,11 +135,11 @@
                         {{ "%.2f"|format(results.total_return_pct) }}%
                     </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card highlight">
                     <div class="metric-title">Total Trades</div>
                     <div class="metric-value">{{ results.model_performance.total_trades }}</div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card highlight">
                     <div class="metric-title">Total Profit/Loss</div>
                     <div class="metric-value {{ 'positive' if results.model_performance.total_profit > 0 else 'negative' }}">
                         ${{ "%.2f"|format(results.model_performance.total_profit) }}
