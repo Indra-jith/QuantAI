@@ -215,240 +215,142 @@ class DQN(nn.Module):
         return self.fc3(x)
 
 class StockTradingEnvironment:
-    def __init__(self, data: pd.DataFrame, initial_balance: float = 1000):
-        """Initialize the trading environment."""
+    def __init__(self, data: pd.DataFrame, initial_balance: float = 100):
         self.data = data
         self.initial_balance = initial_balance
-        self.balance = initial_balance
-        self.shares_held = 0
-        self.current_step = 0
-        self._portfolio_value = initial_balance
-        self.trading_history = []
-        self.transaction_fee = 0.0005  # Reduced to 0.05% transaction fee
+        self.reset()
+        self.state_size = 12
+        self.action_size = 3  # hold, buy, sell
+        self.transaction_fee = 0.001  # 0.1% transaction fee
         self.stop_loss = 0.02  # 2% stop loss
         self.take_profit = 0.03  # 3% take profit
-        self.entry_price = 0  # Track entry price for position
         
-        # Define state size based on our features
-        self.state_size = 12  # Fixed number of features we use in _get_state
-        self.action_size = 3  # hold, buy, sell
-        
-    def _get_state(self) -> np.ndarray:
-        """Get the current state of the environment."""
-        current_idx = self.current_step
-        prev_idx = max(0, current_idx - 1)
-        
-        current_data = self.data.iloc[current_idx]
-        prev_data = self.data.iloc[prev_idx]
-        
-        # Calculate normalized features
-        price_change = ((current_data['close'] - prev_data['close']) / prev_data['close'])
-        volume_change = ((current_data['volume'] - prev_data['volume']) / prev_data['volume']) if prev_data['volume'] != 0 else 0
-        
-        # Get technical indicators (already normalized)
-        rsi = current_data['RSI'] / 100  # Normalize RSI to [0, 1]
-        macd = current_data['MACD']
-        macd_signal = current_data['MACD_Signal']
-        momentum = current_data['Momentum5']
-        volatility = current_data['Volatility']
-        ema_ratio = current_data['EMA_Ratio']
-        
-        # Portfolio state
-        portfolio_value = self._portfolio_value
-        cash_ratio = self.balance / portfolio_value if portfolio_value > 0 else 0
-        position_ratio = (self.shares_held * current_data['close']) / portfolio_value if portfolio_value > 0 else 0
-        position_indicator = 1 if self.shares_held > 0 else 0
-        
-        # Create state vector with exactly 12 features
-        state = np.array([
-            price_change,      # Price momentum
-            volume_change,     # Volume momentum
-            rsi,              # RSI (normalized)
-            macd,             # MACD
-            macd_signal,      # MACD signal
-            momentum,         # Price momentum
-            volatility,       # Market volatility
-            ema_ratio,        # Trend indicator
-            cash_ratio,       # Cash position
-            position_ratio,   # Stock position
-            position_indicator,# Current position indicator
-            portfolio_value / self.initial_balance  # Normalized portfolio value
-        ], dtype=np.float32)
-        
-        return state
-
-    def reset(self) -> np.ndarray:
-        """Reset the environment to initial state."""
+    def reset(self):
+        """Reset the environment."""
         self.balance = self.initial_balance
         self.shares_held = 0
         self.current_step = 0
+        self.entry_price = 0
+        self.total_trades = 0
+        self.profitable_trades = 0
+        self.total_profit = 0
+        self.trading_history = []
         self._portfolio_value = self.initial_balance
-        self.trading_history = []  # Reset trading history
         return self._get_state()
-    
+
     def step(self, action: int) -> Tuple[np.ndarray, float, bool]:
         """Execute one step in the environment."""
         if self.current_step >= len(self.data) - 1:
-            return self._get_state(), 0.0, True
-
-        current_price = self.data.iloc[self.current_step]['close']
+            return self._get_state(), 0, True
+            
+        current_price = float(self.data.iloc[self.current_step]['close'])
         current_date = self.data.index[self.current_step]
         
-        # Get market indicators
-        rsi = self.data.iloc[self.current_step]['RSI']
-        macd = self.data.iloc[self.current_step]['MACD']
-        macd_signal = self.data.iloc[self.current_step]['MACD_Signal']
-        macd_hist = self.data.iloc[self.current_step]['MACD_Hist']
-        sma20 = self.data.iloc[self.current_step]['SMA20']
-        momentum = self.data.iloc[self.current_step]['Momentum5']
-        volatility = self.data.iloc[self.current_step]['Volatility']
-        
-        # Calculate price trend
-        price_trend = (current_price - self.data.iloc[self.current_step-5:self.current_step]['close'].mean()) / current_price
+        # Get technical indicators
+        rsi = float(self.data.iloc[self.current_step]['RSI'])
+        macd = float(self.data.iloc[self.current_step]['MACD'])
+        macd_signal = float(self.data.iloc[self.current_step]['MACD_Signal'])
         
         reward = 0
+        done = False
+        
+        # Calculate current portfolio value before action
+        old_portfolio_value = self.balance + (self.shares_held * current_price)
+        
         if action == 1:  # Buy
-            # Strict buying conditions
-            buy_signal = (
-                rsi < 40 and                     # Oversold condition
-                macd > macd_signal and           # Positive MACD crossover
-                self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5'] and          # Above average volume
-                self.data.iloc[self.current_step]['EMA5'] > self.data.iloc[self.current_step]['EMA20'] and                 # Upward trend
-                self.shares_held == 0                 # No existing position
-            )
-            
-            if buy_signal:
-                # Calculate position size based on volatility
-                risk_factor = max(0.3, 1.0 - (volatility * 10))  # Reduce position size in high volatility
-                max_shares = int((self.balance * risk_factor) / current_price)
-                shares_to_buy = min(max_shares, int(self.balance * 0.3 / current_price))  # Max 30% of balance
+            # Always try to buy if we don't have shares and have enough balance
+            if self.shares_held == 0:
+                # Use 90% of available balance for buying
+                max_shares = int(self.balance * 0.9 / (current_price * (1 + self.transaction_fee)))
                 
-                if shares_to_buy > 0:
+                if max_shares > 0:
+                    shares_to_buy = max_shares
                     cost = shares_to_buy * current_price * (1 + self.transaction_fee)
+                    
                     if cost <= self.balance:
                         self.balance -= cost
                         self.shares_held = shares_to_buy
                         self.entry_price = current_price
-                        reward = 1.0  # Base reward for successful buy
+                        self.total_trades += 1
                         
-                        # Additional rewards for good entry conditions
-                        if rsi < 30:
-                            reward += 0.5
-                        if self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5'] * 1.2:
-                            reward += 0.3
-                    else:
-                        reward = -0.1  # Penalty for failed buy attempt
-                
-            else:
-                reward = -0.2  # Penalty for buying in poor conditions
-                
+                        # Record buy trade
+                        trade_info = {
+                            'date': current_date.strftime('%Y-%m-%d'),
+                            'action': 'buy',
+                            'shares': shares_to_buy,
+                            'price': current_price,
+                            'cost': cost,
+                            'portfolio_value': self.balance + (self.shares_held * current_price)
+                        }
+                        self.trading_history.append(trade_info)
+                        reward = 1  # Reward for successful buy
+        
         elif action == 2:  # Sell
-            if self.shares_held > 0:
+            if self.shares_held > 0:  # Only sell if we have shares
                 # Calculate profit/loss
                 price_change = (current_price - self.entry_price) / self.entry_price
                 
-                # Sell signal conditions
-                sell_signal = (
-                    rsi > 60 or                              # Overbought
-                    price_change > 0.02 or                   # 2% profit
-                    (price_change < -0.01 and rsi < 30) or   # Stop loss with oversold
-                    (macd < macd_signal and price_change > 0)  # MACD crossover with profit
-                )
-                
-                if sell_signal:
+                # Sell if any profit or if loss is too big
+                if price_change >= 0.005 or price_change <= -0.01:  # 0.5% profit or 1% loss
                     revenue = self.shares_held * current_price * (1 - self.transaction_fee)
+                    profit = revenue - (self.shares_held * self.entry_price)
+                    
                     self.balance += revenue
+                    if profit > 0:
+                        self.profitable_trades += 1
+                    self.total_profit += profit
                     
-                    # Base reward on actual profit/loss
-                    reward = price_change * 25  # Reduced multiplier
+                    # Record sell trade
+                    trade_info = {
+                        'date': current_date.strftime('%Y-%m-%d'),
+                        'action': 'sell',
+                        'shares': self.shares_held,
+                        'price': current_price,
+                        'revenue': revenue,
+                        'profit': profit,
+                        'portfolio_value': self.balance
+                    }
+                    self.trading_history.append(trade_info)
                     
-                    # Additional rewards for good exit conditions
-                    if rsi > 70:
-                        reward *= 1.2
-                    if self.data.iloc[self.current_step]['volume'] > self.data.iloc[self.current_step]['Volume_MA5']:
-                        reward *= 1.1
-                    
+                    # Reset position
                     self.shares_held = 0
                     self.entry_price = 0
-                
-            else:
-                reward = -0.1  # Small penalty for attempting to sell with no shares
-                
-        else:  # Hold
-            if self.shares_held > 0:
-                # Reward for holding during uptrend
-                if self.data.iloc[self.current_step]['EMA5'] > self.data.iloc[self.current_step]['EMA20'] and price_trend > 0:
-                    reward = 0.2
-                # Small penalty for holding during downtrend
-                elif self.data.iloc[self.current_step]['EMA5'] < self.data.iloc[self.current_step]['EMA20'] and price_trend < 0:
-                    reward = -0.1
-            else:
-                # Small reward for holding cash during downtrend
-                if self.data.iloc[self.current_step]['EMA5'] < self.data.iloc[self.current_step]['EMA20'] and price_trend < 0:
-                    reward = 0.1
+                    
+                    # Reward based on profit
+                    reward = max(1.0, price_change * 10)
         
-        # Apply volatility penalty to all rewards
-        reward *= (1 / (1 + volatility))
+        # Calculate portfolio value after action
+        new_portfolio_value = self.balance + (self.shares_held * current_price)
+        self._portfolio_value = new_portfolio_value
         
-        # Update portfolio value
-        self._portfolio_value = self.balance + (self.shares_held * current_price)
-        
-        # Check if episode is done
-        done = (self.current_step >= len(self.data) - 1) or (self._portfolio_value < self.initial_balance * 0.5)
-        
-        # Record trade if any happened
-        if reward != 0:
-            trade_info = {
-                'date': current_date.strftime('%Y-%m-%d'),
-                'action': 'buy' if action == 1 else 'sell',
-                'shares': abs(self.shares_held),
-                'price': current_price,
-                'cost': abs(self.shares_held) * current_price * (1 + self.transaction_fee) if action == 1 else 0,
-                'portfolio_value': self._portfolio_value
-            }
-            self.trading_history.append(trade_info)
-
         # Move to next step
         self.current_step += 1
         
+        # Check if episode is done
+        done = (self.current_step >= len(self.data) - 1)
+        
         return self._get_state(), reward, done
 
-    def get_state(self) -> np.ndarray:
-        """Get the current state of the environment."""
-        current_step = self.current_step - 1
+    def _get_state(self):
+        """Get current state."""
+        if self.current_step >= len(self.data):
+            self.current_step = len(self.data) - 1
+            
+        current_data = self.data.iloc[self.current_step]
         
-        # Get current price and technical indicators
-        current_price = self.data.iloc[current_step]['close']
-        rsi = self.data.iloc[current_step]['RSI']
-        macd = self.data.iloc[current_step]['MACD']
-        macd_signal = self.data.iloc[current_step]['MACD_Signal']
-        ema5 = self.data.iloc[current_step]['EMA5']
-        ema20 = self.data.iloc[current_step]['EMA20']
-        volatility = self.data.iloc[current_step]['Volatility']
-        volume = self.data.iloc[current_step]['volume']
-        
-        # Calculate price changes
-        price_change = self.data.iloc[current_step]['Returns']
-        volume_ma5 = self.data.iloc[current_step]['Volume_MA5']
-        
-        # Normalize indicators
-        normalized_price = current_price / self.data['close'].mean() - 1
-        normalized_volume = volume / volume_ma5 - 1
-        
-        # Create state array
         state = np.array([
-            normalized_price,          # Normalized price
-            price_change,             # Price change
-            rsi / 100,                # Normalized RSI
-            macd,                     # MACD
-            macd_signal,              # MACD Signal
-            ema5 / current_price - 1,  # EMA5 relative to price
-            ema20 / current_price - 1, # EMA20 relative to price
-            volatility,               # Volatility
-            normalized_volume,        # Normalized volume
-            self.shares_held / 100,        # Current position
-            self.balance / 10000,     # Normalized balance
-            1 if self.shares_held > 0 else 0  # Position indicator
+            current_data['RSI'] / 100,  # Normalized RSI
+            current_data['MACD'] / current_data['close'],  # Normalized MACD
+            current_data['MACD_Signal'] / current_data['close'],  # Normalized MACD Signal
+            current_data['Volatility'],
+            (current_data['EMA5'] - current_data['EMA20']) / current_data['close'],  # Trend
+            current_data['BB_Position'],  # Bollinger Band position
+            self.shares_held * current_data['close'] / self._portfolio_value if self._portfolio_value > 0 else 0,
+            self.balance / self.initial_balance,  # Normalized balance
+            1 if self.shares_held > 0 else 0,  # Position flag
+            self._portfolio_value / self.initial_balance,  # Total return
+            current_data['Volume_MA5'] / current_data['volume'] - 1,  # Volume trend
+            current_data['close'] / current_data['open'] - 1  # Daily return
         ], dtype=np.float32)
         
         return state
@@ -456,140 +358,86 @@ class StockTradingEnvironment:
 class TradingAgent:
     """Deep Q-Learning agent for stock trading."""
     
-    def __init__(self, state_size: int, action_size: int, device: str = 'cpu'):
+    def __init__(self, state_size: int, action_size: int, learning_rate: float = 0.001,
+                 gamma: float = 0.95, epsilon: float = 1.0, epsilon_min: float = 0.1,
+                 epsilon_decay: float = 0.995):
+        """Initialize the trading agent with improved parameters."""
         self.state_size = state_size
         self.action_size = action_size
-        self.memory = deque(maxlen=1000)
-        self.gamma = 0.95    # Slightly reduced discount rate
-        self.epsilon = 1.0   # Start with full exploration
-        self.epsilon_min = 0.15  # Higher minimum exploration
-        self.epsilon_decay = 0.85  # Faster decay
-        self.batch_size = 32   # Smaller batch size
-        self.learning_rate = 0.001  # Increased learning rate
-        self.tau = 0.005  # Faster target network updates
-        self.device = torch.device(device)
+        self.memory = deque(maxlen=2000)
+        self.gamma = gamma  # Discount rate
+        self.epsilon = epsilon  # Exploration rate
+        self.epsilon_min = epsilon_min
+        self.epsilon_decay = epsilon_decay
+        self.learning_rate = learning_rate
+        self.model = DQN(state_size, action_size)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
+        self.criterion = nn.MSELoss()
         
-        # Initialize networks with correct state size
-        self.model = DQN(12, action_size).to(self.device)
-        self.target_model = DQN(12, action_size).to(self.device)
-        self.target_model.load_state_dict(self.model.state_dict())
+    def remember(self, state, action, reward, next_state, done):
+        """Store experience in memory."""
+        self.memory.append((state, action, reward, next_state, done))
         
-        # Initialize optimizer
-        self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
-        
-        # Track returns for evaluation
-        self.returns = []
-    
-    def act(self, state: np.ndarray, training: bool = True) -> int:
-        """Choose an action."""
-        if training and random.random() < self.epsilon:
+    def act(self, state):
+        """Choose action based on epsilon-greedy policy."""
+        if random.random() <= self.epsilon:
             return random.randrange(self.action_size)
-        
-        state = torch.FloatTensor(state).unsqueeze(0).to(self.device)
+            
         with torch.no_grad():
-            q_values = self.model(state)
-        return q_values.argmax().item()
-    
-    def get_action_probabilities(self, state: np.ndarray) -> np.ndarray:
-        """Get action probabilities for a given state."""
-        with torch.no_grad():
-            state = torch.FloatTensor(state).unsqueeze(0).to(self.device)
-            q_values = self.model(state)
-            # Convert Q-values to probabilities using softmax
-            probs = F.softmax(q_values, dim=1)
-            return probs.cpu().numpy()[0]
-    
-    def train(self, env: StockTradingEnvironment, episodes: int = 20):
-        """Train the agent using DQN with soft target updates."""
-        start_time = time.time()
-        total_rewards = []
-        epsilon_decay = 0.9  # Faster decay for shorter period
-        min_epsilon = 0.05   # Higher minimum epsilon
-        best_reward = float('-inf')
-        patience = 5  # Number of episodes to wait for improvement
-        no_improvement = 0
+            state = torch.FloatTensor(state).unsqueeze(0)
+            act_values = self.model(state)
+            return torch.argmax(act_values).item()
+            
+    def replay(self, batch_size):
+        """Train on past experiences."""
+        if len(self.memory) < batch_size:
+            return
+            
+        minibatch = random.sample(self.memory, batch_size)
+        states = torch.FloatTensor([i[0] for i in minibatch])
+        actions = torch.LongTensor([i[1] for i in minibatch])
+        rewards = torch.FloatTensor([i[2] for i in minibatch])
+        next_states = torch.FloatTensor([i[3] for i in minibatch])
+        dones = torch.FloatTensor([i[4] for i in minibatch])
         
+        # Current Q values
+        curr_Q = self.model(states).gather(1, actions.unsqueeze(1))
+        
+        # Next Q values
+        next_Q = self.model(next_states).detach().max(1)[0]
+        target_Q = rewards + (self.gamma * next_Q * (1 - dones))
+        
+        # Compute loss and update
+        loss = self.criterion(curr_Q.squeeze(), target_Q)
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+        
+        # Decay epsilon
+        if self.epsilon > self.epsilon_min:
+            self.epsilon *= self.epsilon_decay
+            
+    def train(self, env, episodes=10, batch_size=32):
+        """Train the agent."""
         for episode in range(episodes):
             state = env.reset()
-            episode_reward = 0
-            done = False
-            trades_this_episode = 0
+            total_reward = 0
             
-            while not done:
-                action = self.act(state, training=True)
+            for time in range(len(env.data) - 1):
+                action = self.act(state)
                 next_state, reward, done = env.step(action)
+                total_reward += reward
                 
-                if action != 0:  # If not holding
-                    trades_this_episode += 1
-                
-                # Store experience in replay memory
-                self.memory.append((state, action, reward, next_state, done))
-                
-                # Train on random batch from replay memory if we have enough samples
-                if len(self.memory) > self.batch_size:
-                    batch = random.sample(self.memory, self.batch_size)
-                    states = torch.FloatTensor([s[0] for s in batch]).to(self.device)
-                    actions = torch.LongTensor([[s[1]] for s in batch]).to(self.device)
-                    rewards = torch.FloatTensor([s[2] for s in batch]).to(self.device)
-                    next_states = torch.FloatTensor([s[3] for s in batch]).to(self.device)
-                    dones = torch.FloatTensor([s[4] for s in batch]).to(self.device)
-                    
-                    # Double DQN: Use online network to select action, target network to evaluate it
-                    with torch.no_grad():
-                        next_actions = self.model(next_states).argmax(1).unsqueeze(1)
-                        next_q_values = self.target_model(next_states).gather(1, next_actions).squeeze()
-                        target_q_values = rewards + (1 - dones) * self.gamma * next_q_values
-                    
-                    # Compute current Q values and loss
-                    current_q_values = self.model(states).gather(1, actions).squeeze()
-                    loss = F.smooth_l1_loss(current_q_values, target_q_values)
-                    
-                    # Optimize the model
-                    self.optimizer.zero_grad()
-                    loss.backward()
-                    torch.nn.utils.clip_grad_norm_(self.model.parameters(), 1.0)
-                    self.optimizer.step()
-                    
-                    # Soft update target network more frequently
-                    for target_param, param in zip(self.target_model.parameters(), self.model.parameters()):
-                        target_param.data.copy_(
-                            self.tau * param.data + (1 - self.tau) * target_param.data
-                        )
-                
+                self.remember(state, action, reward, next_state, done)
                 state = next_state
-                episode_reward += reward
-            
-            # Decay epsilon with a minimum value
-            self.epsilon = max(min_epsilon, self.epsilon * epsilon_decay)
-            
-            # Track best reward and implement early stopping
-            if episode_reward > best_reward:
-                best_reward = episode_reward
-                no_improvement = 0
-            else:
-                no_improvement += 1
-            
-            # Early stopping if no improvement for several episodes
-            if no_improvement >= patience:
-                logger.info(f"Early stopping at episode {episode + 1} due to no improvement")
-                break
-            
-            total_rewards.append(episode_reward)
-            training_time = time.time() - start_time
-            
-            # Log progress with more details
-            avg_reward = sum(total_rewards[-5:]) / min(len(total_rewards), 5)  # Moving average of last 5 episodes
-            logger.info(
-                f"Episode {episode + 1}/{episodes} | "
-                f"Reward: {episode_reward:.2f} | "
-                f"Avg Reward: {avg_reward:.2f} | "
-                f"Trades: {trades_this_episode} | "
-                f"Epsilon: {self.epsilon:.3f} | "
-                f"Time: {training_time:.2f}s"
-            )
-        
-        # Save final returns
-        self.returns = total_rewards
+                
+                if len(self.memory) > batch_size:
+                    self.replay(batch_size)
+                    
+                if done:
+                    break
+                    
+            logger.info(f"Episode: {episode + 1}/{episodes}, Total Reward: {total_reward}")
     
     def evaluate_model(self, env: StockTradingEnvironment) -> Dict:
         """
@@ -603,7 +451,7 @@ class TradingAgent:
         actions_taken = []
         
         while not done:
-            action = self.act(state, training=False)
+            action = self.act(state)
             next_state, reward, done = env.step(action)
             total_reward += reward
             state = next_state
@@ -655,92 +503,75 @@ class TradingAgent:
             'trading_history': env.trading_history  # Include trading history
         }
 
-def generate_trading_recommendations(agent: TradingAgent, env: StockTradingEnvironment) -> Dict:
-    """Generate more balanced trading recommendations."""
-    state = env.get_state()
+def generate_trading_recommendations(agent, env) -> dict:
+    """Generate trading recommendations based on current state."""
+    state = env._get_state()
     
+    # Convert state to tensor and get predictions
     with torch.no_grad():
-        state_tensor = torch.FloatTensor(state).unsqueeze(0)
-        action_values = agent.model(state_tensor)
-        
-    # Get market indicators
-    current_step = env.current_step - 1
-    rsi = env.data.iloc[current_step]['RSI']
-    macd = env.data.iloc[current_step]['MACD']
-    macd_signal = env.data.iloc[current_step]['MACD_Signal']
-    volatility = env.data.iloc[current_step]['Volatility']
-    volume = env.data.iloc[current_step]['volume']
-    volume_ma5 = env.data.iloc[current_step]['Volume_MA5']
+        state_tensor = torch.FloatTensor(state).unsqueeze(0)  # Add batch dimension
+        q_values = agent.model(state_tensor).squeeze().numpy()  # Use forward pass directly
     
-    # Use lower temperature for softer probabilities
-    temperature = 1.5
-    scaled_values = action_values / temperature
-    base_probs = F.softmax(scaled_values, dim=1).squeeze().numpy()
+    # Calculate probabilities using softmax
+    probabilities = F.softmax(torch.FloatTensor(q_values), dim=0).numpy()
     
-    # Initialize balanced probabilities
-    adjusted_probs = np.array([0.34, 0.33, 0.33])  # Start with nearly equal probabilities
+    # Get current price and technical indicators
+    current_price = float(env.data.iloc[env.current_step]['close'])
+    rsi = float(env.data.iloc[env.current_step]['RSI'])
+    macd = float(env.data.iloc[env.current_step]['MACD'])
+    macd_signal = float(env.data.iloc[env.current_step]['MACD_Signal'])
+    ema5 = float(env.data.iloc[env.current_step]['EMA5'])
+    ema20 = float(env.data.iloc[env.current_step]['EMA20'])
     
-    # Market condition adjustments
-    trend_strength = abs(macd - macd_signal) / (abs(macd) + 1e-6)
+    # Determine action based on highest probability
+    action_idx = np.argmax(q_values)
+    actions = ['HOLD', 'BUY', 'SELL']
+    action = actions[action_idx]
     
-    # RSI-based adjustments
-    if rsi > 70:  # Overbought
-        adjusted_probs[2] += 0.15  # Increase sell
-        adjusted_probs[1] -= 0.10  # Decrease buy
-        adjusted_probs[0] -= 0.05  # Slightly decrease hold
-    elif rsi < 30:  # Oversold
-        adjusted_probs[1] += 0.15  # Increase buy
-        adjusted_probs[2] -= 0.10  # Decrease sell
-        adjusted_probs[0] -= 0.05  # Slightly decrease hold
+    # Calculate confidence score (0-100)
+    confidence = float(probabilities[action_idx] * 100)
     
-    # Volume-based adjustments
-    if volume > volume_ma5 * 1.5:  # Significant volume increase
-        if macd > macd_signal:
-            adjusted_probs[1] += 0.1  # Increase buy on high volume uptrend
+    # Generate reason based on technical indicators
+    reason = ""
+    if action == 'BUY':
+        if rsi < 30:
+            reason = "RSI indicates oversold conditions"
+        elif macd > macd_signal:
+            reason = "MACD shows bullish crossover"
+        elif ema5 > ema20:
+            reason = "Short-term trend is bullish"
         else:
-            adjusted_probs[2] += 0.1  # Increase sell on high volume downtrend
-        adjusted_probs[0] -= 0.1  # Decrease hold
+            reason = "Technical indicators suggest upward momentum"
+    elif action == 'SELL':
+        if rsi > 70:
+            reason = "RSI indicates overbought conditions"
+        elif macd < macd_signal:
+            reason = "MACD shows bearish crossover"
+        elif ema5 < ema20:
+            reason = "Short-term trend is bearish"
+        else:
+            reason = "Technical indicators suggest downward momentum"
+    else:
+        reason = "Market conditions suggest holding position"
     
-    # Volatility adjustments
-    if volatility > 0.02:
-        adjusted_probs[0] += 0.1  # Increase hold probability
-        adjusted_probs[1] -= 0.05  # Decrease buy
-        adjusted_probs[2] -= 0.05  # Decrease sell
-    
-    # Combine with base probabilities
-    final_probs = (0.6 * adjusted_probs + 0.4 * base_probs)
-    
-    # Ensure minimum probability
-    min_prob = 0.15
-    final_probs = np.maximum(final_probs, min_prob)
-    final_probs = final_probs / final_probs.sum()
-    
-    # Determine signal
-    action_idx = np.argmax(final_probs)
-    signals = ['HOLD', 'BUY', 'SELL']
-    signal = signals[action_idx]
-    
-    # Calculate confidence (capped at 90%)
-    confidence = float(min(final_probs[action_idx] * 100, 90.0))
-    
-    recommendation = {
-        'signal': signal,
+    return {
+        'action': action,
         'confidence': confidence,
-        'risk': 'High' if volatility > 0.03 else 'Medium' if volatility > 0.02 else 'Low',
-        'action_probabilities': {
-            'hold': float(final_probs[0]),
-            'buy': float(final_probs[1]),
-            'sell': float(final_probs[2])
+        'reason': reason,
+        'current_price': current_price,
+        'probabilities': {
+            'hold': float(probabilities[0]),
+            'buy': float(probabilities[1]),
+            'sell': float(probabilities[2])
         },
         'technical_indicators': {
-            'RSI': float(rsi),
-            'MACD': float(macd),
-            'MACD_Signal': float(macd_signal),
-            'Volatility': float(volatility)
+            'RSI': rsi,
+            'MACD': macd,
+            'MACD_Signal': macd_signal,
+            'EMA5': ema5,
+            'EMA20': ema20
         }
     }
-    
-    return recommendation
 
 def get_date_ranges() -> Tuple[str, str]:
     """Get date ranges for training and testing."""
@@ -758,12 +589,13 @@ def get_date_ranges() -> Tuple[str, str]:
         if test_start_date.weekday() < 5:  # If it's a weekday
             working_days += 1
     
-    # Get one year of working days before test period for training
+    # Get exactly one year before test period for training
     train_start_date = test_start_date - timedelta(days=365)
+    train_end_date = test_start_date - timedelta(days=1)
     
     # Format dates as strings
     train_start_str = train_start_date.strftime('%Y-%m-%d')
-    train_end_str = (test_start_date - timedelta(days=1)).strftime('%Y-%m-%d')
+    train_end_str = train_end_date.strftime('%Y-%m-%d')
     test_start_str = test_start_date.strftime('%Y-%m-%d')
     test_end_str = end_date.strftime('%Y-%m-%d')
     
@@ -777,7 +609,7 @@ def get_date_ranges() -> Tuple[str, str]:
         'test': (test_start_str, test_end_str)
     }
 
-def initialize_trading_environment(symbol: str, initial_balance: float = 1000) -> Tuple[TradingAgent, StockTradingEnvironment]:
+def initialize_trading_environment(symbol: str, initial_balance: float = 100) -> Tuple[TradingAgent, StockTradingEnvironment]:
     """Initialize the trading environment and agent for a given symbol."""
     try:
         # Import API key from app.py
@@ -854,7 +686,7 @@ def main():
     try:
         # Set parameters
         symbol = 'AAPL'  # Example stock
-        initial_balance = 1000
+        initial_balance = 100
         episodes = 10
         
         # Initialize environment and agent

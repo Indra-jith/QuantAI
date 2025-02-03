@@ -7326,3 +7326,1057 @@ Testing period: 2025-01-23 to 2025-02-03
 2025-02-03 17:34:31,359 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-02-03 17:34:31,528 - __main__ - INFO - Loaded 11712 stock symbols
 2025-02-03 17:34:31,694 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:34:31] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:35:18,226 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:35:18,693 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:35:19,765 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:35:20,348 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:35:26,281 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:35:26,288 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:35:26,312 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:35:26,320 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:35:41,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:35:41,634 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:35:42,324 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:35:42,335 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:35:49,568 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:35:49,576 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:35:49,587 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:35:49,599 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:35:49,637 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:35:49] "GET / HTTP/1.1" 200 -
+2025-02-03 17:35:49,853 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:35:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:35:49,854 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:35:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:35:49,963 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:35:50,031 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:35:50] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:35:53,434 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:35:53,436 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 17:35:53,437 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:35:53,437 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 17:35:53,437 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 17:35:56,674 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:35:56,733 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 17:35:56,734 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:35:56,766 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 17:35:56,766 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 17:35:56,767 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 17:35:57,623 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:35:57,673 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 17:35:57,675 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:35:57,702 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 17:35:57,705 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:35:57] "[31m[1mPOST /process_stock HTTP/1.1[0m" 400 -
+2025-02-03 17:37:22,325 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:37:23,156 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:37:29,113 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:37:29,121 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:37:57,179 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-03 17:37:57,180 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-03 17:37:57,182 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:37:59,337 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:37:59] "GET / HTTP/1.1" 200 -
+2025-02-03 17:37:59,505 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:37:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:37:59,508 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:37:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:37:59,714 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:37:59,806 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:37:59] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:38:03,196 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:03] "GET / HTTP/1.1" 200 -
+2025-02-03 17:38:03,229 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:38:03,232 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:38:03,347 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:38:03,430 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:03] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:38:03,568 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:38:03,576 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:38:06,464 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:38:06,466 - __main__ - INFO - Processing stock data for DELL
+2025-02-03 17:38:06,467 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:38:06,467 - __main__ - INFO - Fetching training data for DELL
+2025-02-03 17:38:06,467 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 17:38:08,843 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:38:08,867 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 17:38:08,868 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:38:08,903 - Main_code - INFO - Got 250 days of data for DELL
+2025-02-03 17:38:08,903 - __main__ - INFO - Fetching testing data for DELL
+2025-02-03 17:38:08,904 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 17:38:10,011 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:38:10,030 - Main_code - INFO - Successfully downloaded and processed data for DELL
+2025-02-03 17:38:10,030 - Main_code - INFO - Data shape: (1536, 10), Date range: 2018-12-21 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:38:10,052 - Main_code - INFO - Got 7 days of data for DELL
+2025-02-03 17:38:10,055 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:10] "[31m[1mPOST /process_stock HTTP/1.1[0m" 400 -
+2025-02-03 17:38:39,544 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:38:40,201 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:38:40,275 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:38:41,021 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:38:47,333 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:38:47,344 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:38:47,400 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:47] "GET / HTTP/1.1" 200 -
+2025-02-03 17:38:47,608 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:38:47,609 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:38:47,731 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:38:47,846 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:47] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:38:48,148 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:38:48,157 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:38:50,762 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:38:50,765 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 17:38:50,765 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:38:50,766 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 17:38:50,766 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 17:38:53,225 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:38:53,301 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 17:38:53,303 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:38:53,338 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 17:38:53,338 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 17:38:53,339 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 17:38:56,432 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:38:56,474 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 17:38:56,475 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:38:56,500 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 17:38:56,501 - __main__ - INFO - Initializing training environment
+2025-02-03 17:38:56,501 - __main__ - INFO - Initializing testing environment
+2025-02-03 17:38:56,501 - __main__ - INFO - Initializing trading agent
+2025-02-03 17:38:56,501 - __main__ - ERROR - Error processing INTC: TradingAgent.__init__() got an unexpected keyword argument 'learning_rate'
+2025-02-03 17:38:56,502 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 101, in process_stock
+    agent = TradingAgent(
+TypeError: TradingAgent.__init__() got an unexpected keyword argument 'learning_rate'
+
+2025-02-03 17:38:56,504 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:38:56] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 17:39:31,960 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:39:32,254 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:39:32,834 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:39:33,004 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:39:39,706 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:39:39,719 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:39:39,956 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:39:39,964 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:39:40,016 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:39:40] "GET / HTTP/1.1" 200 -
+2025-02-03 17:39:40,209 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:39:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:39:40,209 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:39:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:39:40,325 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:39:40,424 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:39:40] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:39:44,718 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:39:44,720 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 17:39:44,721 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:39:44,721 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 17:39:44,721 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:39:47,010 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:39:47,066 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:39:47,067 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:39:47,094 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 17:39:47,095 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 17:39:47,095 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:39:50,056 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:39:50,114 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:39:50,115 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:39:50,147 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 17:39:50,148 - __main__ - INFO - Initializing training environment
+2025-02-03 17:39:50,149 - __main__ - INFO - Initializing testing environment
+2025-02-03 17:39:50,150 - __main__ - INFO - Initializing trading agent
+2025-02-03 17:39:51,861 - __main__ - INFO - Training model for MSFT
+2025-02-03 17:39:51,863 - __main__ - ERROR - Error processing MSFT: 'date'
+2025-02-03 17:39:51,951 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\indexes\base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'date'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 118, in process_stock
+    agent.train(train_env, episodes=30)  # More episodes
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 520, in train
+    next_state, reward, done = env.step(action)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 296, in step
+    current_date = pd.to_datetime(self.data.iloc[self.current_step]['date'])
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\indexes\base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'date'
+
+2025-02-03 17:39:51,955 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:39:51] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 17:40:51,243 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:40:51,723 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:40:52,494 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:40:53,363 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:41:00,714 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:41:00,723 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:41:01,207 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:41:01,214 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:41:01,261 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:41:01] "GET / HTTP/1.1" 200 -
+2025-02-03 17:41:01,438 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:41:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:41:01,440 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:41:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:41:01,551 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:41:01,638 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:41:01] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:41:07,155 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:41:07,157 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 17:41:07,158 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:41:07,158 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 17:41:07,159 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:41:10,061 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:41:10,104 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:41:10,105 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:41:10,123 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 17:41:10,123 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 17:41:10,124 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:41:10,960 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:41:11,005 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:41:11,006 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:41:11,025 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 17:41:11,026 - __main__ - INFO - Initializing training environment
+2025-02-03 17:41:11,026 - __main__ - INFO - Initializing testing environment
+2025-02-03 17:41:11,027 - __main__ - INFO - Initializing trading agent
+2025-02-03 17:41:11,914 - __main__ - INFO - Training model for MSFT
+2025-02-03 17:41:12,701 - Main_code - INFO - Episode: 1/30, Total Reward: 80.1930800315294
+2025-02-03 17:41:13,701 - Main_code - INFO - Episode: 2/30, Total Reward: 122.20002505708524
+2025-02-03 17:41:14,596 - Main_code - INFO - Episode: 3/30, Total Reward: 133.9021147757701
+2025-02-03 17:41:15,391 - Main_code - INFO - Episode: 4/30, Total Reward: 141.8999530850092
+2025-02-03 17:41:16,365 - Main_code - INFO - Episode: 5/30, Total Reward: 130.5105689206766
+2025-02-03 17:41:17,239 - Main_code - INFO - Episode: 6/30, Total Reward: 131.72672200863474
+2025-02-03 17:41:18,067 - Main_code - INFO - Episode: 7/30, Total Reward: 134.3212464440926
+2025-02-03 17:41:18,927 - Main_code - INFO - Episode: 8/30, Total Reward: 129.80363459741085
+2025-02-03 17:41:19,869 - Main_code - INFO - Episode: 9/30, Total Reward: 148.00771178406293
+2025-02-03 17:41:20,698 - Main_code - INFO - Episode: 10/30, Total Reward: 133.50299691534394
+2025-02-03 17:41:21,514 - Main_code - INFO - Episode: 11/30, Total Reward: 124.93827778654378
+2025-02-03 17:41:22,394 - Main_code - INFO - Episode: 12/30, Total Reward: 143.41308371719728
+2025-02-03 17:41:23,243 - Main_code - INFO - Episode: 13/30, Total Reward: 134.59590125759502
+2025-02-03 17:41:24,050 - Main_code - INFO - Episode: 14/30, Total Reward: 137.71565764332286
+2025-02-03 17:41:24,864 - Main_code - INFO - Episode: 15/30, Total Reward: 139.01180551930972
+2025-02-03 17:41:25,819 - Main_code - INFO - Episode: 16/30, Total Reward: 141.11605239534177
+2025-02-03 17:41:26,629 - Main_code - INFO - Episode: 17/30, Total Reward: 134.80540957142665
+2025-02-03 17:41:27,437 - Main_code - INFO - Episode: 18/30, Total Reward: 145.00161655037252
+2025-02-03 17:41:28,313 - Main_code - INFO - Episode: 19/30, Total Reward: 134.30259471981554
+2025-02-03 17:41:29,183 - Main_code - INFO - Episode: 20/30, Total Reward: 144.50414483334706
+2025-02-03 17:41:30,011 - Main_code - INFO - Episode: 21/30, Total Reward: 143.6076913093844
+2025-02-03 17:41:30,823 - Main_code - INFO - Episode: 22/30, Total Reward: 134.99839412791
+2025-02-03 17:41:31,719 - Main_code - INFO - Episode: 23/30, Total Reward: 123.5040195857024
+2025-02-03 17:41:32,617 - Main_code - INFO - Episode: 24/30, Total Reward: 135.60660577212133
+2025-02-03 17:41:33,438 - Main_code - INFO - Episode: 25/30, Total Reward: 137.1045692989836
+2025-02-03 17:41:34,299 - Main_code - INFO - Episode: 26/30, Total Reward: 136.58540465448186
+2025-02-03 17:41:35,230 - Main_code - INFO - Episode: 27/30, Total Reward: 139.5904174210952
+2025-02-03 17:41:36,056 - Main_code - INFO - Episode: 28/30, Total Reward: 138.70759311408713
+2025-02-03 17:41:36,860 - Main_code - INFO - Episode: 29/30, Total Reward: 135.60559439391582
+2025-02-03 17:41:37,778 - Main_code - INFO - Episode: 30/30, Total Reward: 133.87434369724113
+2025-02-03 17:41:38,063 - __main__ - ERROR - Error processing MSFT: single positional indexer is out-of-bounds
+2025-02-03 17:41:38,087 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 119, in process_stock
+    val_results = agent.evaluate_model(train_env)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 547, in evaluate_model
+    next_state, reward, done = env.step(action)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 408, in step
+    return self._get_state(), reward, done
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 246, in _get_state
+    current_data = self.data.iloc[current_idx]
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\indexing.py", line 1153, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\indexing.py", line 1714, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\indexing.py", line 1647, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2025-02-03 17:41:38,090 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:41:38] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 17:42:22,297 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:42:22,788 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:42:22,899 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:42:23,747 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:42:28,959 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:42:28,967 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:42:29,224 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:42:29,231 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:43:17,812 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:43:18,086 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:43:18,336 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:43:18,790 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:43:25,027 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:43:25,033 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:43:25,248 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:43:25,254 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:43:25,926 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:25] "GET / HTTP/1.1" 200 -
+2025-02-03 17:43:26,128 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:43:26,131 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:43:26,244 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:43:26,344 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:26] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:43:29,992 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:29] "GET / HTTP/1.1" 200 -
+2025-02-03 17:43:30,041 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:43:30,044 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:43:30,153 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:43:30,226 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:30] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:43:34,571 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:34] "GET / HTTP/1.1" 200 -
+2025-02-03 17:43:34,614 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:43:34,616 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:43:34,737 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:43:34,810 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:43:34] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:43:41,147 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:43:41,150 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 17:43:41,151 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:43:41,151 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 17:43:41,152 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:43:44,152 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:43:44,207 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:43:44,209 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:43:44,242 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 17:43:44,243 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 17:43:44,244 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:43:47,206 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:43:47,260 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:43:47,261 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:43:47,294 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 17:43:47,296 - __main__ - INFO - Initializing training environment
+2025-02-03 17:43:47,297 - __main__ - INFO - Initializing testing environment
+2025-02-03 17:43:47,298 - __main__ - INFO - Initializing trading agent
+2025-02-03 17:43:49,239 - __main__ - INFO - Training model for MSFT
+2025-02-03 17:43:50,571 - Main_code - INFO - Episode: 1/30, Total Reward: 98.00334781043627
+2025-02-03 17:43:52,259 - Main_code - INFO - Episode: 2/30, Total Reward: 130.20374064261068
+2025-02-03 17:43:53,743 - Main_code - INFO - Episode: 3/30, Total Reward: 148.30043707248242
+2025-02-03 17:43:55,435 - Main_code - INFO - Episode: 4/30, Total Reward: 147.6022477413212
+2025-02-03 17:43:56,943 - Main_code - INFO - Episode: 5/30, Total Reward: 141.59899596908733
+2025-02-03 17:43:58,474 - Main_code - INFO - Episode: 6/30, Total Reward: 140.06944763545988
+2025-02-03 17:44:00,069 - Main_code - INFO - Episode: 7/30, Total Reward: 145.90146279820053
+2025-02-03 17:44:01,565 - Main_code - INFO - Episode: 8/30, Total Reward: 128.1688711899635
+2025-02-03 17:44:03,254 - Main_code - INFO - Episode: 9/30, Total Reward: 149.16968766051576
+2025-02-03 17:44:04,749 - Main_code - INFO - Episode: 10/30, Total Reward: 140.19436092968428
+2025-02-03 17:44:06,336 - Main_code - INFO - Episode: 11/30, Total Reward: 139.05531448071028
+2025-02-03 17:44:07,865 - Main_code - INFO - Episode: 12/30, Total Reward: 141.25943233250558
+2025-02-03 17:44:09,418 - Main_code - INFO - Episode: 13/30, Total Reward: 131.06937403855287
+2025-02-03 17:44:10,995 - Main_code - INFO - Episode: 14/30, Total Reward: 139.79419567194748
+2025-02-03 17:44:12,537 - Main_code - INFO - Episode: 15/30, Total Reward: 136.50354935407643
+2025-02-03 17:44:14,156 - Main_code - INFO - Episode: 16/30, Total Reward: 146.003445276344
+2025-02-03 17:44:15,570 - Main_code - INFO - Episode: 17/30, Total Reward: 145.59687700966478
+2025-02-03 17:44:17,167 - Main_code - INFO - Episode: 18/30, Total Reward: 135.37544994348627
+2025-02-03 17:44:18,903 - Main_code - INFO - Episode: 19/30, Total Reward: 137.9131528061238
+2025-02-03 17:44:20,541 - Main_code - INFO - Episode: 20/30, Total Reward: 134.50070703483217
+2025-02-03 17:44:22,110 - Main_code - INFO - Episode: 21/30, Total Reward: 140.7634927473471
+2025-02-03 17:44:23,698 - Main_code - INFO - Episode: 22/30, Total Reward: 139.07814265396348
+2025-02-03 17:44:25,414 - Main_code - INFO - Episode: 23/30, Total Reward: 132.2841158021057
+2025-02-03 17:44:27,148 - Main_code - INFO - Episode: 24/30, Total Reward: 138.70254345600543
+2025-02-03 17:44:28,733 - Main_code - INFO - Episode: 25/30, Total Reward: 139.0012586726929
+2025-02-03 17:44:30,264 - Main_code - INFO - Episode: 26/30, Total Reward: 134.80657623075874
+2025-02-03 17:44:31,891 - Main_code - INFO - Episode: 27/30, Total Reward: 140.66172490448199
+2025-02-03 17:44:33,374 - Main_code - INFO - Episode: 28/30, Total Reward: 146.80327815002988
+2025-02-03 17:44:34,994 - Main_code - INFO - Episode: 29/30, Total Reward: 139.9035905909278
+2025-02-03 17:44:36,516 - Main_code - INFO - Episode: 30/30, Total Reward: 141.41303717414075
+2025-02-03 17:44:38,546 - Main_code - INFO - Episode: 1/30, Total Reward: 144.30208395594292
+2025-02-03 17:44:40,064 - Main_code - INFO - Episode: 2/30, Total Reward: 138.29985086294542
+2025-02-03 17:44:41,586 - Main_code - INFO - Episode: 3/30, Total Reward: 142.48977537969046
+2025-02-03 17:44:43,176 - Main_code - INFO - Episode: 4/30, Total Reward: 141.3993560507129
+2025-02-03 17:44:44,742 - Main_code - INFO - Episode: 5/30, Total Reward: 145.3035812153318
+2025-02-03 17:44:46,413 - Main_code - INFO - Episode: 6/30, Total Reward: 143.00263782061566
+2025-02-03 17:44:47,880 - Main_code - INFO - Episode: 7/30, Total Reward: 137.11243722272897
+2025-02-03 17:44:49,537 - Main_code - INFO - Episode: 8/30, Total Reward: 139.20768832655332
+2025-02-03 17:44:50,994 - Main_code - INFO - Episode: 9/30, Total Reward: 138.6043901232939
+2025-02-03 17:44:52,604 - Main_code - INFO - Episode: 10/30, Total Reward: 135.4120998101375
+2025-02-03 17:44:54,158 - Main_code - INFO - Episode: 11/30, Total Reward: 132.19112876403952
+2025-02-03 17:44:55,731 - Main_code - INFO - Episode: 12/30, Total Reward: 142.8777848528146
+2025-02-03 17:44:57,280 - Main_code - INFO - Episode: 13/30, Total Reward: 140.802976167578
+2025-02-03 17:44:58,791 - Main_code - INFO - Episode: 14/30, Total Reward: 131.7040805155765
+2025-02-03 17:45:00,381 - Main_code - INFO - Episode: 15/30, Total Reward: 127.19419214540503
+2025-02-03 17:45:01,838 - Main_code - INFO - Episode: 16/30, Total Reward: 137.59637065714637
+2025-02-03 17:45:03,413 - Main_code - INFO - Episode: 17/30, Total Reward: 141.00359774203721
+2025-02-03 17:45:04,859 - Main_code - INFO - Episode: 18/30, Total Reward: 145.3086299633114
+2025-02-03 17:45:06,439 - Main_code - INFO - Episode: 19/30, Total Reward: 135.60384942034662
+2025-02-03 17:45:07,961 - Main_code - INFO - Episode: 20/30, Total Reward: 140.7938458761662
+2025-02-03 17:45:09,533 - Main_code - INFO - Episode: 21/30, Total Reward: 146.0171313319238
+2025-02-03 17:45:11,109 - Main_code - INFO - Episode: 22/30, Total Reward: 144.10320407574
+2025-02-03 17:45:12,633 - Main_code - INFO - Episode: 23/30, Total Reward: 139.90381033775276
+2025-02-03 17:45:14,211 - Main_code - INFO - Episode: 24/30, Total Reward: 140.20427215750442
+2025-02-03 17:45:15,776 - Main_code - INFO - Episode: 25/30, Total Reward: 133.41053962000976
+2025-02-03 17:45:17,369 - Main_code - INFO - Episode: 26/30, Total Reward: 135.20778305895584
+2025-02-03 17:45:19,081 - Main_code - INFO - Episode: 27/30, Total Reward: 129.10491612803065
+2025-02-03 17:45:20,596 - Main_code - INFO - Episode: 28/30, Total Reward: 130.59906256329765
+2025-02-03 17:45:22,149 - Main_code - INFO - Episode: 29/30, Total Reward: 133.60893575475916
+2025-02-03 17:45:23,688 - Main_code - INFO - Episode: 30/30, Total Reward: 134.8102036063251
+2025-02-03 17:45:25,595 - Main_code - INFO - Episode: 1/30, Total Reward: 136.5925014162678
+2025-02-03 17:45:27,164 - Main_code - INFO - Episode: 2/30, Total Reward: 140.49837713556198
+2025-02-03 17:47:03,111 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:47:03,952 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:47:10,777 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:47:10,784 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:47:10,843 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:10] "GET / HTTP/1.1" 200 -
+2025-02-03 17:47:11,044 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:47:11,046 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:47:11,170 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:47:11,258 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:11] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 17:47:15,587 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:47:15,590 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 17:47:15,591 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 17:47:15,591 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 17:47:15,592 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:47:17,991 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:47:18,034 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:47:18,035 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:47:18,072 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 17:47:18,072 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 17:47:18,073 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 17:47:20,310 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 17:47:20,357 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 17:47:20,358 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 17:47:20,384 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 17:47:20,385 - __main__ - INFO - Initializing training environment
+2025-02-03 17:47:20,386 - __main__ - INFO - Initializing testing environment
+2025-02-03 17:47:20,387 - __main__ - INFO - Initializing trading agent
+2025-02-03 17:47:21,348 - __main__ - INFO - Training model for MSFT
+2025-02-03 17:47:22,111 - Main_code - INFO - Episode: 1/20, Total Reward: 97.11750408670757
+2025-02-03 17:47:22,921 - Main_code - INFO - Episode: 2/20, Total Reward: 122.29428723034805
+2025-02-03 17:47:23,769 - Main_code - INFO - Episode: 3/20, Total Reward: 148.39427258282186
+2025-02-03 17:47:24,670 - Main_code - INFO - Episode: 4/20, Total Reward: 140.50168678550813
+2025-02-03 17:47:25,470 - Main_code - INFO - Episode: 5/20, Total Reward: 137.60510509536715
+2025-02-03 17:47:26,308 - Main_code - INFO - Episode: 6/20, Total Reward: 140.50660529204194
+2025-02-03 17:47:27,142 - Main_code - INFO - Episode: 7/20, Total Reward: 140.69803645784484
+2025-02-03 17:47:27,986 - Main_code - INFO - Episode: 8/20, Total Reward: 135.00174380766495
+2025-02-03 17:47:28,771 - Main_code - INFO - Episode: 9/20, Total Reward: 141.19543570136486
+2025-02-03 17:47:29,546 - Main_code - INFO - Episode: 10/20, Total Reward: 144.39457601595836
+2025-02-03 17:47:30,427 - Main_code - INFO - Episode: 11/20, Total Reward: 138.2008819339768
+2025-02-03 17:47:31,257 - Main_code - INFO - Episode: 12/20, Total Reward: 143.60267447761618
+2025-02-03 17:47:32,065 - Main_code - INFO - Episode: 13/20, Total Reward: 135.00006535799244
+2025-02-03 17:47:32,843 - Main_code - INFO - Episode: 14/20, Total Reward: 144.90089570738036
+2025-02-03 17:47:33,724 - Main_code - INFO - Episode: 15/20, Total Reward: 136.58379921613215
+2025-02-03 17:47:34,530 - Main_code - INFO - Episode: 16/20, Total Reward: 141.29865512626938
+2025-02-03 17:47:35,325 - Main_code - INFO - Episode: 17/20, Total Reward: 133.60308148263886
+2025-02-03 17:47:36,151 - Main_code - INFO - Episode: 18/20, Total Reward: 133.9010921975979
+2025-02-03 17:47:37,064 - Main_code - INFO - Episode: 19/20, Total Reward: 145.5022054814016
+2025-02-03 17:47:37,922 - Main_code - INFO - Episode: 20/20, Total Reward: 141.3065581858647
+2025-02-03 17:47:38,161 - __main__ - INFO - Evaluating model performance
+2025-02-03 17:47:38,167 - __main__ - INFO - Generating trading recommendations
+2025-02-03 17:47:38,170 - __main__ - INFO - Successfully processed MSFT
+2025-02-03 17:47:38,173 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:38] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 17:47:38,251 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'cost'
+2025-02-03 17:47:38,320 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 196, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 198, in top-level template code
+    <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'cost'
+
+2025-02-03 17:47:38,327 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:38] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:47:38,360 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:47:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:48:26,531 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:48:26] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:48:26,559 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:48:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:51:41,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 17:51:42,524 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:51:46,991 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:51:46,995 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:52:25,590 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 17:52:25,987 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 17:52:32,922 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 17:52:32,930 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 17:52:33,007 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:52:33] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:52:33,114 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:52:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:52:37,574 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:52:37] "GET /results HTTP/1.1" 200 -
+2025-02-03 17:52:37,611 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:52:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:59:56,417 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:59:56] "GET / HTTP/1.1" 200 -
+2025-02-03 17:59:56,463 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:59:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 17:59:56,466 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:59:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 17:59:56,602 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 17:59:56,684 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 17:59:56] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:03:23,895 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:03:23,901 - __main__ - INFO - Processing stock data for RELI
+2025-02-03 18:03:23,903 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:03:23,905 - __main__ - INFO - Fetching training data for RELI
+2025-02-03 18:03:23,905 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 18:03:26,810 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:03:26,839 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 18:03:26,840 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:03:26,877 - Main_code - INFO - Got 250 days of data for RELI
+2025-02-03 18:03:26,879 - __main__ - INFO - Fetching testing data for RELI
+2025-02-03 18:03:26,880 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 18:03:27,854 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:03:27,873 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 18:03:27,875 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:03:27,916 - Main_code - INFO - Got 7 days of data for RELI
+2025-02-03 18:03:27,917 - __main__ - INFO - Initializing training environment
+2025-02-03 18:03:27,918 - __main__ - INFO - Initializing testing environment
+2025-02-03 18:03:27,920 - __main__ - INFO - Initializing trading agent
+2025-02-03 18:03:29,602 - __main__ - INFO - Training model for RELI
+2025-02-03 18:03:30,156 - Main_code - INFO - Episode: 1/20, Total Reward: 1.983007646526761
+2025-02-03 18:03:30,811 - Main_code - INFO - Episode: 2/20, Total Reward: 3.965977556028731
+2025-02-03 18:03:31,350 - Main_code - INFO - Episode: 3/20, Total Reward: 3.965953053978888
+2025-02-03 18:03:31,896 - Main_code - INFO - Episode: 4/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:32,407 - Main_code - INFO - Episode: 5/20, Total Reward: 3.9658226200212026
+2025-02-03 18:03:32,952 - Main_code - INFO - Episode: 6/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:33,511 - Main_code - INFO - Episode: 7/20, Total Reward: 3.966010886878082
+2025-02-03 18:03:34,028 - Main_code - INFO - Episode: 8/20, Total Reward: 3.9660096890223264
+2025-02-03 18:03:34,520 - Main_code - INFO - Episode: 9/20, Total Reward: 3.9659788479628197
+2025-02-03 18:03:35,041 - Main_code - INFO - Episode: 10/20, Total Reward: 3.9659788479628197
+2025-02-03 18:03:35,554 - Main_code - INFO - Episode: 11/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:36,083 - Main_code - INFO - Episode: 12/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:36,593 - Main_code - INFO - Episode: 13/20, Total Reward: 3.965977556028731
+2025-02-03 18:03:37,080 - Main_code - INFO - Episode: 14/20, Total Reward: 3.9659788479628197
+2025-02-03 18:03:37,627 - Main_code - INFO - Episode: 15/20, Total Reward: 3.966010886878082
+2025-02-03 18:03:38,138 - Main_code - INFO - Episode: 16/20, Total Reward: 3.9659762944707566
+2025-02-03 18:03:38,680 - Main_code - INFO - Episode: 17/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:39,218 - Main_code - INFO - Episode: 18/20, Total Reward: 3.9659788479628197
+2025-02-03 18:03:39,743 - Main_code - INFO - Episode: 19/20, Total Reward: 3.965954237786041
+2025-02-03 18:03:40,235 - Main_code - INFO - Episode: 20/20, Total Reward: 3.9659788479628197
+2025-02-03 18:03:40,359 - __main__ - INFO - Testing model on recent data
+2025-02-03 18:03:40,363 - __main__ - INFO - Generating trading recommendations
+2025-02-03 18:03:40,364 - __main__ - ERROR - Error processing RELI: 'StockTradingEnvironment' object has no attribute 'get_state'
+2025-02-03 18:03:40,365 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 152, in process_stock
+    recommendation = generate_trading_recommendations(agent, test_env)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 526, in generate_trading_recommendations
+    state = env.get_state()
+AttributeError: 'StockTradingEnvironment' object has no attribute 'get_state'
+
+2025-02-03 18:03:40,367 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:03:40] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 18:04:58,550 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:04:59,197 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:05:04,290 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:05:04,295 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:05:06,994 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:05:06,995 - __main__ - INFO - Processing stock data for RELI
+2025-02-03 18:05:06,996 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:05:06,997 - __main__ - INFO - Fetching training data for RELI
+2025-02-03 18:05:06,997 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 18:05:09,028 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:05:09,049 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 18:05:09,050 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:05:09,090 - Main_code - INFO - Got 250 days of data for RELI
+2025-02-03 18:05:09,091 - __main__ - INFO - Fetching testing data for RELI
+2025-02-03 18:05:09,092 - Main_code - INFO - Downloading data for RELI...
+2025-02-03 18:05:11,351 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:05:11,371 - Main_code - INFO - Successfully downloaded and processed data for RELI
+2025-02-03 18:05:11,372 - Main_code - INFO - Data shape: (1905, 10), Date range: 2016-02-02 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:05:11,402 - Main_code - INFO - Got 7 days of data for RELI
+2025-02-03 18:05:11,403 - __main__ - INFO - Initializing training environment
+2025-02-03 18:05:11,404 - __main__ - INFO - Initializing testing environment
+2025-02-03 18:05:11,405 - __main__ - INFO - Initializing trading agent
+2025-02-03 18:05:12,776 - __main__ - INFO - Training model for RELI
+2025-02-03 18:05:13,370 - Main_code - INFO - Episode: 1/20, Total Reward: 3.9659884537144716
+2025-02-03 18:05:13,979 - Main_code - INFO - Episode: 2/20, Total Reward: 3.9659916012120324
+2025-02-03 18:05:14,608 - Main_code - INFO - Episode: 3/20, Total Reward: 3.965950687964371
+2025-02-03 18:05:15,207 - Main_code - INFO - Episode: 4/20, Total Reward: 3.965953053978888
+2025-02-03 18:05:15,855 - Main_code - INFO - Episode: 5/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:16,561 - Main_code - INFO - Episode: 6/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:17,223 - Main_code - INFO - Episode: 7/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:17,875 - Main_code - INFO - Episode: 8/20, Total Reward: 3.965950687964371
+2025-02-03 18:05:18,508 - Main_code - INFO - Episode: 9/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:19,174 - Main_code - INFO - Episode: 10/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:19,778 - Main_code - INFO - Episode: 11/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:20,420 - Main_code - INFO - Episode: 12/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:21,128 - Main_code - INFO - Episode: 13/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:21,826 - Main_code - INFO - Episode: 14/20, Total Reward: 3.965977556028731
+2025-02-03 18:05:22,477 - Main_code - INFO - Episode: 15/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:22,959 - Main_code - INFO - Episode: 16/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:23,408 - Main_code - INFO - Episode: 17/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:23,918 - Main_code - INFO - Episode: 18/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:24,385 - Main_code - INFO - Episode: 19/20, Total Reward: 3.966003427994301
+2025-02-03 18:05:24,836 - Main_code - INFO - Episode: 20/20, Total Reward: 3.965954237786041
+2025-02-03 18:05:24,982 - __main__ - INFO - Testing model on recent data
+2025-02-03 18:05:24,988 - __main__ - INFO - Generating trading recommendations
+2025-02-03 18:05:24,991 - __main__ - INFO - Successfully processed RELI
+2025-02-03 18:05:24,994 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:05:24] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 18:05:25,048 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'training_return'
+2025-02-03 18:05:25,050 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 222, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 158, in top-level template code
+    <div class="metric-value {{ 'positive' if results.training_return > 0 else 'negative' }}">
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'training_return'
+
+2025-02-03 18:05:25,052 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:05:25] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:05:25,104 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:05:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:06:28,593 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:06:28] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:06:28,625 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:06:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:07:24,559 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:07:24,979 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:07:30,446 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:07:30,451 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:07:30,514 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:07:30] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:07:30,620 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:07:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:08:41,564 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:08:42,202 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:08:45,822 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:08:45,827 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:08:49,439 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:08:49] "GET / HTTP/1.1" 200 -
+2025-02-03 18:08:49,575 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:08:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:08:49,575 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:08:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:08:49,662 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:08:49,713 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:08:49] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:08:55,694 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:08:55,697 - __main__ - INFO - Processing stock data for MSFT
+2025-02-03 18:08:55,698 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:08:55,699 - __main__ - INFO - Fetching training data for MSFT
+2025-02-03 18:08:55,699 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 18:08:58,292 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:08:58,341 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 18:08:58,342 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:08:58,365 - Main_code - INFO - Got 250 days of data for MSFT
+2025-02-03 18:08:58,366 - __main__ - INFO - Fetching testing data for MSFT
+2025-02-03 18:08:58,367 - Main_code - INFO - Downloading data for MSFT...
+2025-02-03 18:09:00,886 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:09:00,923 - Main_code - INFO - Successfully downloaded and processed data for MSFT
+2025-02-03 18:09:00,924 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:09:00,935 - Main_code - INFO - Got 7 days of data for MSFT
+2025-02-03 18:09:00,936 - __main__ - INFO - Initializing training environment
+2025-02-03 18:09:00,936 - __main__ - INFO - Initializing testing environment
+2025-02-03 18:09:00,937 - __main__ - INFO - Initializing trading agent
+2025-02-03 18:09:01,697 - __main__ - INFO - Training model for MSFT
+2025-02-03 18:09:02,059 - Main_code - INFO - Episode: 1/20, Total Reward: 134.73703571376703
+2025-02-03 18:09:02,453 - Main_code - INFO - Episode: 2/20, Total Reward: 208.05361492980117
+2025-02-03 18:09:02,866 - Main_code - INFO - Episode: 3/20, Total Reward: 226.88132767284048
+2025-02-03 18:09:03,302 - Main_code - INFO - Episode: 4/20, Total Reward: 228.86550624571328
+2025-02-03 18:09:03,739 - Main_code - INFO - Episode: 5/20, Total Reward: 228.8613711991499
+2025-02-03 18:09:04,146 - Main_code - INFO - Episode: 6/20, Total Reward: 225.89959227156464
+2025-02-03 18:09:04,556 - Main_code - INFO - Episode: 7/20, Total Reward: 233.81266105168677
+2025-02-03 18:09:04,962 - Main_code - INFO - Episode: 8/20, Total Reward: 232.82849540225723
+2025-02-03 18:09:05,381 - Main_code - INFO - Episode: 9/20, Total Reward: 224.9018300776785
+2025-02-03 18:09:05,798 - Main_code - INFO - Episode: 10/20, Total Reward: 223.9052162185493
+2025-02-03 18:09:06,179 - Main_code - INFO - Episode: 11/20, Total Reward: 229.85573569178752
+2025-02-03 18:09:06,582 - Main_code - INFO - Episode: 12/20, Total Reward: 226.87953045464113
+2025-02-03 18:09:06,972 - Main_code - INFO - Episode: 13/20, Total Reward: 229.8481228067983
+2025-02-03 18:09:07,370 - Main_code - INFO - Episode: 14/20, Total Reward: 234.80312084568504
+2025-02-03 18:09:07,758 - Main_code - INFO - Episode: 15/20, Total Reward: 220.92733780561215
+2025-02-03 18:09:08,150 - Main_code - INFO - Episode: 16/20, Total Reward: 219.93921878495536
+2025-02-03 18:09:08,552 - Main_code - INFO - Episode: 17/20, Total Reward: 226.87802011214504
+2025-02-03 18:09:08,946 - Main_code - INFO - Episode: 18/20, Total Reward: 230.84259543020343
+2025-02-03 18:09:09,368 - Main_code - INFO - Episode: 19/20, Total Reward: 230.84656203843258
+2025-02-03 18:09:09,783 - Main_code - INFO - Episode: 20/20, Total Reward: 221.92007214070964
+2025-02-03 18:09:09,886 - __main__ - INFO - Testing model on recent data
+2025-02-03 18:09:09,890 - __main__ - INFO - Generating trading recommendations
+2025-02-03 18:09:09,893 - __main__ - INFO - Successfully processed MSFT
+2025-02-03 18:09:09,895 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:09:09] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 18:09:09,942 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:09:09] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:09:09,963 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:09:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:11:29,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 18:11:30,176 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:11:34,168 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:11:34,172 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:12:07,658 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:12:07] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:12:07,756 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:12:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:13:17,864 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:13:17] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:13:17,908 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:13:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:13:29,824 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:13:29] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:13:29,874 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:13:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:13:42,795 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:13:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:16:41,085 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 18:16:41,730 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:16:48,005 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:16:48,016 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:17:13,516 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:17:14,268 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:17:20,079 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:17:20,094 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:17:24,400 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:24] "GET / HTTP/1.1" 200 -
+2025-02-03 18:17:24,578 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:17:24,580 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:17:24,695 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:17:24,771 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:17:28,295 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:17:28,298 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 18:17:28,299 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:17:28,300 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 18:17:28,300 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:17:30,645 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:17:30,701 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:17:30,702 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:17:30,733 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 18:17:30,734 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 18:17:30,734 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:17:32,589 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:17:32,638 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:17:32,640 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:17:32,662 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 18:17:32,663 - __main__ - INFO - Initializing training environment
+2025-02-03 18:17:32,664 - __main__ - INFO - Initializing testing environment
+2025-02-03 18:17:32,665 - __main__ - INFO - Initializing trading agent
+2025-02-03 18:17:33,603 - __main__ - INFO - Training model for INTC
+2025-02-03 18:17:34,310 - Main_code - INFO - Episode: 1/20, Total Reward: 142.8358258970453
+2025-02-03 18:17:35,147 - Main_code - INFO - Episode: 2/20, Total Reward: 219.23313595680463
+2025-02-03 18:17:35,911 - Main_code - INFO - Episode: 3/20, Total Reward: 234.12775677229257
+2025-02-03 18:17:36,658 - Main_code - INFO - Episode: 4/20, Total Reward: 234.0773038178169
+2025-02-03 18:17:37,401 - Main_code - INFO - Episode: 5/20, Total Reward: 224.1835613841951
+2025-02-03 18:17:38,284 - Main_code - INFO - Episode: 6/20, Total Reward: 233.19272582969936
+2025-02-03 18:17:39,103 - Main_code - INFO - Episode: 7/20, Total Reward: 229.0639369811726
+2025-02-03 18:17:39,861 - Main_code - INFO - Episode: 8/20, Total Reward: 234.1496923373297
+2025-02-03 18:17:40,600 - Main_code - INFO - Episode: 9/20, Total Reward: 219.2157901897514
+2025-02-03 18:17:41,460 - Main_code - INFO - Episode: 10/20, Total Reward: 228.16941350061833
+2025-02-03 18:17:42,234 - Main_code - INFO - Episode: 11/20, Total Reward: 233.12886998717684
+2025-02-03 18:17:42,983 - Main_code - INFO - Episode: 12/20, Total Reward: 235.16949408629677
+2025-02-03 18:17:43,756 - Main_code - INFO - Episode: 13/20, Total Reward: 233.07102134040704
+2025-02-03 18:17:44,858 - Main_code - INFO - Episode: 14/20, Total Reward: 224.19444135242423
+2025-02-03 18:17:45,727 - Main_code - INFO - Episode: 15/20, Total Reward: 229.2652744783206
+2025-02-03 18:17:46,495 - Main_code - INFO - Episode: 16/20, Total Reward: 234.17361098145943
+2025-02-03 18:17:47,449 - Main_code - INFO - Episode: 17/20, Total Reward: 214.2959297376702
+2025-02-03 18:17:48,343 - Main_code - INFO - Episode: 18/20, Total Reward: 230.18001369065183
+2025-02-03 18:17:49,070 - Main_code - INFO - Episode: 19/20, Total Reward: 220.25627562522698
+2025-02-03 18:17:49,808 - Main_code - INFO - Episode: 20/20, Total Reward: 229.14825177248073
+2025-02-03 18:17:50,005 - __main__ - INFO - Testing model on recent data
+2025-02-03 18:17:50,011 - __main__ - INFO - Generating trading recommendations
+2025-02-03 18:17:50,014 - __main__ - INFO - Successfully processed INTC
+2025-02-03 18:17:50,017 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:50] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 18:17:50,086 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:50] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:17:50,119 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:17:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:20:05,253 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:20:06,070 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:20:12,823 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:20:12,830 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:20:12,895 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:12] "GET / HTTP/1.1" 200 -
+2025-02-03 18:20:13,105 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:20:13,106 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:20:13,251 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:20:13,336 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:13] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:20:19,039 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:19] "GET / HTTP/1.1" 200 -
+2025-02-03 18:20:19,076 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:20:19,078 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:20:19,218 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:20:19,313 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:19] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:20:23,656 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:20:23,659 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 18:20:23,660 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:20:23,661 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 18:20:23,662 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:20:27,167 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:20:27,219 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:20:27,220 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:20:27,248 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 18:20:27,249 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 18:20:27,249 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:20:29,598 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:20:29,631 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:20:29,632 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:20:29,656 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 18:20:29,656 - __main__ - INFO - Initializing training environment
+2025-02-03 18:20:29,657 - __main__ - INFO - Initializing testing environment
+2025-02-03 18:20:29,658 - __main__ - INFO - Initializing trading agent
+2025-02-03 18:20:30,632 - __main__ - INFO - Training model for INTC
+2025-02-03 18:20:31,441 - Main_code - INFO - Episode: 1/20, Total Reward: 121.0
+2025-02-03 18:20:32,423 - Main_code - INFO - Episode: 2/20, Total Reward: 186.1234458259325
+2025-02-03 18:20:33,158 - Main_code - INFO - Episode: 3/20, Total Reward: 195.0
+2025-02-03 18:20:33,877 - Main_code - INFO - Episode: 4/20, Total Reward: 201.24785591766724
+2025-02-03 18:20:34,669 - Main_code - INFO - Episode: 5/20, Total Reward: 197.0
+2025-02-03 18:20:35,523 - Main_code - INFO - Episode: 6/20, Total Reward: 201.0
+2025-02-03 18:20:36,227 - Main_code - INFO - Episode: 7/20, Total Reward: 195.0
+2025-02-03 18:20:37,013 - Main_code - INFO - Episode: 8/20, Total Reward: 197.0
+2025-02-03 18:20:37,769 - Main_code - INFO - Episode: 9/20, Total Reward: 205.0
+2025-02-03 18:20:38,622 - Main_code - INFO - Episode: 10/20, Total Reward: 196.067615658363
+2025-02-03 18:20:39,360 - Main_code - INFO - Episode: 11/20, Total Reward: 195.0
+2025-02-03 18:20:40,103 - Main_code - INFO - Episode: 12/20, Total Reward: 196.0
+2025-02-03 18:20:40,886 - Main_code - INFO - Episode: 13/20, Total Reward: 202.0
+2025-02-03 18:20:41,762 - Main_code - INFO - Episode: 14/20, Total Reward: 195.0
+2025-02-03 18:20:42,514 - Main_code - INFO - Episode: 15/20, Total Reward: 195.08987603305786
+2025-02-03 18:20:43,246 - Main_code - INFO - Episode: 16/20, Total Reward: 195.0
+2025-02-03 18:20:44,027 - Main_code - INFO - Episode: 17/20, Total Reward: 195.0
+2025-02-03 18:20:44,871 - Main_code - INFO - Episode: 18/20, Total Reward: 192.0
+2025-02-03 18:20:45,641 - Main_code - INFO - Episode: 19/20, Total Reward: 203.0
+2025-02-03 18:20:46,339 - Main_code - INFO - Episode: 20/20, Total Reward: 199.0
+2025-02-03 18:20:46,525 - __main__ - INFO - Testing model on recent data
+2025-02-03 18:20:46,531 - __main__ - INFO - Generating trading recommendations
+2025-02-03 18:20:46,531 - __main__ - ERROR - Error processing INTC: 'DQN' object has no attribute 'predict'
+2025-02-03 18:20:46,533 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 152, in process_stock
+    recommendation = generate_trading_recommendations(agent, test_env)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 509, in generate_trading_recommendations
+    q_values = agent.model.predict(state.reshape(1, -1))[0]
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1695, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'DQN' object has no attribute 'predict'
+
+2025-02-03 18:20:46,538 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:20:46] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 18:21:24,396 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-03 18:21:25,267 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:21:30,575 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:21:30,581 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:22:13,302 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 18:22:13,899 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:22:20,665 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:22:20,673 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:22:20,738 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:22:20] "GET / HTTP/1.1" 200 -
+2025-02-03 18:22:20,938 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:22:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:22:20,940 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:22:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:22:21,063 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:22:21,157 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:22:21] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:22:24,228 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:22:24,231 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 18:22:24,231 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:22:24,233 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 18:22:24,233 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:22:27,694 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:22:27,729 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:22:27,730 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:22:27,760 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 18:22:27,761 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 18:22:27,762 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:22:30,168 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:22:30,217 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:22:30,218 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:22:30,243 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 18:22:30,244 - __main__ - INFO - Initializing environments
+2025-02-03 18:22:30,245 - __main__ - INFO - Training model
+2025-02-03 18:22:31,897 - Main_code - INFO - Episode: 1/20, Total Reward: 110.33854166666667
+2025-02-03 18:22:32,683 - Main_code - INFO - Episode: 2/20, Total Reward: 185.0
+2025-02-03 18:22:33,594 - Main_code - INFO - Episode: 3/20, Total Reward: 199.0
+2025-02-03 18:22:34,440 - Main_code - INFO - Episode: 4/20, Total Reward: 197.0
+2025-02-03 18:22:35,210 - Main_code - INFO - Episode: 5/20, Total Reward: 201.0
+2025-02-03 18:22:35,995 - Main_code - INFO - Episode: 6/20, Total Reward: 201.0
+2025-02-03 18:22:36,838 - Main_code - INFO - Episode: 7/20, Total Reward: 197.0
+2025-02-03 18:22:37,627 - Main_code - INFO - Episode: 8/20, Total Reward: 207.0
+2025-02-03 18:22:38,402 - Main_code - INFO - Episode: 9/20, Total Reward: 197.0
+2025-02-03 18:22:39,162 - Main_code - INFO - Episode: 10/20, Total Reward: 203.0
+2025-02-03 18:22:39,984 - Main_code - INFO - Episode: 11/20, Total Reward: 195.0
+2025-02-03 18:22:40,757 - Main_code - INFO - Episode: 12/20, Total Reward: 199.0
+2025-02-03 18:22:41,545 - Main_code - INFO - Episode: 13/20, Total Reward: 199.0
+2025-02-03 18:22:42,326 - Main_code - INFO - Episode: 14/20, Total Reward: 198.0
+2025-02-03 18:22:43,189 - Main_code - INFO - Episode: 15/20, Total Reward: 197.0
+2025-02-03 18:22:43,969 - Main_code - INFO - Episode: 16/20, Total Reward: 199.0
+2025-02-03 18:22:44,689 - Main_code - INFO - Episode: 17/20, Total Reward: 203.0
+2025-02-03 18:22:45,461 - Main_code - INFO - Episode: 18/20, Total Reward: 201.0
+2025-02-03 18:22:46,313 - Main_code - INFO - Episode: 19/20, Total Reward: 192.0
+2025-02-03 18:22:47,057 - Main_code - INFO - Episode: 20/20, Total Reward: 207.0
+2025-02-03 18:22:47,057 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 18:22:47,066 - __main__ - ERROR - Error processing INTC: only length-1 arrays can be converted to Python scalars
+2025-02-03 18:22:47,067 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 131, in process_stock
+    max_drawdown = float(np.max(np.maximum.accumulate(portfolio_values) - portfolio_values) / np.maximum.accumulate(portfolio_values)) if len(portfolio_values) > 1 else 0
+TypeError: only length-1 arrays can be converted to Python scalars
+
+2025-02-03 18:22:47,071 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:22:47] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 18:23:23,943 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\app.py', reloading
+2025-02-03 18:23:24,745 - werkzeug - INFO -  * Restarting with stat
+2025-02-03 18:23:31,129 - werkzeug - WARNING -  * Debugger is active!
+2025-02-03 18:23:31,137 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-03 18:23:31,194 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:23:31] "GET / HTTP/1.1" 200 -
+2025-02-03 18:23:31,355 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:23:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 18:23:31,357 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:23:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:23:31,461 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:23:31,541 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:23:31] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 18:23:38,175 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:23:38,178 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 18:23:38,179 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:23:38,180 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 18:23:38,180 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:23:39,212 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-03 18:23:39,213 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'}
+2025-02-03 18:23:39,214 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-03 18:23:39,215 - Main_code - ERROR - Error getting data for period: No data returned for INTC. Please verify the symbol is correct.
+2025-02-03 18:23:39,216 - __main__ - ERROR - Error processing INTC: No data returned for INTC. Please verify the symbol is correct.
+2025-02-03 18:23:39,218 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 70, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 74, in get_stock_data
+    raise ValueError(f"No data returned for {symbol}. Please verify the symbol is correct.")
+ValueError: No data returned for INTC. Please verify the symbol is correct.
+
+2025-02-03 18:23:39,226 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:23:39] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-03 18:24:16,200 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 18:24:16,204 - __main__ - INFO - Processing stock data for INTC
+2025-02-03 18:24:16,206 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 18:24:16,207 - __main__ - INFO - Fetching training data for INTC
+2025-02-03 18:24:16,207 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:24:20,358 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:24:20,392 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:24:20,393 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:24:20,416 - Main_code - INFO - Got 250 days of data for INTC
+2025-02-03 18:24:20,417 - __main__ - INFO - Fetching testing data for INTC
+2025-02-03 18:24:20,418 - Main_code - INFO - Downloading data for INTC...
+2025-02-03 18:24:23,405 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-03 18:24:23,457 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-03 18:24:23,457 - Main_code - INFO - Data shape: (6352, 10), Date range: 1999-11-01 00:00:00 to 2025-01-31 00:00:00
+2025-02-03 18:24:23,473 - Main_code - INFO - Got 7 days of data for INTC
+2025-02-03 18:24:23,474 - __main__ - INFO - Initializing environments
+2025-02-03 18:24:23,475 - __main__ - INFO - Training model
+2025-02-03 18:24:25,037 - Main_code - INFO - Episode: 1/20, Total Reward: 108.24785591766724
+2025-02-03 18:24:25,911 - Main_code - INFO - Episode: 2/20, Total Reward: 189.0
+2025-02-03 18:24:26,663 - Main_code - INFO - Episode: 3/20, Total Reward: 193.0
+2025-02-03 18:24:27,408 - Main_code - INFO - Episode: 4/20, Total Reward: 198.0
+2025-02-03 18:24:28,105 - Main_code - INFO - Episode: 5/20, Total Reward: 178.0
+2025-02-03 18:24:29,039 - Main_code - INFO - Episode: 6/20, Total Reward: 191.0
+2025-02-03 18:24:29,883 - Main_code - INFO - Episode: 7/20, Total Reward: 183.1655459494076
+2025-02-03 18:24:30,619 - Main_code - INFO - Episode: 8/20, Total Reward: 197.0
+2025-02-03 18:24:31,361 - Main_code - INFO - Episode: 9/20, Total Reward: 199.0
+2025-02-03 18:24:32,192 - Main_code - INFO - Episode: 10/20, Total Reward: 191.0
+2025-02-03 18:24:32,959 - Main_code - INFO - Episode: 11/20, Total Reward: 194.0
+2025-02-03 18:24:33,682 - Main_code - INFO - Episode: 12/20, Total Reward: 205.0
+2025-02-03 18:24:34,427 - Main_code - INFO - Episode: 13/20, Total Reward: 197.1234458259325
+2025-02-03 18:24:35,241 - Main_code - INFO - Episode: 14/20, Total Reward: 192.0
+2025-02-03 18:24:36,018 - Main_code - INFO - Episode: 15/20, Total Reward: 184.0
+2025-02-03 18:24:36,774 - Main_code - INFO - Episode: 16/20, Total Reward: 196.0
+2025-02-03 18:24:37,496 - Main_code - INFO - Episode: 17/20, Total Reward: 186.0
+2025-02-03 18:24:38,316 - Main_code - INFO - Episode: 18/20, Total Reward: 204.1234458259325
+2025-02-03 18:24:39,108 - Main_code - INFO - Episode: 19/20, Total Reward: 200.0
+2025-02-03 18:24:39,862 - Main_code - INFO - Episode: 20/20, Total Reward: 186.0
+2025-02-03 18:24:39,862 - __main__ - INFO - Testing model and generating recommendations
+2025-02-03 18:24:39,871 - __main__ - INFO - Successfully processed INTC
+2025-02-03 18:24:39,875 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:24:39] "POST /process_stock HTTP/1.1" 200 -
+2025-02-03 18:24:39,962 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'cost'
+2025-02-03 18:24:39,965 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 234, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 199, in top-level template code
+    <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'cost'
+
+2025-02-03 18:24:39,972 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:24:39] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:24:40,001 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:24:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:25:31,596 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'cost'
+2025-02-03 18:25:31,598 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 234, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 199, in top-level template code
+    <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'cost'
+
+2025-02-03 18:25:31,601 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:31] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:25:31,626 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:25:33,138 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'cost'
+2025-02-03 18:25:33,140 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 234, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 199, in top-level template code
+    <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'cost'
+
+2025-02-03 18:25:33,145 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:33] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:25:33,175 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:25:39,681 - __main__ - ERROR - Error displaying results: 'dict object' has no attribute 'cost'
+2025-02-03 18:25:39,682 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 234, in results
+    return render_template('results.html', results=results)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\indra\Desktop\Project\Code\templates\results.html", line 199, in top-level template code
+    <span class="detail-value">${{ "%.2f"|format(trade.cost) }}</span>
+  File "C:\Users\indra\AppData\Local\Programs\Python\Python310\lib\site-packages\jinja2\filters.py", line 1002, in do_format
+    return soft_str(value) % (kwargs or args)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'cost'
+
+2025-02-03 18:25:39,687 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:39] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:25:39,720 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:25:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:26:36,827 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:26:36] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:26:36,864 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:26:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:29:16,750 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:29:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:36:29,452 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:36:29] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:36:29,524 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:36:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:38:35,966 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:38:35] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:38:36,013 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:38:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:39:25,920 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:39:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:41:08,828 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:41:08] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:41:08,884 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:41:08] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 18:43:11,922 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:11] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:43:11,996 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:43:26,476 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:26] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:43:26,523 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:43:35,783 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:35] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:43:35,828 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:43:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:47:28,317 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:47:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:50:13,662 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:50:13] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:50:13,730 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:50:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:51:34,742 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:51:34] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:51:34,812 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:51:34] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 18:51:44,233 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:51:44] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:51:44,296 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:51:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 18:53:59,962 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:53:59] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:54:00,021 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:54:00] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 18:54:50,014 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:54:50] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:54:50,066 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:54:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:58:00,985 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:58:00] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:58:01,036 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:58:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:59:21,306 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:21] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:59:21,362 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:21] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 18:59:26,324 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:26] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:59:26,372 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 18:59:32,203 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:32] "GET /results HTTP/1.1" 200 -
+2025-02-03 18:59:32,257 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 18:59:32] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-03 19:00:16,116 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:00:16] "GET /results HTTP/1.1" 200 -
+2025-02-03 19:00:16,163 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:00:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 19:07:21,891 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:07:21] "GET /results HTTP/1.1" 200 -
+2025-02-03 19:07:21,947 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:07:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 19:22:51,935 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:22:51] "GET / HTTP/1.1" 200 -
+2025-02-03 19:22:51,992 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:22:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-03 19:22:51,993 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:22:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-03 19:22:52,112 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 19:22:52,161 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:22:52] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-03 19:23:44,932 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-03 19:23:44,937 - __main__ - INFO - Processing stock data for DELL
+2025-02-03 19:23:44,938 - Main_code - INFO - Training period: 2024-01-24 to 2025-01-22
+Testing period: 2025-01-23 to 2025-02-03
+2025-02-03 19:23:44,939 - __main__ - INFO - Fetching training data for DELL
+2025-02-03 19:23:44,939 - Main_code - INFO - Downloading data for DELL...
+2025-02-03 19:23:46,283 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-03 19:23:46,284 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'}
+2025-02-03 19:23:46,284 - Main_code - ERROR - Data processing error: No data returned for DELL. Please verify the symbol is correct.
+2025-02-03 19:23:46,285 - Main_code - ERROR - Error getting data for period: No data returned for DELL. Please verify the symbol is correct.
+2025-02-03 19:23:46,286 - __main__ - ERROR - Error processing DELL: No data returned for DELL. Please verify the symbol is correct.
+2025-02-03 19:23:46,288 - __main__ - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\indra\Desktop\Project\Code\app.py", line 70, in process_stock
+    train_data = processor.get_data_for_period(
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 122, in get_data_for_period
+    data = self.get_stock_data(ticker)
+  File "C:\Users\indra\Desktop\Project\Code\Main_code.py", line 74, in get_stock_data
+    raise ValueError(f"No data returned for {symbol}. Please verify the symbol is correct.")
+ValueError: No data returned for DELL. Please verify the symbol is correct.
+
+2025-02-03 19:23:46,299 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2025 19:23:46] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -

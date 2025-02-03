@@ -49,38 +49,32 @@ def get_stock_data():
 def process_stock():
     """Process stock data and generate trading signals."""
     try:
-        # Get symbol from form
         symbol = request.form.get('symbol', '').strip().upper()
         if not symbol:
-            logger.warning("Empty stock symbol provided")
             return jsonify({'error': 'Please select a stock from the suggestions'}), 400
 
-        # Validate symbol exists in our list
         stock_list = load_stock_data()
         valid_symbols = {stock['symbol'] for stock in stock_list}
         if symbol not in valid_symbols:
-            logger.warning(f"Invalid stock symbol provided: {symbol}")
             return jsonify({'error': 'Please select a valid stock symbol from the suggestions'}), 400
         
         try:
             logger.info(f"Processing stock data for {symbol}")
-            
-            # Initialize processor first
             processor = StockDataProcessor(api_key=API_KEY)
             
             # Get date ranges
             date_ranges = get_date_ranges()
-            logger.info(f"Date ranges - Training: {date_ranges['train']}, Testing: {date_ranges['test']}")
             
-            # Get training data first
+            # Get training data
             logger.info(f"Fetching training data for {symbol}")
             train_data = processor.get_data_for_period(
                 symbol, 
                 date_ranges['train'][0], 
                 date_ranges['train'][1]
             )
-            if len(train_data) < 20:
-                return jsonify({'error': f'Insufficient training data for {symbol}. Need at least 20 days.'}), 400
+            
+            if len(train_data) < 200:
+                return jsonify({'error': f'Insufficient historical data for {symbol}. Need at least 200 trading days.'}), 400
             
             # Get testing data
             logger.info(f"Fetching testing data for {symbol}")
@@ -89,78 +83,122 @@ def process_stock():
                 date_ranges['test'][0], 
                 date_ranges['test'][1]
             )
+            
             if len(test_data) < 5:
-                return jsonify({'error': f'Insufficient testing data for {symbol}. Need at least 5 days.'}), 400
+                return jsonify({'error': f'Insufficient recent data for {symbol}. Need at least 5 trading days.'}), 400
             
-            # Initialize environments
-            logger.info("Initializing training environment")
-            train_env = StockTradingEnvironment(train_data, initial_balance=1000)
+            # Set initial balance to 100
+            initial_balance = 100.0
             
-            logger.info("Initializing testing environment")
-            test_env = StockTradingEnvironment(test_data, initial_balance=1000)
+            logger.info("Initializing environments")
+            train_env = StockTradingEnvironment(train_data, initial_balance=initial_balance)
+            test_env = StockTradingEnvironment(test_data, initial_balance=initial_balance)
             
-            # Initialize agent
-            logger.info("Initializing trading agent")
-            agent = TradingAgent(state_size=train_env.state_size, action_size=train_env.action_size)
+            # Initialize and train agent
+            logger.info("Training model")
+            agent = TradingAgent(
+                state_size=train_env.state_size,
+                action_size=train_env.action_size,
+                learning_rate=0.001,
+                gamma=0.95,
+                epsilon=1.0,
+                epsilon_min=0.1,
+                epsilon_decay=0.995
+            )
             
-            # Train the model
-            logger.info(f"Training model for {symbol}")
+            train_env.reset()
             agent.train(train_env, episodes=20)
             
-            # Evaluate on test data
-            logger.info(f"Evaluating model performance")
-            training_results = agent.evaluate_model(test_env)
-            
-            # Generate recommendations
-            logger.info(f"Generating trading recommendations")
+            # Test the model and get recommendations
+            logger.info("Testing model and generating recommendations")
+            test_env.reset()
             recommendation = generate_trading_recommendations(agent, test_env)
             
-            # Convert numpy values to Python native types
-            def convert_to_native(obj):
-                if isinstance(obj, (np.integer, np.floating)):
-                    return float(obj)
-                elif isinstance(obj, np.ndarray):
-                    return obj.tolist()
-                elif isinstance(obj, np.bool_):
-                    return bool(obj)
-                elif isinstance(obj, dict):
-                    return {key: convert_to_native(value) for key, value in obj.items()}
-                elif isinstance(obj, (list, tuple)):
-                    return [convert_to_native(item) for item in obj]
-                return obj
+            # Run test episode to generate trading history
+            state = test_env.reset()
+            done = False
+            while not done:
+                action = agent.act(state)
+                next_state, reward, done = test_env.step(action)
+                state = next_state
             
-            # Calculate metrics
-            final_value = float(training_results.get('final_value', 0))
-            initial_value = 1000.00
-            total_return = ((final_value - initial_value) / initial_value) * 100
+            # Calculate performance metrics
+            portfolio_values = np.array([trade['portfolio_value'] for trade in test_env.trading_history] if test_env.trading_history else [initial_balance])
             
-            # Prepare results with converted values
+            if len(portfolio_values) > 1:
+                daily_returns = np.diff(portfolio_values) / portfolio_values[:-1]
+                volatility = float(np.std(daily_returns) * np.sqrt(252))
+                sharpe_ratio = float(np.mean(daily_returns) / (np.std(daily_returns) + 1e-9) * np.sqrt(252))
+                
+                # Calculate max drawdown properly
+                peak = np.maximum.accumulate(portfolio_values)
+                drawdown = (peak - portfolio_values) / peak
+                max_drawdown = float(np.max(drawdown))
+            else:
+                daily_returns = np.array([0])
+                volatility = 0.0
+                sharpe_ratio = 0.0
+                max_drawdown = 0.0
+            
+            # Prepare results
             results = {
                 'symbol': symbol,
-                'training_return': float(total_return),
-                'final_portfolio_value': float(final_value),
-                'recommendation': convert_to_native(recommendation),
-                'trading_history': convert_to_native(training_results.get('trading_history', [])),
-                'model_performance': {
-                    'avg_reward': float(training_results.get('avg_reward', 0)),
-                    'final_epsilon': float(training_results.get('final_epsilon', 0)),
-                    'training_episodes': 20,
-                    'sharpe_ratio': float(training_results.get('sharpe_ratio', 0)),
-                    'max_drawdown': float(training_results.get('max_drawdown', 0))
+                'initial_balance': initial_balance,
+                'final_portfolio_value': float(test_env._portfolio_value),
+                'total_return_pct': ((test_env._portfolio_value - initial_balance) / initial_balance) * 100,
+                'recommendation': {
+                    'action': recommendation['action'],
+                    'confidence': recommendation['confidence'],
+                    'reason': recommendation['reason'],
+                    'current_price': float(test_data['close'].iloc[-1]),
+                    'probabilities': {
+                        'buy': float(recommendation['probabilities']['buy']),
+                        'sell': float(recommendation['probabilities']['sell']),
+                        'hold': float(recommendation['probabilities']['hold'])
+                    },
+                    'technical_indicators': {
+                        'RSI': float(recommendation['technical_indicators']['RSI']),
+                        'MACD': float(recommendation['technical_indicators']['MACD']),
+                        'MACD_Signal': float(recommendation['technical_indicators']['MACD_Signal']),
+                        'EMA5': float(recommendation['technical_indicators']['EMA5']),
+                        'EMA20': float(recommendation['technical_indicators']['EMA20'])
+                    }
                 },
-                'dates': {
-                    'training_start': date_ranges['train'][0],
-                    'training_end': date_ranges['train'][1],
-                    'testing_start': date_ranges['test'][0],
-                    'testing_end': date_ranges['test'][1]
-                }
+                'trading_history': [
+                    {
+                        'date': trade['date'],
+                        'action': trade['action'],
+                        'shares': float(trade['shares']),
+                        'price': float(trade['price']),
+                        'value': float(trade.get('cost', trade.get('revenue', 0))),
+                        'profit': float(trade.get('profit', 0)) if 'profit' in trade else None,
+                        'portfolio_value': float(trade['portfolio_value'])
+                    }
+                    for trade in test_env.trading_history
+                ],
+                'model_performance': {
+                    'total_trades': test_env.total_trades,
+                    'profitable_trades': test_env.profitable_trades,
+                    'win_rate': float(test_env.profitable_trades / max(test_env.total_trades, 1) * 100),
+                    'total_profit': float(test_env.total_profit),
+                    'sharpe_ratio': sharpe_ratio,
+                    'volatility': volatility,
+                    'max_drawdown': max_drawdown,
+                    'training_episodes': 20
+                },
+                'market_analysis': {
+                    'trend': 'bullish' if test_data['EMA5'].iloc[-1] > test_data['EMA20'].iloc[-1] else 'bearish',
+                    'volatility': volatility,
+                    'rsi': float(test_data['RSI'].iloc[-1]),
+                    'volume_trend': 'increasing' if test_data['volume'].iloc[-1] > test_data['Volume_MA5'].iloc[-1] else 'decreasing'
+                },
+                'dates': date_ranges
             }
             
-            # Save results to file
-            logger.info(f"Saving results for {symbol}")
+            # Save results
             results_file = os.path.join(os.path.dirname(__file__), 'trading_results.json')
             with open(results_file, 'w') as f:
-                json.dump(convert_to_native(results), f, indent=4)
+                json.dump(results, f, indent=4)
             
             logger.info(f"Successfully processed {symbol}")
             return jsonify({'redirect': url_for('results')})

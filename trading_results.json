@@ -1,44 +1,106 @@
 {
     "symbol": "INTC",
-    "training_return": 0.0,
-    "final_portfolio_value": 1000.0,
+    "initial_balance": 100.0,
+    "final_portfolio_value": 95.63100000000003,
+    "total_return_pct": -4.368999999999971,
     "recommendation": {
-        "signal": "BUY",
-        "confidence": 43.303138154475135,
-        "risk": "Low",
-        "action_probabilities": {
-            "hold": 0.29989977949768115,
-            "buy": 0.43303138154475135,
-            "sell": 0.26706883895756756
+        "action": "BUY",
+        "confidence": 78.52507829666138,
+        "reason": "RSI indicates oversold conditions",
+        "current_price": 19.43,
+        "probabilities": {
+            "buy": 0.7852507829666138,
+            "sell": 0.05513189360499382,
+            "hold": 0.1596173793077469
         },
         "technical_indicators": {
             "RSI": 0.0,
-            "MACD": -0.38120182433641503,
-            "MACD_Signal": -0.18307919344528123,
-            "Volatility": 0.019521513164928037
+            "MACD": 0.0,
+            "MACD_Signal": 0.0,
+            "EMA5": 21.57,
+            "EMA20": 21.57
         }
     },
     "trading_history": [
         {
+            "date": "2025-01-23",
+            "action": "buy",
+            "shares": 4.0,
+            "price": 21.57,
+            "value": 86.36627999999999,
+            "profit": null,
+            "portfolio_value": 99.91372000000001
+        },
+        {
+            "date": "2025-01-24",
+            "action": "sell",
+            "shares": 4.0,
+            "price": 20.83,
+            "value": 83.23667999999999,
+            "profit": -3.0433200000000085,
+            "portfolio_value": 96.8704
+        },
+        {
+            "date": "2025-01-27",
+            "action": "buy",
+            "shares": 4.0,
+            "price": 20.29,
+            "value": 81.24116,
+            "profit": null,
+            "portfolio_value": 96.78924
+        },
+        {
+            "date": "2025-01-28",
+            "action": "sell",
+            "shares": 4.0,
+            "price": 19.8,
+            "value": 79.1208,
+            "profit": -2.039199999999994,
+            "portfolio_value": 94.75004000000001
+        },
+        {
+            "date": "2025-01-29",
+            "action": "buy",
+            "shares": 4.0,
+            "price": 19.75,
+            "value": 79.079,
+            "profit": null,
+            "portfolio_value": 94.67104000000002
+        },
+        {
             "date": "2025-01-30",
             "action": "sell",
-            "shares": 0,
+            "shares": 4.0,
             "price": 20.01,
-            "cost": 0,
-            "portfolio_value": 1000.0
+            "value": 79.95996000000001,
+            "profit": 0.9599600000000095,
+            "portfolio_value": 95.63100000000003
         }
     ],
     "model_performance": {
-        "avg_reward": 0.014012175418806769,
-        "final_epsilon": 0.12157665459056936,
-        "training_episodes": 20,
-        "sharpe_ratio": 0.0,
-        "max_drawdown": 0.0
+        "total_trades": 3,
+        "profitable_trades": 1,
+        "win_rate": 33.33333333333333,
+        "total_profit": -4.122559999999993,
+        "sharpe_ratio": -9.195894794584397,
+        "volatility": 0.23599688655336273,
+        "max_drawdown": 0.052472072904501926,
+        "training_episodes": 20
+    },
+    "market_analysis": {
+        "trend": "bearish",
+        "volatility": 0.23599688655336273,
+        "rsi": 0.0,
+        "volume_trend": "increasing"
     },
     "dates": {
-        "training_start": "2024-01-24",
-        "training_end": "2025-01-22",
-        "testing_start": "2025-01-23",
-        "testing_end": "2025-02-03"
+        "train": [
+            "2024-01-24",
+            "2025-01-22"
+        ],
+        "test": [
+            "2025-01-23",
+            "2025-02-03"
+        ]
     }
 }

@@ -1110,6 +1110,8 @@ footer {
 
 .prob-bar .value {
     width: 60px;
+    color: var(--glow-color);
+    font-weight: bold;
 }
 
 .bar {
@@ -2139,10 +2141,71 @@ input:focus, select:focus {
     margin-top: 2rem;
 }
 
-.trade-details {
+.trade-card {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.trade-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.trade-date-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trade-date {
+    color: #888;
+    width: 100px; /* Fixed width for date */
+}
+
+.action-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    width: 60px; /* Fixed width for badge */
+    text-align: center;
+}
+
+.trade-shares {
+    margin-left: auto;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.trade-values {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.value-label {
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 4px;
+}
+
+.value-amount {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1em;
+    color: #00ff9d;
 }
 
 /* Probability Bars Layout */
@@ -2180,12 +2243,17 @@ input:focus, select:focus {
         grid-template-columns: 1fr;  /* Single column on mobile */
     }
 
-    .trade-details {
-        grid-template-columns: 1fr;  /* Single column on mobile */
+    .trade-values {
+        grid-template-columns: 1fr;
     }
-
-    .metric, .stat {
-        padding: 1rem;
+    
+    .value-item {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .value-item:last-child {
+        border-bottom: none;
     }
 }
 
@@ -2201,5 +2269,178 @@ input:focus, select:focus {
 
     .action i {
         font-size: 2rem;
+    }
+}
+
+/* Probability Distribution Styling */
+.probability-distribution {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 157, 0.1);
+}
+
+.prob-row {
+    display: flex;
+    align-items: center;
+    margin: 1.8rem 0;  /* Increased margin between rows */
+    gap: 1.5rem;      /* Increased gap between label and bar */
+}
+
+.prob-label {
+    width: 80px;      /* Increased label width */
+    text-align: right;
+    font-size: 1.1rem; /* Larger font size */
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.prob-bar-container {
+    flex-grow: 1;
+    height: 40px;     /* Increased height */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prob-bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prob-bar-fill.buy {
+    background: linear-gradient(90deg, #00ff9d, #00cc7d);
+    box-shadow: 0 0 25px rgba(0, 255, 157, 0.3);
+}
+
+.prob-bar-fill.hold {
+    background: linear-gradient(90deg, #ffd700, #ffa500);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.prob-bar-fill.sell {
+    background: linear-gradient(90deg, #ff4444, #cc0000);
+    box-shadow: 0 0 25px rgba(255, 68, 68, 0.3);
+}
+
+/* Hover effects */
+.prob-bar-container:hover .prob-bar-fill {
+    filter: brightness(1.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Animation for probability bars */
+@keyframes fillWidth {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .prob-row {
+        margin: 1.5rem 0;
+    }
+    
+    .prob-bar-container {
+        height: 35px;
+    }
+    
+    .prob-label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .prob-label {
+        width: 60px;
+        font-size: 0.9rem;
+    }
+    
+    .prob-bar-container {
+        height: 30px;
+    }
+}
+
+/* Bot Performance Card */
+.bot-performance {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.performance-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Remove the key-metric class distinction and style all metric cards the same */
+.metric-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
+}
+
+.metric-title {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.metric-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.metric-value.positive {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.metric-value.negative {
+    color: #ff4444;
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+}
+
+/* Enhanced Metrics */
+.metric-card.enhanced {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .performance-metrics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .metric-card {
+        padding: 1.2rem;
+    }
+    
+    .metric-value {
+        font-size: 1.2rem;
     }
 }
