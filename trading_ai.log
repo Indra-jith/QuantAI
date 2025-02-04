@@ -9024,3 +9024,6 @@ Testing period: 2025-01-24 to 2025-02-04
 2025-02-04 19:33:06,261 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "POST /process_stock HTTP/1.1" 200 -
 2025-02-04 19:33:06,305 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "GET /results HTTP/1.1" 200 -
 2025-02-04 19:33:06,625 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 20:04:53,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-04 20:04:53,553 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 20:05:02,862 - Main_code - INFO - Trading AI startup

@@ -20,10 +20,11 @@ import random
 import traceback
 from collections import Counter
 from flask import Flask, render_template, request, jsonify
+from logging.handlers import RotatingFileHandler
 
 app = Flask(__name__)
 
-# Add port configuration
+# Configure port
 port = int(os.environ.get("PORT", 8000))
 
 # Configure logging
@@ -39,6 +40,17 @@ logger = logging.getLogger(__name__)
 
 # Suppress warnings
 warnings.filterwarnings('ignore')
+
+if not app.debug:
+    # Configure production logging
+    file_handler = RotatingFileHandler('trading_ai.log', maxBytes=10240, backupCount=10)
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+    ))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Trading AI startup')
 
 class StockDataProcessor:
     def __init__(self, api_key: str):
@@ -731,6 +743,30 @@ def main():
         
     except Exception as e:
         logger.error(f"Error in main: {str(e)}")
+        raise
+
+@app.errorhandler(500)
+def handle_500_error(error):
+    return jsonify({
+        'error': 'Internal Server Error',
+        'message': str(error)
+    }), 500
+
+@app.errorhandler(404)
+def handle_404_error(error):
+    return jsonify({
+        'error': 'Not Found',
+        'message': str(error)
+    }), 404
+
+@app.before_first_request
+def initialize_app():
+    """Initialize any required resources."""
+    try:
+        # Add any initialization code here
+        app.logger.info("Application initialized successfully")
+    except Exception as e:
+        app.logger.error(f"Error initializing application: {str(e)}")
         raise
 
 if __name__ == "__main__":
