@@ -9028,3 +9028,302 @@ Testing period: 2025-01-24 to 2025-02-04
 2025-02-04 20:04:53,553 - werkzeug - INFO -  * Restarting with stat
 2025-02-04 20:05:02,862 - Main_code - INFO - Trading AI startup
 2025-02-04 20:40:32,674 - Main_code - INFO - Trading AI startup
+2025-02-04 21:48:22,789 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 21:48:22,791 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 21:48:36,921 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:36] "GET / HTTP/1.1" 200 -
+2025-02-04 21:48:37,051 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:37] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 21:48:37,053 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:37] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 21:48:37,293 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:37] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:48:37,443 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:37] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:48:37,462 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:37] "GET / HTTP/1.1" 200 -
+2025-02-04 21:48:41,520 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 21:48:42,564 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:48:42,565 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:48:42,566 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:48:42,567 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:48:42,567 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:48:42,571 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 21:48:42] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 21:50:02,159 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 21:50:02,161 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 21:50:07,554 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:50:07] "GET / HTTP/1.1" 200 -
+2025-02-04 21:50:07,655 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:50:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 21:50:07,656 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:50:07] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 21:50:14,021 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:50:14] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:50:25,305 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 21:50:50,672 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:50:50,673 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:50:50,675 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:50:50,676 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:50:50,677 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:50:50,683 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:50:50] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 21:51:03,635 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:51:03] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:51:03,647 - werkzeug - INFO - 192.168.113.160 - - [04/Feb/2025 21:51:03] "GET / HTTP/1.1" 200 -
+2025-02-04 21:52:10,664 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "GET / HTTP/1.1" 200 -
+2025-02-04 21:52:10,679 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 21:52:10,679 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 21:52:10,737 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:52:10,784 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:52:10,796 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:10] "GET / HTTP/1.1" 200 -
+2025-02-04 21:52:17,243 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 21:52:19,537 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:52:19,538 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:52:19,539 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:52:19,540 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:52:19,540 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:52:19,543 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:52:19] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 21:53:55,734 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.148.74:8000
+2025-02-04 21:53:55,736 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 21:53:59,291 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "GET / HTTP/1.1" 200 -
+2025-02-04 21:53:59,410 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 21:53:59,412 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 21:53:59,490 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:53:59,538 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:53:59,555 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:53:59] "GET / HTTP/1.1" 200 -
+2025-02-04 21:54:03,540 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 21:54:04,556 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:54:04,557 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:54:04,558 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:54:04,559 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:54:04,560 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:54:04,562 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:54:04] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 21:55:42,371 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.148.74:8000
+2025-02-04 21:55:42,372 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 21:55:45,393 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "GET / HTTP/1.1" 200 -
+2025-02-04 21:55:45,518 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 21:55:45,520 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 21:55:45,580 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:55:45,626 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:55:45,634 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:45] "GET / HTTP/1.1" 200 -
+2025-02-04 21:55:49,249 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 21:55:50,800 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:55:50,801 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:55:50,801 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:55:50,803 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:55:50,803 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 21:55:50,807 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 21:55:50] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 21:56:25,711 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:25] "GET / HTTP/1.1" 200 -
+2025-02-04 21:56:25,762 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:25] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 21:56:25,763 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:25] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 21:56:26,659 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:26] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 21:56:27,422 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:27] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 21:56:27,439 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:27] "GET / HTTP/1.1" 200 -
+2025-02-04 21:56:30,870 - Main_code - INFO - Downloading data for AAPL...
+2025-02-04 21:56:32,228 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 21:56:32,229 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 21:56:32,230 - Main_code - ERROR - Data processing error: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 21:56:32,230 - Main_code - ERROR - Error initializing trading environment: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 21:56:32,231 - __main__ - ERROR - Error processing stock: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 21:56:32,234 - werkzeug - INFO - 192.168.148.74 - - [04/Feb/2025 21:56:32] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:03:51,283 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.51.129:8000
+2025-02-04 22:03:51,285 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:03:53,814 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:53] "GET / HTTP/1.1" 200 -
+2025-02-04 22:03:53,913 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:03:53,915 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:03:53,997 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:53] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:03:54,041 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:54] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:03:54,048 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:54] "GET / HTTP/1.1" 200 -
+2025-02-04 22:03:57,734 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:03:59,800 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 22:03:59,802 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 22:03:59,803 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:03:59,804 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:03:59,805 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:03:59,809 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:03:59] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:05:11,334 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "GET / HTTP/1.1" 200 -
+2025-02-04 22:05:11,383 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:05:11,386 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:05:11,406 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:05:11,419 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:05:11,431 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:11] "GET / HTTP/1.1" 200 -
+2025-02-04 22:05:14,773 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:05:16,754 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 22:05:16,755 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 22:05:16,755 - Main_code - ERROR - Data processing error: No data returned for AMD. Please verify the symbol is correct.
+2025-02-04 22:05:16,756 - Main_code - ERROR - Error initializing trading environment: No data returned for AMD. Please verify the symbol is correct.
+2025-02-04 22:05:16,757 - __main__ - ERROR - Error processing stock: No data returned for AMD. Please verify the symbol is correct.
+2025-02-04 22:05:16,758 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:05:16] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:06:46,895 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.108.174:8000
+2025-02-04 22:06:46,897 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:06:53,991 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:53] "GET / HTTP/1.1" 200 -
+2025-02-04 22:06:54,089 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:06:54,090 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:06:54,163 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:54] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:06:54,223 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:54] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:06:54,236 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:06:54] "GET / HTTP/1.1" 200 -
+2025-02-04 22:06:58,937 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 22:07:00,282 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 22:07:00,283 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 22:07:00,285 - Main_code - ERROR - Data processing error: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-04 22:07:00,285 - Main_code - ERROR - Error initializing trading environment: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-04 22:07:00,287 - __main__ - ERROR - Error processing stock: No data returned for MSFT. Please verify the symbol is correct.
+2025-02-04 22:07:00,290 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:07:00] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:13:38,804 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:13:38,805 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:13:42,645 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "GET / HTTP/1.1" 200 -
+2025-02-04 22:13:42,718 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:13:42,720 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:13:42,816 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:13:42,870 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:13:42,881 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:42] "GET / HTTP/1.1" 200 -
+2025-02-04 22:13:50,974 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:13:51,867 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 22:13:51,868 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints'}
+2025-02-04 22:13:51,868 - Main_code - ERROR - Data processing error: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:13:51,868 - Main_code - ERROR - Error initializing trading environment: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:13:51,868 - __main__ - ERROR - Error processing stock: No data returned for INTC. Please verify the symbol is correct.
+2025-02-04 22:13:51,870 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:13:51] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:15:25,464 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:15:25,465 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:15:27,756 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:27] "GET / HTTP/1.1" 200 -
+2025-02-04 22:15:27,860 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:15:27,861 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:15:27,957 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:27] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:15:27,999 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:27] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:15:28,007 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:28] "GET / HTTP/1.1" 200 -
+2025-02-04 22:15:32,891 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:15:34,313 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:15:34,323 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:15:34,323 - Main_code - INFO - Data shape: (100, 10), Date range: 2024-09-10 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:15:34,326 - Main_code - INFO - Got 100 days of training data for INTC
+2025-02-04 22:15:34,326 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:15:34,327 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:15:34,327 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:15:34] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:17:24,988 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:24] "GET / HTTP/1.1" 200 -
+2025-02-04 22:17:25,033 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:17:25,035 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:17:25,055 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:25] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:17:25,074 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:25] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:17:25,088 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:25] "GET / HTTP/1.1" 200 -
+2025-02-04 22:17:27,983 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:17:29,251 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:17:29,259 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:17:29,260 - Main_code - INFO - Data shape: (100, 10), Date range: 2024-09-10 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:17:29,263 - Main_code - INFO - Got 100 days of training data for INTC
+2025-02-04 22:17:29,264 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:17:29,265 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:17:29,266 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:17:29] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:18:39,087 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "GET / HTTP/1.1" 200 -
+2025-02-04 22:18:39,136 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:18:39,140 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:18:39,156 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:18:39,183 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:18:39,199 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:39] "GET / HTTP/1.1" 200 -
+2025-02-04 22:18:42,537 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:18:43,193 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:18:43,202 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:18:43,203 - Main_code - INFO - Data shape: (100, 10), Date range: 2024-09-10 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:18:43,205 - Main_code - INFO - Got 100 days of training data for INTC
+2025-02-04 22:18:43,205 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:18:43,206 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:18:43,207 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:18:43] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:19:07,220 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "GET / HTTP/1.1" 200 -
+2025-02-04 22:19:07,270 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:19:07,274 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:19:07,288 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:19:07,312 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:19:07,323 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:07] "GET / HTTP/1.1" 200 -
+2025-02-04 22:19:14,383 - Main_code - INFO - Downloading data for AAPL...
+2025-02-04 22:19:16,294 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:19:16,303 - Main_code - INFO - Successfully downloaded and processed data for AAPL
+2025-02-04 22:19:16,304 - Main_code - INFO - Data shape: (100, 10), Date range: 2024-09-10 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:19:16,306 - Main_code - INFO - Got 100 days of training data for AAPL
+2025-02-04 22:19:16,307 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:19:16,307 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:19:16,308 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:19:16] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:21:26,629 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:21:26,629 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:21:37,211 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "GET / HTTP/1.1" 200 -
+2025-02-04 22:21:37,239 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:21:37,240 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:21:37,308 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:21:37,346 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:21:37,360 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:37] "GET / HTTP/1.1" 200 -
+2025-02-04 22:21:40,655 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:21:41,530 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:21:41,534 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:21:41,535 - Main_code - INFO - Data shape: (100, 10), Date range: 2024-09-10 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:21:41,536 - Main_code - INFO - Got 100 days of training data for INTC
+2025-02-04 22:21:41,537 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:21:41,538 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:21:41,539 - werkzeug - INFO - 172.22.42.220 - - [04/Feb/2025 22:21:41] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:23:39,867 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:23:39,867 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:23:42,168 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "GET / HTTP/1.1" 200 -
+2025-02-04 22:23:42,281 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:23:42,281 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:23:42,363 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:23:42,415 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:23:42,430 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:42] "GET / HTTP/1.1" 200 -
+2025-02-04 22:23:48,530 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 22:23:48,956 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:23:48,990 - Main_code - INFO - RSI calculation successful. Sample values: 2024-09-10     50.0
+2024-09-11    100.0
+2024-09-12    100.0
+2024-09-13    100.0
+2024-09-16    100.0
+Name: RSI, dtype: float64
+2025-02-04 22:23:48,998 - Main_code - INFO - Final columns: ['open', 'high', 'low', 'close', 'volume', 'Returns', 'Volume_MA5', 'EMA5', 'EMA20', 'EMA_Ratio', 'RSI', 'MACD', 'MACD_Signal']
+2025-02-04 22:23:49,002 - Main_code - INFO - RSI stats - min: 21.889443520059118, max: 100.0, mean: 54.86409319704203
+2025-02-04 22:23:49,008 - Main_code - INFO - Got 100 days of training data for MSFT
+2025-02-04 22:23:49,009 - Main_code - ERROR - Error in data processing: 'Volatility'
+2025-02-04 22:23:49,010 - Main_code - ERROR - Error initializing trading environment: 'Volatility'
+2025-02-04 22:23:49,011 - __main__ - ERROR - Error in processing: 'Volatility'
+2025-02-04 22:23:49,011 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:23:49] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:26:13,268 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:26:13,270 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:26:15,361 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "GET / HTTP/1.1" 200 -
+2025-02-04 22:26:15,484 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:26:15,486 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:26:15,554 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:26:15,599 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:26:15,614 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:15] "GET / HTTP/1.1" 200 -
+2025-02-04 22:26:32,921 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:26:35,206 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:26:35,256 - Main_code - INFO - RSI calculation successful. Sample values: 2024-02-05    50.000000
+2024-02-06     0.000000
+2024-02-07    32.518597
+2024-02-08    27.818182
+2024-02-09    43.807502
+Name: RSI, dtype: float64
+2025-02-04 22:26:35,261 - Main_code - INFO - Final columns: ['open', 'high', 'low', 'close', 'volume', 'Returns', 'Volume_MA5', 'EMA5', 'EMA20', 'EMA_Ratio', 'RSI', 'MACD', 'MACD_Signal']
+2025-02-04 22:26:35,262 - Main_code - INFO - RSI stats - min: 0.0, max: 88.75116931711875, mean: 46.39179474246933
+2025-02-04 22:26:35,263 - Main_code - INFO - Successfully downloaded and processed data for AMD
+2025-02-04 22:26:35,264 - Main_code - INFO - Data shape: (250, 13), Date range: 2024-02-05 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:26:35,268 - Main_code - INFO - Got 250 days of training data for AMD
+2025-02-04 22:26:35,269 - Main_code - ERROR - Error in data processing: 'Volatility'
+2025-02-04 22:26:35,270 - Main_code - ERROR - Error initializing trading environment: 'Volatility'
+2025-02-04 22:26:35,270 - __main__ - ERROR - Error in processing: 'Volatility'
+2025-02-04 22:26:35,271 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:35] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
