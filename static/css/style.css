@@ -786,12 +786,7 @@ footer {
     margin: 1rem 0;
 }
 
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns by default */
-    gap: 2rem;
-    margin: 2rem 0;
-}
+
 
 .result-card, .bot-performance {
     width: 100%;
@@ -2024,13 +2019,7 @@ input:focus, select:focus {
     }
 }
 
-/* Enhanced responsive styles for results page */
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns by default */
-    gap: 2rem;
-    margin: 2rem 0;
-}
+
 
 .performance-metrics {
     width: 100%;
@@ -2111,13 +2100,7 @@ input:focus, select:focus {
     }
 }
 
-/* Results Grid Layout */
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns by default */
-    gap: 2rem;
-    margin: 2rem 0;
-}
+
 
 .performance-metrics {
     width: 100%;
@@ -2413,20 +2396,10 @@ input:focus, select:focus {
     }
 }
 
-/* Results Grid Layout */
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns by default */
-    gap: 2rem;
-    margin: 2rem 0;
-}
+
 
 /* Responsive breakpoint for tablets and mobile */
 @media screen and (max-width: 768px) {
-    .results-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 1.5rem; /* Slightly reduced gap for mobile */
-    }
 
     .result-card.recommendation,
     .result-card.model-performance {
@@ -2436,10 +2409,7 @@ input:focus, select:focus {
 
 /* Additional mobile optimizations */
 @media screen and (max-width: 576px) {
-    .results-grid {
-        gap: 1rem;
-        margin: 1rem 0;
-    }
+ 
 
     .result-card {
         padding: 1rem;

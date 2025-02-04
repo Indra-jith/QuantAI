@@ -1,79 +1,97 @@
 {
-    "symbol": "RELI",
+    "symbol": "INTC",
     "initial_balance": 100.0,
-    "final_portfolio_value": 96.94072000000001,
-    "total_return_pct": -3.059279999999987,
+    "final_portfolio_value": 98.27856000000006,
+    "total_return_pct": -1.7214399999999443,
     "recommendation": {
         "action": "BUY",
-        "confidence": 99.16226267814636,
+        "confidence": 64.94139432907104,
         "reason": "RSI indicates oversold conditions",
-        "current_price": 1.97,
+        "current_price": 19.38,
         "probabilities": {
-            "buy": 0.9916226267814636,
-            "sell": 0.0009137820452451706,
-            "hold": 0.007463597692549229
+            "buy": 0.6494139432907104,
+            "sell": 0.18057942390441895,
+            "hold": 0.1700066328048706
         },
         "technical_indicators": {
             "RSI": 0.0,
             "MACD": 0.0,
             "MACD_Signal": 0.0,
-            "EMA5": 2.21,
-            "EMA20": 2.21
+            "EMA5": 20.83,
+            "EMA20": 20.83
         }
     },
     "trading_history": [
         {
-            "date": "2025-01-23",
+            "date": "2025-01-24",
             "action": "buy",
-            "shares": 40.0,
-            "price": 2.21,
-            "value": 88.4884,
+            "shares": 4.0,
+            "price": 20.83,
+            "value": 83.40331999999998,
             "profit": null,
-            "portfolio_value": 99.9116
+            "portfolio_value": 99.91668000000001
         },
         {
-            "date": "2025-01-29",
+            "date": "2025-01-27",
             "action": "sell",
-            "shares": 40.0,
-            "price": 2.14,
-            "value": 85.51440000000001,
-            "profit": -2.8855999999999966,
-            "portfolio_value": 97.02600000000001
+            "shares": 4.0,
+            "price": 20.29,
+            "value": 81.07884,
+            "profit": -2.2411599999999936,
+            "portfolio_value": 97.67552000000002
+        },
+        {
+            "date": "2025-01-28",
+            "action": "buy",
+            "shares": 4.0,
+            "price": 19.8,
+            "value": 79.27919999999999,
+            "profit": null,
+            "portfolio_value": 97.59632000000003
         },
         {
             "date": "2025-01-30",
+            "action": "sell",
+            "shares": 4.0,
+            "price": 20.01,
+            "value": 79.95996000000001,
+            "profit": 0.7599600000000066,
+            "portfolio_value": 98.35628000000004
+        },
+        {
+            "date": "2025-01-31",
             "action": "buy",
-            "shares": 41.0,
-            "price": 2.08,
-            "value": 85.36528,
+            "shares": 4.0,
+            "price": 19.43,
+            "value": 77.79771999999998,
             "profit": null,
-            "portfolio_value": 96.94072000000001
+            "portfolio_value": 98.27856000000006
         }
     ],
     "model_performance": {
-        "total_trades": 2,
-        "profitable_trades": 0,
-        "win_rate": 0.0,
-        "total_profit": -2.8855999999999966,
-        "sharpe_ratio": -16.871038327627186,
-        "volatility": 0.22226368038013172,
-        "max_drawdown": 0.029735085815861158,
+        "total_trades": 3,
+        "profitable_trades": 1,
+        "win_rate": 33.33333333333333,
+        "total_profit": -1.481199999999987,
+        "sharpe_ratio": -5.77166075520559,
+        "volatility": 0.1773158549251604,
+        "max_drawdown": 0.023222949361407716,
         "training_episodes": 20
     },
     "market_analysis": {
         "trend": "bearish",
-        "volatility": 0.22226368038013172,
+        "volatility": 0.1773158549251604,
         "rsi": 0.0,
-        "volume_trend": "increasing"
+        "volume_trend": "decreasing"
     },
     "dates": {
         "train": [
-            "2024-01-24",
-            "2025-01-22"
+            "2024-01-25",
+            "2025-01-23"
         ],
         "test": [
-            "2025-01-23",
-            "2025-02-03"
+            "2025-01-24",
+            "2025-02-04"
         ]
     }
 }
