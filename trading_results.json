@@ -1,5 +1,5 @@
 {
-    "symbol": "MSFT",
+    "symbol": "GOOGL",
     "training_return": 0.0,
     "final_portfolio_value": 100.0,
     "initial_balance": 100,
@@ -27,18 +27,18 @@
     },
     "recommendation": {
         "action": "BUY",
-        "confidence": 38.8782799243927,
-        "reason": "RSI indicates oversold conditions",
+        "confidence": 41.83635711669922,
+        "reason": "MACD shows bullish crossover",
         "probabilities": {
-            "hold": 0.22385644912719727,
-            "buy": 0.388782799243927,
-            "sell": 0.38736069202423096
+            "hold": 0.3353409469127655,
+            "buy": 0.4183635711669922,
+            "sell": 0.24629545211791992
         },
         "trend_analysis": {
             "recent_return": 0.0,
             "total_return": 0.0
         },
-        "timestamp": "2025-02-04 23:15:32"
+        "timestamp": "2025-02-04 23:19:24"
     },
     "trading_history": []
 }

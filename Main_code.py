@@ -339,6 +339,7 @@ class StockTradingEnvironment:
         
         self.data = data
         self.initial_balance = initial_balance
+        self.trading_history = []  # Initialize trading history list
         self.reset()
         self.state_size = 12
         self.action_size = 3  # hold, buy, sell
@@ -353,7 +354,7 @@ class StockTradingEnvironment:
         self.total_trades = 0
         self.profitable_trades = 0
         self.total_profit = 0
-        self.trading_history = []
+        self.trading_history = []  # Reset trading history
         self._portfolio_value = self.initial_balance
         return self._get_state()
 
@@ -372,8 +373,8 @@ class StockTradingEnvironment:
         old_portfolio_value = self.balance + (self.shares_held * current_price)
         
         if action == 1:  # Buy
-            if self.shares_held == 0:
-                max_shares = int(self.balance * 0.9 / (current_price * (1 + self.transaction_fee)))
+            if self.balance > 0:  # Changed condition to allow buying if there's any balance
+                max_shares = int(self.balance / (current_price * (1 + self.transaction_fee)))
                 
                 if max_shares > 0:
                     shares_to_buy = max_shares
@@ -381,22 +382,21 @@ class StockTradingEnvironment:
                     
                     if cost <= self.balance:
                         self.balance -= cost
-                        self.shares_held = shares_to_buy
+                        self.shares_held += shares_to_buy
                         self.entry_price = current_price
                         self.total_trades += 1
                         
-                        # Record buy trade with all required fields
+                        # Record buy trade
                         trade_info = {
                             'date': current_date.strftime('%Y-%m-%d'),
                             'action': 'BUY',
                             'shares': shares_to_buy,
                             'price': current_price,
-                            'value': shares_to_buy * current_price,
+                            'value': cost,
                             'portfolio_value': self.balance + (self.shares_held * current_price)
                         }
                         self.trading_history.append(trade_info)
-                        
-                        reward = 1  # Base reward for successful buy
+                        reward = 1
         
         elif action == 2:  # Sell
             if self.shares_held > 0:
@@ -408,7 +408,7 @@ class StockTradingEnvironment:
                     self.profitable_trades += 1
                 self.total_profit += profit
                 
-                # Record sell trade with all required fields
+                # Record sell trade
                 trade_info = {
                     'date': current_date.strftime('%Y-%m-%d'),
                     'action': 'SELL',
@@ -423,7 +423,7 @@ class StockTradingEnvironment:
                 self.shares_held = 0
                 self.entry_price = 0
                 
-                reward = max(1.0, profit / self.initial_balance * 10)  # Reward based on profit
+                reward = max(1.0, profit / self.initial_balance * 10)
         
         # Update portfolio value and step
         new_portfolio_value = self.balance + (self.shares_held * current_price)
