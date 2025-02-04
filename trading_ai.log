@@ -8884,3 +8884,143 @@ Testing period: 2025-01-24 to 2025-02-04
 2025-02-04 18:55:48,245 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:55:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-02-04 18:56:13,327 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:56:13] "GET /results HTTP/1.1" 200 -
 2025-02-04 18:56:13,364 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:56:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:10:57,250 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:10:57] "GET / HTTP/1.1" 200 -
+2025-02-04 19:10:57,501 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:10:57] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 19:10:57,613 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:10:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 19:10:57,744 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:10:57,829 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:10:57] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 19:10:58,135 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:10:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-04 19:27:41,054 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-04 19:27:41,054 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 19:27:41,056 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:27:44,828 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:27:44,832 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:29:56,811 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-04 19:29:57,254 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-04 19:29:57,310 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:29:58,276 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:30:01,351 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:30:01,356 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:30:02,133 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:30:02,138 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:30:40,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-04 19:30:40,949 - werkzeug - INFO -  * Detected change in 'C:\\Users\\indra\\Desktop\\Project\\Code\\Main_code.py', reloading
+2025-02-04 19:30:41,385 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:30:41,574 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:30:45,116 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:30:45,121 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:30:45,236 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:30:45,240 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:31:12,254 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:12] "GET / HTTP/1.1" 200 -
+2025-02-04 19:31:12,543 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:31:12,603 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 19:31:12,671 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:31:12,717 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 19:31:24,429 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:24] "GET / HTTP/1.1" 200 -
+2025-02-04 19:31:24,698 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:31:24,767 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 19:31:24,835 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:31:24,877 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 19:31:30,674 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:31:30,676 - __main__ - INFO - Processing stock data for AERT
+2025-02-04 19:31:30,677 - Main_code - INFO - Training period: 2024-01-25 to 2025-01-23
+Testing period: 2025-01-24 to 2025-02-04
+2025-02-04 19:31:30,677 - __main__ - INFO - Fetching training data for AERT
+2025-02-04 19:31:30,677 - Main_code - INFO - Downloading data for AERT...
+2025-02-04 19:31:36,634 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 19:31:36,647 - Main_code - INFO - Successfully downloaded and processed data for AERT
+2025-02-04 19:31:36,648 - Main_code - INFO - Data shape: (784, 10), Date range: 2021-12-17 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 19:31:36,668 - Main_code - INFO - Got 250 days of data for AERT
+2025-02-04 19:31:36,669 - __main__ - INFO - Fetching testing data for AERT
+2025-02-04 19:31:36,669 - Main_code - INFO - Downloading data for AERT...
+2025-02-04 19:31:46,333 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 19:31:46,343 - Main_code - INFO - Successfully downloaded and processed data for AERT
+2025-02-04 19:31:46,343 - Main_code - INFO - Data shape: (784, 10), Date range: 2021-12-17 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 19:31:46,355 - Main_code - INFO - Got 7 days of data for AERT
+2025-02-04 19:31:46,356 - __main__ - INFO - Initializing environments
+2025-02-04 19:31:46,357 - __main__ - INFO - Training model
+2025-02-04 19:31:47,334 - Main_code - INFO - Episode: 1/20, Total Reward: 184.7018812588781
+2025-02-04 19:31:47,729 - Main_code - INFO - Episode: 2/20, Total Reward: 290.86091794041766
+2025-02-04 19:31:48,120 - Main_code - INFO - Episode: 3/20, Total Reward: 311.711448664828
+2025-02-04 19:31:48,518 - Main_code - INFO - Episode: 4/20, Total Reward: 315.4358366512642
+2025-02-04 19:31:48,911 - Main_code - INFO - Episode: 5/20, Total Reward: 318.8619940312174
+2025-02-04 19:31:49,302 - Main_code - INFO - Episode: 6/20, Total Reward: 317.43168165010417
+2025-02-04 19:31:49,776 - Main_code - INFO - Episode: 7/20, Total Reward: 313.7442943498118
+2025-02-04 19:31:50,323 - Main_code - INFO - Episode: 8/20, Total Reward: 323.772140004347
+2025-02-04 19:31:50,922 - Main_code - INFO - Episode: 9/20, Total Reward: 320.86124353690786
+2025-02-04 19:31:51,530 - Main_code - INFO - Episode: 10/20, Total Reward: 311.57719712090375
+2025-02-04 19:31:52,112 - Main_code - INFO - Episode: 11/20, Total Reward: 332.1228272216347
+2025-02-04 19:31:52,545 - Main_code - INFO - Episode: 12/20, Total Reward: 323.9514377457315
+2025-02-04 19:31:52,964 - Main_code - INFO - Episode: 13/20, Total Reward: 319.5655029331898
+2025-02-04 19:31:53,392 - Main_code - INFO - Episode: 14/20, Total Reward: 325.0095029176416
+2025-02-04 19:31:53,806 - Main_code - INFO - Episode: 15/20, Total Reward: 325.9195713822769
+2025-02-04 19:31:54,239 - Main_code - INFO - Episode: 16/20, Total Reward: 325.366298297133
+2025-02-04 19:31:54,680 - Main_code - INFO - Episode: 17/20, Total Reward: 314.93408397157276
+2025-02-04 19:31:55,107 - Main_code - INFO - Episode: 18/20, Total Reward: 319.423536044828
+2025-02-04 19:31:55,515 - Main_code - INFO - Episode: 19/20, Total Reward: 309.76853079927446
+2025-02-04 19:31:55,908 - Main_code - INFO - Episode: 20/20, Total Reward: 322.0281884184834
+2025-02-04 19:31:55,908 - __main__ - INFO - Testing model and generating recommendations
+2025-02-04 19:31:55,913 - __main__ - INFO - Successfully processed AERT
+2025-02-04 19:31:55,915 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:55] "POST /process_stock HTTP/1.1" 200 -
+2025-02-04 19:31:55,964 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:55] "GET /results HTTP/1.1" 200 -
+2025-02-04 19:31:56,284 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:31:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:32:24,166 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-04 19:32:24,167 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 19:32:24,171 - werkzeug - INFO -  * Restarting with stat
+2025-02-04 19:32:28,177 - werkzeug - WARNING -  * Debugger is active!
+2025-02-04 19:32:28,184 - werkzeug - INFO -  * Debugger PIN: 144-120-015
+2025-02-04 19:32:29,523 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:29] "GET / HTTP/1.1" 200 -
+2025-02-04 19:32:29,813 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:32:29,871 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 19:32:29,939 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:32:29,985 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:29] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 19:32:31,717 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:31] "GET / HTTP/1.1" 200 -
+2025-02-04 19:32:31,973 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 19:32:32,050 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 19:32:32,106 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:32:32,151 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:32:32] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 19:32:52,010 - __main__ - INFO - Loaded 11712 stock symbols
+2025-02-04 19:32:52,015 - __main__ - INFO - Processing stock data for ACCO
+2025-02-04 19:32:52,016 - Main_code - INFO - Training period: 2024-01-25 to 2025-01-23
+Testing period: 2025-01-24 to 2025-02-04
+2025-02-04 19:32:52,018 - __main__ - INFO - Fetching training data for ACCO
+2025-02-04 19:32:52,018 - Main_code - INFO - Downloading data for ACCO...
+2025-02-04 19:32:54,042 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 19:32:54,093 - Main_code - INFO - Successfully downloaded and processed data for ACCO
+2025-02-04 19:32:54,094 - Main_code - INFO - Data shape: (4897, 10), Date range: 2005-08-17 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 19:32:54,123 - Main_code - INFO - Got 250 days of data for ACCO
+2025-02-04 19:32:54,123 - __main__ - INFO - Fetching testing data for ACCO
+2025-02-04 19:32:54,124 - Main_code - INFO - Downloading data for ACCO...
+2025-02-04 19:32:56,282 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 19:32:56,315 - Main_code - INFO - Successfully downloaded and processed data for ACCO
+2025-02-04 19:32:56,316 - Main_code - INFO - Data shape: (4897, 10), Date range: 2005-08-17 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 19:32:56,330 - Main_code - INFO - Got 7 days of data for ACCO
+2025-02-04 19:32:56,331 - __main__ - INFO - Initializing environments
+2025-02-04 19:32:56,332 - __main__ - INFO - Training model
+2025-02-04 19:32:57,700 - Main_code - INFO - Episode: 1/20, Total Reward: 161.0555744525457
+2025-02-04 19:32:58,162 - Main_code - INFO - Episode: 2/20, Total Reward: 262.9242476925765
+2025-02-04 19:32:58,644 - Main_code - INFO - Episode: 3/20, Total Reward: 269.92594063006146
+2025-02-04 19:32:59,160 - Main_code - INFO - Episode: 4/20, Total Reward: 269.606788629166
+2025-02-04 19:32:59,675 - Main_code - INFO - Episode: 5/20, Total Reward: 259.0453376431589
+2025-02-04 19:33:00,143 - Main_code - INFO - Episode: 6/20, Total Reward: 269.81967372625707
+2025-02-04 19:33:00,629 - Main_code - INFO - Episode: 7/20, Total Reward: 271.32412224272434
+2025-02-04 19:33:01,110 - Main_code - INFO - Episode: 8/20, Total Reward: 285.21646462618116
+2025-02-04 19:33:01,561 - Main_code - INFO - Episode: 9/20, Total Reward: 268.39829337723444
+2025-02-04 19:33:02,054 - Main_code - INFO - Episode: 10/20, Total Reward: 265.5161515925918
+2025-02-04 19:33:02,508 - Main_code - INFO - Episode: 11/20, Total Reward: 265.2140273943954
+2025-02-04 19:33:02,918 - Main_code - INFO - Episode: 12/20, Total Reward: 272.99018051673477
+2025-02-04 19:33:03,369 - Main_code - INFO - Episode: 13/20, Total Reward: 267.10323645031036
+2025-02-04 19:33:03,777 - Main_code - INFO - Episode: 14/20, Total Reward: 270.79921288126906
+2025-02-04 19:33:04,186 - Main_code - INFO - Episode: 15/20, Total Reward: 273.1636945309333
+2025-02-04 19:33:04,589 - Main_code - INFO - Episode: 16/20, Total Reward: 264.88772059446114
+2025-02-04 19:33:05,020 - Main_code - INFO - Episode: 17/20, Total Reward: 271.3903874520516
+2025-02-04 19:33:05,424 - Main_code - INFO - Episode: 18/20, Total Reward: 276.320273982725
+2025-02-04 19:33:05,831 - Main_code - INFO - Episode: 19/20, Total Reward: 272.9312388450366
+2025-02-04 19:33:06,253 - Main_code - INFO - Episode: 20/20, Total Reward: 262.61898950316544
+2025-02-04 19:33:06,254 - __main__ - INFO - Testing model and generating recommendations
+2025-02-04 19:33:06,259 - __main__ - INFO - Successfully processed ACCO
+2025-02-04 19:33:06,261 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "POST /process_stock HTTP/1.1" 200 -
+2025-02-04 19:33:06,305 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "GET /results HTTP/1.1" 200 -
+2025-02-04 19:33:06,625 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 19:33:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

@@ -1,88 +1,88 @@
 {
-    "symbol": "INTC",
+    "symbol": "ACCO",
     "initial_balance": 100.0,
-    "final_portfolio_value": 98.27856000000006,
-    "total_return_pct": -1.7214399999999443,
+    "final_portfolio_value": 102.27052000000002,
+    "total_return_pct": 2.270520000000019,
     "recommendation": {
         "action": "BUY",
-        "confidence": 64.94139432907104,
+        "confidence": 59.08902883529663,
         "reason": "RSI indicates oversold conditions",
-        "current_price": 19.38,
+        "current_price": 5.09,
         "probabilities": {
-            "buy": 0.6494139432907104,
-            "sell": 0.18057942390441895,
-            "hold": 0.1700066328048706
+            "buy": 0.5908902883529663,
+            "sell": 0.17754201591014862,
+            "hold": 0.23156771063804626
         },
         "technical_indicators": {
             "RSI": 0.0,
             "MACD": 0.0,
             "MACD_Signal": 0.0,
-            "EMA5": 20.83,
-            "EMA20": 20.83
+            "EMA5": 5.24,
+            "EMA20": 5.24
         }
     },
     "trading_history": [
         {
             "date": "2025-01-24",
             "action": "buy",
-            "shares": 4.0,
-            "price": 20.83,
-            "value": 83.40331999999998,
+            "shares": 17.0,
+            "price": 5.24,
+            "value": 89.16908,
             "profit": null,
-            "portfolio_value": 99.91668000000001
+            "portfolio_value": 99.91092
         },
         {
             "date": "2025-01-27",
             "action": "sell",
-            "shares": 4.0,
-            "price": 20.29,
-            "value": 81.07884,
-            "profit": -2.2411599999999936,
-            "portfolio_value": 97.67552000000002
+            "shares": 17.0,
+            "price": 5.35,
+            "value": 90.85904999999998,
+            "profit": 1.7790499999999838,
+            "portfolio_value": 101.68996999999999
         },
         {
             "date": "2025-01-28",
             "action": "buy",
-            "shares": 4.0,
-            "price": 19.8,
-            "value": 79.27919999999999,
+            "shares": 17.0,
+            "price": 5.27,
+            "value": 89.67958999999998,
             "profit": null,
-            "portfolio_value": 97.59632000000003
+            "portfolio_value": 101.60038
         },
         {
             "date": "2025-01-30",
             "action": "sell",
-            "shares": 4.0,
-            "price": 20.01,
-            "value": 79.95996000000001,
-            "profit": 0.7599600000000066,
-            "portfolio_value": 98.35628000000004
+            "shares": 17.0,
+            "price": 5.32,
+            "value": 90.34956,
+            "profit": 0.7595600000000076,
+            "portfolio_value": 102.35994000000001
         },
         {
             "date": "2025-01-31",
             "action": "buy",
-            "shares": 4.0,
-            "price": 19.43,
-            "value": 77.79771999999998,
+            "shares": 17.0,
+            "price": 5.26,
+            "value": 89.50941999999999,
             "profit": null,
-            "portfolio_value": 98.27856000000006
+            "portfolio_value": 102.27052000000002
         }
     ],
     "model_performance": {
         "total_trades": 3,
-        "profitable_trades": 1,
-        "win_rate": 33.33333333333333,
-        "total_profit": -1.481199999999987,
-        "sharpe_ratio": -5.77166075520559,
-        "volatility": 0.1773158549251604,
-        "max_drawdown": 0.023222949361407716,
+        "profitable_trades": 2,
+        "win_rate": 66.66666666666666,
+        "total_profit": 2.5386099999999914,
+        "sharpe_ratio": 12.153332382420475,
+        "volatility": 0.12196213469946487,
+        "max_drawdown": 0.0008810111754383148,
         "training_episodes": 20
     },
     "market_analysis": {
         "trend": "bearish",
-        "volatility": 0.1773158549251604,
+        "volatility": 0.12196213469946487,
         "rsi": 0.0,
-        "volume_trend": "decreasing"
+        "volume_trend": "increasing"
     },
     "dates": {
         "train": [

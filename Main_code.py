@@ -19,6 +19,12 @@ import os
 import random
 import traceback
 from collections import Counter
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+# Add port configuration
+port = int(os.environ.get("PORT", 8000))
 
 # Configure logging
 logging.basicConfig(
@@ -728,4 +734,4 @@ def main():
         raise
 
 if __name__ == "__main__":
-    main()
+    app.run(host='0.0.0.0', port=port)
