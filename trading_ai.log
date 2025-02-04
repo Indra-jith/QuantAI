@@ -8880,3 +8880,7 @@ Testing period: 2025-01-24 to 2025-02-04
 2025-02-04 18:54:40,504 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:54:40] "GET /static/css/style.css HTTP/1.1" 200 -
 2025-02-04 18:54:50,099 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:54:50] "GET /results HTTP/1.1" 200 -
 2025-02-04 18:54:50,138 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:54:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 18:55:48,204 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:55:48] "GET /results HTTP/1.1" 200 -
+2025-02-04 18:55:48,245 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:55:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 18:56:13,327 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:56:13] "GET /results HTTP/1.1" 200 -
+2025-02-04 18:56:13,364 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 18:56:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
