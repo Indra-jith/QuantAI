@@ -36,32 +36,37 @@ document.addEventListener('DOMContentLoaded', function() {
             showLoading();
             
             try {
+                const formData = new FormData(this);
                 const response = await fetch('/process_stock', {
                     method: 'POST',
+                    body: formData,
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ symbol: symbol })
+                        'Accept': '*/*'  // Accept any response type
+                    }
                 });
                 
-                // Check if response is JSON
+                // Handle redirects
+                if (response.redirected) {
+                    window.location.href = response.url;
+                    return;
+                }
+                
+                // Try to parse JSON if available
                 const contentType = response.headers.get('content-type');
-                if (!contentType || !contentType.includes('application/json')) {
-                    throw new Error('Server returned non-JSON response');
+                if (contentType && contentType.includes('application/json')) {
+                    const data = await response.json();
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                        return;
+                    }
                 }
                 
-                const data = await response.json();
+                // If we get here, follow the response URL
+                window.location.href = response.url;
                 
-                if (!response.ok) {
-                    throw new Error(data.error || 'Server error');
-                }
-                
-                if (data.redirect) {
-                    window.location.href = data.redirect;
-                } else {
-                    hideLoading();
-                }
             } catch (error) {
                 console.error('Error:', error);
                 alert(error.message || 'An error occurred while processing your request');
@@ -167,16 +172,33 @@ suggestionsBox.addEventListener('click', function(e) {
         // Make the API call
         fetch(form.action, {
             method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.redirect) {
-                window.location.href = data.redirect;
-            } else if (data.error) {
-                loadingElement.classList.add('hidden');
-                alert(data.error);
+            body: formData,
+            headers: {
+                'Accept': '*/*'  // Accept any response type
             }
+        })
+        .then(response => {
+            // Check if we got redirected
+            if (response.redirected) {
+                window.location.href = response.url;
+                return;
+            }
+            
+            // Try to parse as JSON if possible
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json().then(data => {
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    }
+                });
+            }
+            
+            // If we get here, just follow the response
+            window.location.href = response.url;
         })
         .catch(error => {
             console.error('Error:', error);
@@ -207,16 +229,33 @@ function analyzeStock(event) {
     // Make the API call
     fetch(form.action, {
         method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.redirect) {
-            window.location.href = data.redirect;
-        } else if (data.error) {
-            loadingElement.classList.add('hidden');
-            alert(data.error);
+        body: formData,
+        headers: {
+            'Accept': '*/*'  // Accept any response type
         }
+    })
+    .then(response => {
+        // Check if we got redirected
+        if (response.redirected) {
+            window.location.href = response.url;
+            return;
+        }
+        
+        // Try to parse as JSON if possible
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+            return response.json().then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                }
+            });
+        }
+        
+        // If we get here, just follow the response
+        window.location.href = response.url;
     })
     .catch(error => {
         console.error('Error:', error);

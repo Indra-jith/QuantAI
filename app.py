@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
 import os
-from Main_code import initialize_trading_environment, generate_trading_recommendations, save_trading_results
+import json
+from Main_code import initialize_trading_environment, generate_trading_recommendations, save_trading_results, StockDataProcessor
 import logging
+import re
+import requests
 
 app = Flask(__name__)
 app.secret_key = 'dev'  # Simple secret key for development
@@ -59,35 +62,116 @@ def get_stock_data():
     """Return the stock list."""
     return jsonify(STOCK_LIST)
 
+@app.route('/results')
+def results():
+    """Display the results page."""
+    try:
+        results_path = os.path.join(os.path.dirname(__file__), 'trading_results.json')
+        
+        if not os.path.exists(results_path):
+            logger.error("Results file not found")
+            flash('No results available')
+            return redirect(url_for('index'))
+        
+        try:
+            with open(results_path, 'r') as f:
+                file_content = f.read()
+                if not file_content.strip():
+                    logger.error("Results file is empty")
+                    flash('No results available')
+                    return redirect(url_for('index'))
+                results = json.loads(file_content)
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON in results file: {str(e)}")
+            flash('Error loading results')
+            return redirect(url_for('index'))
+        
+        # Validate required fields
+        required_fields = ['symbol', 'final_portfolio_value', 'initial_balance', 'model_performance']
+        missing_fields = [field for field in required_fields if field not in results]
+        if missing_fields:
+            logger.error(f"Missing required fields in results: {missing_fields}")
+            flash('Invalid results data')
+            return redirect(url_for('index'))
+        
+        # Ensure all required fields exist with defaults
+        if 'model_performance' not in results:
+            results['model_performance'] = {}
+        
+        model_perf = results['model_performance']
+        model_perf.setdefault('total_trades', 0)
+        model_perf.setdefault('total_profit', 0)
+        
+        # Ensure required fields exist
+        results.setdefault('final_portfolio_value', results.get('testing', {}).get('final_value', 100))
+        results.setdefault('total_return_pct', results.get('testing', {}).get('return', 0) * 100)
+        results.setdefault('initial_balance', 100)
+        results.setdefault('trading_history', [])
+        
+        logger.info("Successfully loaded results for display")
+        return render_template('results.html', results=results)
+        
+    except Exception as e:
+        logger.error(f"Error loading results: {str(e)}")
+        flash('Error loading results')
+        return redirect(url_for('index'))
+
 @app.route('/process_stock', methods=['POST'])
 def process_stock():
     """Process the stock analysis request."""
     try:
-        symbol = request.form.get('symbol')
+        symbol = request.form.get('symbol', '').strip().upper()
         if not symbol:
             flash('Please enter a valid stock symbol')
             return redirect(url_for('index'))
-            
-        # Make API key available to Main_code.py
+        
+        # Validate symbol format
+        if not re.match(r'^[A-Z]{1,5}$', symbol):
+            flash('Invalid stock symbol format')
+            return redirect(url_for('index'))
+        
         os.environ['ALPHA_VANTAGE_API_KEY'] = API_KEY
         
-        # Initialize environment and agent
-        agent, env = initialize_trading_environment(symbol)
-        
-        # Train the agent
-        results = agent.evaluate_model(env)
-        
-        # Generate recommendations
-        recommendation = generate_trading_recommendations(agent, env)
-        
-        # Save results
-        save_trading_results(symbol, results, recommendation)
-        
-        return jsonify(recommendation)
-        
+        try:
+            # Initialize environments
+            agent, train_env, test_env = initialize_trading_environment(symbol)
+            
+            # Train the agent
+            train_results = agent.evaluate_model(train_env)
+            logger.info(f"Training completed for {symbol}")
+            
+            # Test the agent
+            test_results = agent.evaluate_model(test_env)
+            logger.info(f"Testing completed for {symbol}")
+            
+            # Generate recommendations
+            recommendation = generate_trading_recommendations(agent, test_env)
+            
+            # Save results
+            save_trading_results(symbol, train_results, test_results, recommendation)
+            logger.info(f"Results saved for {symbol}")
+            
+            return redirect(url_for('results'))
+            
+        except ValueError as e:
+            logger.error(f"Value error processing {symbol}: {str(e)}")
+            flash(str(e))
+            return redirect(url_for('index'))
+            
+        except requests.exceptions.RequestException as e:
+            logger.error(f"API error for {symbol}: {str(e)}")
+            flash('Error accessing stock data. Please try again later.')
+            return redirect(url_for('index'))
+            
+        except Exception as e:
+            logger.error(f"Unexpected error processing {symbol}: {str(e)}")
+            flash('An unexpected error occurred. Please try again later.')
+            return redirect(url_for('index'))
+            
     except Exception as e:
-        logger.error(f"Error processing stock: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        logger.error(f"Critical error: {str(e)}")
+        flash('A system error occurred. Please try again later.')
+        return redirect(url_for('index'))
 
 @app.errorhandler(404)
 def not_found_error(error):

@@ -9327,3 +9327,571 @@ Name: RSI, dtype: float64
 2025-02-04 22:26:35,270 - Main_code - ERROR - Error initializing trading environment: 'Volatility'
 2025-02-04 22:26:35,270 - __main__ - ERROR - Error in processing: 'Volatility'
 2025-02-04 22:26:35,271 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:26:35] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:28:26,191 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:28:26,191 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:28:29,023 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "GET / HTTP/1.1" 200 -
+2025-02-04 22:28:29,161 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:28:29,162 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:28:29,229 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:28:29,305 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:28:29,313 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:29] "GET / HTTP/1.1" 200 -
+2025-02-04 22:28:32,207 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:28:34,135 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:28:34,170 - Main_code - INFO - RSI calculation successful. Sample values: 2024-02-05    50.000000
+2024-02-06     0.000000
+2024-02-07    57.142857
+2024-02-08    11.428571
+2024-02-09    73.275862
+Name: RSI, dtype: float64
+2025-02-04 22:28:34,174 - Main_code - INFO - Final columns: ['open', 'high', 'low', 'close', 'volume', 'Returns', 'Volume_MA5', 'EMA5', 'EMA20', 'EMA_Ratio', 'Volatility', 'RSI', 'MACD', 'MACD_Signal']
+2025-02-04 22:28:34,175 - Main_code - INFO - RSI stats - min: 0.0, max: 85.57046979865777, mean: 45.48741882860188
+2025-02-04 22:28:34,176 - Main_code - INFO - Volatility stats - min: 0.1715407961569046, max: 1.1013513693746062, mean: 0.46384453710566176
+2025-02-04 22:28:34,176 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:28:34,177 - Main_code - INFO - Data shape: (250, 14), Date range: 2024-02-05 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:28:34,184 - Main_code - INFO - Got 250 days of training data for INTC
+2025-02-04 22:28:36,507 - __main__ - ERROR - Error in processing: single positional indexer is out-of-bounds
+2025-02-04 22:28:36,509 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:36] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:28:44,426 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:28:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:31:36,301 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:31:36,301 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:31:38,371 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "GET / HTTP/1.1" 200 -
+2025-02-04 22:31:38,402 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:31:38,408 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:31:38,474 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:31:38,527 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:31:38,550 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:38] "GET / HTTP/1.1" 200 -
+2025-02-04 22:31:42,680 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:31:44,751 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:31:44,780 - Main_code - INFO - RSI calculation successful. Sample values: 2024-02-05    50.000000
+2024-02-06     0.000000
+2024-02-07    57.142857
+2024-02-08    11.428571
+2024-02-09    73.275862
+Name: RSI, dtype: float64
+2025-02-04 22:31:44,785 - Main_code - INFO - Final columns: ['open', 'high', 'low', 'close', 'volume', 'Returns', 'Volume_MA5', 'EMA5', 'EMA20', 'EMA_Ratio', 'Volatility', 'RSI', 'MACD', 'MACD_Signal']
+2025-02-04 22:31:44,786 - Main_code - INFO - RSI stats - min: 0.0, max: 85.57046979865777, mean: 45.48741882860188
+2025-02-04 22:31:44,787 - Main_code - INFO - Volatility stats - min: 0.1715407961569046, max: 1.1013513693746062, mean: 0.46384453710566176
+2025-02-04 22:31:44,787 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:31:44,788 - Main_code - INFO - Data shape: (250, 14), Date range: 2024-02-05 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:31:44,791 - Main_code - INFO - Got 250 days of training data for INTC
+2025-02-04 22:31:44,830 - __main__ - ERROR - Error in processing: single positional indexer is out-of-bounds
+2025-02-04 22:31:44,832 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:31:44] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:34:02,059 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:34:02,061 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:34:04,782 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:04] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:04,881 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:34:04,884 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:34:04,952 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:04] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:34:05,004 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:05] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:34:05,019 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:05] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:11,261 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:34:13,202 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:34:13,237 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:34:13,238 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:34:13,241 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:34:13,242 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:34:13,243 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:34:13,243 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:13] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:34:40,599 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:40,644 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:34:40,647 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:34:40,661 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:34:40,677 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:34:40,694 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:40] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:54,194 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:54,239 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:34:54,242 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:34:54,256 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:34:54,274 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:34:54,289 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:54] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:55,046 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "GET / HTTP/1.1" 200 -
+2025-02-04 22:34:55,094 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:34:55,098 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:34:55,121 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:34:55,141 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:34:55,161 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:34:55] "GET / HTTP/1.1" 200 -
+2025-02-04 22:35:44,519 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:35:44,519 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:35:46,962 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:46] "GET / HTTP/1.1" 200 -
+2025-02-04 22:35:47,752 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-02-04 22:35:47,753 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:47] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 22:35:47,779 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:47] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:35:47,879 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:47] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:35:47,888 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:35:56,504 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:35:58,950 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:35:58,987 - Main_code - INFO - Successfully downloaded and processed data for AMD
+2025-02-04 22:35:58,988 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:35:58,991 - Main_code - INFO - Got 6353 days of training data for AMD
+2025-02-04 22:35:58,992 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:35:58,992 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:35:58,993 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:35:58] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:36:40,136 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:36:40,142 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:40] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:36:40,159 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:40] "GET / HTTP/1.1" 200 -
+2025-02-04 22:36:42,493 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:36:42,536 - Main_code - INFO - Successfully downloaded and processed data for AMD
+2025-02-04 22:36:42,536 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:36:42,541 - Main_code - INFO - Got 6353 days of training data for AMD
+2025-02-04 22:36:42,542 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:36:42,543 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:36:42,545 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:42] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:36:47,723 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:36:47,772 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:36:47,778 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:36:47,839 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:36:47,846 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:36:47,857 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:36:50,732 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:36:53,386 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:36:53,410 - Main_code - INFO - Successfully downloaded and processed data for AMD
+2025-02-04 22:36:53,411 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:36:53,413 - Main_code - INFO - Got 6353 days of training data for AMD
+2025-02-04 22:36:53,414 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:36:53,414 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:36:53,416 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:36:53] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:38:12,858 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "GET / HTTP/1.1" 200 -
+2025-02-04 22:38:12,903 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:38:12,906 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:38:12,926 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:38:12,938 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:38:12,947 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:12] "GET / HTTP/1.1" 200 -
+2025-02-04 22:38:19,971 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 22:38:23,506 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:38:23,526 - Main_code - INFO - Successfully downloaded and processed data for AMD
+2025-02-04 22:38:23,527 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:38:23,531 - Main_code - INFO - Got 6353 days of training data for AMD
+2025-02-04 22:38:23,532 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:38:23,532 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:38:23,533 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:38:23] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:39:24,782 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "GET / HTTP/1.1" 200 -
+2025-02-04 22:39:24,830 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:39:24,833 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:39:24,849 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:39:24,870 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:39:24,889 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:24] "GET / HTTP/1.1" 200 -
+2025-02-04 22:39:28,728 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:39:31,982 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:39:32,005 - Main_code - INFO - Successfully downloaded and processed data for INTC
+2025-02-04 22:39:32,006 - Main_code - INFO - Data shape: (6353, 10), Date range: 1999-11-01 00:00:00 to 2025-02-03 00:00:00
+2025-02-04 22:39:32,011 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:39:32,012 - Main_code - ERROR - Error initializing trading environment: 'RSI'
+2025-02-04 22:39:32,013 - __main__ - ERROR - Error processing stock: 'RSI'
+2025-02-04 22:39:32,014 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:32] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:39:42,404 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:39:42,406 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:39:44,606 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "GET / HTTP/1.1" 200 -
+2025-02-04 22:39:44,722 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:39:44,723 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:39:44,797 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:39:44,852 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:39:44,868 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:44] "GET / HTTP/1.1" 200 -
+2025-02-04 22:39:49,853 - Main_code - INFO - Downloading data for AMZN...
+2025-02-04 22:39:52,613 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:39:52,640 - Main_code - INFO - Successfully calculated technical indicators for AMZN
+2025-02-04 22:39:52,644 - Main_code - INFO - Got 6353 days of training data for AMZN
+2025-02-04 22:39:52,645 - Main_code - ERROR - Error initializing trading environment: 'MACD_Signal'
+2025-02-04 22:39:52,646 - __main__ - ERROR - Error processing AMZN: 'MACD_Signal'
+2025-02-04 22:39:52,646 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:39:52] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:40:47,185 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:40:47,231 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:40:47,233 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:40:47,259 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:40:47,269 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:40:47,283 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:40:48,893 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "GET / HTTP/1.1" 200 -
+2025-02-04 22:40:48,926 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:40:48,929 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:40:48,955 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:40:48,961 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:40:48,978 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:40:48] "GET / HTTP/1.1" 200 -
+2025-02-04 22:41:02,328 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "GET / HTTP/1.1" 200 -
+2025-02-04 22:41:02,381 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:41:02,384 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:41:02,467 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:41:02,516 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:41:02,529 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:02] "GET / HTTP/1.1" 200 -
+2025-02-04 22:41:06,367 - Main_code - INFO - Downloading data for AMZN...
+2025-02-04 22:41:09,309 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:41:09,333 - Main_code - INFO - Successfully calculated technical indicators for AMZN
+2025-02-04 22:41:09,337 - Main_code - INFO - Got 6353 days of training data for AMZN
+2025-02-04 22:41:09,337 - Main_code - ERROR - Error initializing trading environment: 'MACD_Signal'
+2025-02-04 22:41:09,338 - __main__ - ERROR - Error processing AMZN: 'MACD_Signal'
+2025-02-04 22:41:09,339 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:41:09] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:42:36,519 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "GET / HTTP/1.1" 200 -
+2025-02-04 22:42:36,560 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:42:36,561 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:42:36,578 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:42:36,592 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:42:36,608 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:36] "GET / HTTP/1.1" 200 -
+2025-02-04 22:42:39,391 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:42:42,012 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:42:42,043 - Main_code - INFO - Successfully calculated technical indicators for INTC
+2025-02-04 22:42:42,047 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:42:42,048 - Main_code - ERROR - Error initializing trading environment: 'MACD_Signal'
+2025-02-04 22:42:42,048 - __main__ - ERROR - Error processing INTC: 'MACD_Signal'
+2025-02-04 22:42:42,050 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:42] "[35m[1mPOST /process_stock HTTP/1.1[0m" 500 -
+2025-02-04 22:42:52,159 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:42:52,160 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:42:55,332 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "GET / HTTP/1.1" 200 -
+2025-02-04 22:42:55,431 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:42:55,432 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:42:55,510 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:42:55,563 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:42:55,573 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:42:55] "GET / HTTP/1.1" 200 -
+2025-02-04 22:43:00,299 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:43:02,914 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:43:02,942 - Main_code - INFO - Successfully calculated technical indicators for INTC
+2025-02-04 22:43:02,945 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:43:02,946 - Main_code - ERROR - Missing required data column: 'BB_Position'
+2025-02-04 22:43:02,947 - Main_code - ERROR - Error initializing trading environment: Missing required data column: 'BB_Position'
+2025-02-04 22:43:02,948 - __main__ - ERROR - Value error processing INTC: Missing required data column: 'BB_Position'
+2025-02-04 22:43:02,949 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:43:02] "[31m[1mPOST /process_stock HTTP/1.1[0m" 400 -
+2025-02-04 22:44:01,115 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:44:01,116 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:44:03,211 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "GET / HTTP/1.1" 200 -
+2025-02-04 22:44:03,309 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:44:03,310 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:44:03,381 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:44:03,426 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:44:03,443 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:03] "GET / HTTP/1.1" 200 -
+2025-02-04 22:44:06,687 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:44:08,725 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:44:08,756 - Main_code - INFO - Successfully calculated technical indicators for INTC
+2025-02-04 22:44:08,759 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:44:10,837 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 22:44:10,838 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:44:10] "POST /process_stock HTTP/1.1" 200 -
+2025-02-04 22:45:59,586 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:45:59,588 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:46:01,361 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:01,459 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:46:01,460 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:46:01,536 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:46:01,574 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:46:01,588 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:01] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:04,975 - Main_code - INFO - Downloading data for AAPL...
+2025-02-04 22:46:06,183 - Main_code - INFO - API Response keys: dict_keys(['Information'])
+2025-02-04 22:46:06,184 - Main_code - ERROR - API Response: {'Information': 'Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'}
+2025-02-04 22:46:06,186 - Main_code - ERROR - Error in get_stock_data: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 22:46:06,186 - Main_code - ERROR - Error initializing trading environment: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 22:46:06,187 - __main__ - ERROR - Value error processing AAPL: No data returned for AAPL. Please verify the symbol is correct.
+2025-02-04 22:46:06,191 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:06] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:46:06,200 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:06] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:46,807 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.148.74:8000
+2025-02-04 22:46:46,809 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:46:49,438 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:49] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:50,171 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:46:50,172 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:46:50,197 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:50] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:46:50,288 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:50] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:46:50,317 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:50] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:52,076 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:52,098 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:46:52,109 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:46:52,626 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:46:52,671 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:46:52,685 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-02-04 22:46:55,760 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:46:59,878 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:46:59,910 - Main_code - INFO - Successfully calculated technical indicators for INTC
+2025-02-04 22:46:59,912 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:47:02,116 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 22:47:02,118 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:47:02] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:47:02,150 - __main__ - ERROR - Error loading results: 'dict object' has no attribute 'total_profit'
+2025-02-04 22:47:02,151 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:47:02] "[32mGET /results HTTP/1.1[0m" 302 -
+2025-02-04 22:47:02,159 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:47:02] "GET / HTTP/1.1" 200 -
+2025-02-04 22:49:39,786 - __main__ - ERROR - Error loading results: 'dict object' has no attribute 'total_profit'
+2025-02-04 22:49:39,789 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "[32mGET /results HTTP/1.1[0m" 302 -
+2025-02-04 22:49:39,809 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "GET / HTTP/1.1" 200 -
+2025-02-04 22:49:39,855 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:49:39,858 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:49:39,914 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:49:39,921 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:49:39,934 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:49:39] "GET / HTTP/1.1" 200 -
+2025-02-04 22:50:00,631 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.51.129:8000
+2025-02-04 22:50:00,633 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:50:02,097 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "GET / HTTP/1.1" 200 -
+2025-02-04 22:50:02,201 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:50:02,202 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:50:02,276 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:50:02,328 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:50:02,338 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:02] "GET / HTTP/1.1" 200 -
+2025-02-04 22:50:07,793 - Main_code - INFO - Downloading data for INTC...
+2025-02-04 22:50:12,491 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:50:12,540 - Main_code - INFO - Successfully calculated technical indicators for INTC
+2025-02-04 22:50:12,542 - Main_code - INFO - Got 6353 days of training data for INTC
+2025-02-04 22:50:14,794 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 22:50:14,795 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:14] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:50:14,836 - __main__ - ERROR - Error loading results: 'dict object' has no attribute 'value'
+2025-02-04 22:50:14,838 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:14] "[32mGET /results HTTP/1.1[0m" 302 -
+2025-02-04 22:50:14,847 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:50:14] "GET / HTTP/1.1" 200 -
+2025-02-04 22:53:29,593 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.46.110:8000
+2025-02-04 22:53:29,594 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:53:38,972 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:38] "GET / HTTP/1.1" 200 -
+2025-02-04 22:53:39,085 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:53:39,086 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:53:39,157 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:39] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:53:39,210 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:39] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:53:39,221 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:39] "GET / HTTP/1.1" 200 -
+2025-02-04 22:53:43,662 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 22:53:49,182 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:53:49,199 - Main_code - INFO - Training period: 2024-01-28 to 2025-01-27
+2025-02-04 22:53:49,200 - Main_code - INFO - Testing period: 2025-01-28 to 2025-02-04
+2025-02-04 22:53:49,212 - Main_code - INFO - Successfully calculated technical indicators for MSFT
+2025-02-04 22:53:49,214 - Main_code - INFO - Data shape: (250, 16), Date range: 2024-01-29 00:00:00 to 2025-01-27 00:00:00
+2025-02-04 22:53:49,218 - Main_code - INFO - Got 250 days of training data for MSFT
+2025-02-04 22:53:49,869 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 22:53:49,870 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:49] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:53:49,901 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:53:49] "GET /results HTTP/1.1" 200 -
+2025-02-04 22:56:35,712 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 22:56:35,713 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 22:56:47,354 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:56:47,454 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 22:56:47,454 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 22:56:47,526 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 22:56:47,575 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 22:56:47,588 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:56:47] "GET / HTTP/1.1" 200 -
+2025-02-04 22:56:50,422 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 22:57:02,910 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 22:57:02,939 - Main_code - INFO - Training period: 2024-01-28 to 2025-01-27
+2025-02-04 22:57:02,941 - Main_code - INFO - Testing period: 2025-01-28 to 2025-02-04
+2025-02-04 22:57:02,955 - Main_code - INFO - Successfully calculated technical indicators for MSFT
+2025-02-04 22:57:02,956 - Main_code - INFO - Data shape: (250, 16), Date range: 2024-01-29 00:00:00 to 2025-01-27 00:00:00
+2025-02-04 22:57:02,963 - Main_code - INFO - Got 250 days of training data for MSFT
+2025-02-04 22:57:04,419 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 22:57:04,420 - __main__ - INFO - Successfully processed stock MSFT
+2025-02-04 22:57:04,422 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:57:04] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 22:57:04,448 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 22:57:04,477 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 22:57:04] "GET /results HTTP/1.1" 200 -
+2025-02-04 23:00:59,018 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.22.42.220:8000
+2025-02-04 23:00:59,020 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:01:13,779 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:13] "GET / HTTP/1.1" 200 -
+2025-02-04 23:01:13,887 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:01:13,889 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:01:13,955 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:13] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:01:14,004 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:14] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:01:14,017 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:14] "GET / HTTP/1.1" 200 -
+2025-02-04 23:01:17,770 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:01:26,398 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 23:01:26,412 - Main_code - ERROR - Error calculating technical indicators: unsupported operand type(s) for -: 'str' and 'str'
+2025-02-04 23:01:26,413 - Main_code - ERROR - Error in get_stock_data: Failed to calculate technical indicators: unsupported operand type(s) for -: 'str' and 'str'
+2025-02-04 23:01:26,414 - Main_code - ERROR - Error initializing trading environment: Failed to calculate technical indicators: unsupported operand type(s) for -: 'str' and 'str'
+2025-02-04 23:01:26,415 - __main__ - ERROR - Value error processing MSFT: Failed to calculate technical indicators: unsupported operand type(s) for -: 'str' and 'str'
+2025-02-04 23:01:26,422 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:26] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:01:26,432 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:01:26] "GET / HTTP/1.1" 200 -
+2025-02-04 23:04:08,116 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:04:08,118 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:04:10,871 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:10] "GET / HTTP/1.1" 200 -
+2025-02-04 23:04:10,979 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:04:10,980 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:04:11,046 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:11] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:04:11,092 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:11] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:04:11,106 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:11] "GET / HTTP/1.1" 200 -
+2025-02-04 23:04:14,769 - Main_code - INFO - Downloading data for AMD...
+2025-02-04 23:04:17,084 - Main_code - INFO - API Response keys: dict_keys(['Meta Data', 'Time Series (Daily)'])
+2025-02-04 23:04:17,112 - Main_code - INFO - Successfully calculated technical indicators for AMD
+2025-02-04 23:04:17,112 - Main_code - INFO - Data shape: (250, 16), Date range: 2024-01-29 00:00:00 to 2025-01-27 00:00:00
+2025-02-04 23:04:17,122 - Main_code - ERROR - Error calculating technical indicators: Invalid values in BB_Upper
+2025-02-04 23:04:17,123 - Main_code - ERROR - Error in get_stock_data: Failed to calculate technical indicators: Invalid values in BB_Upper
+2025-02-04 23:04:17,123 - Main_code - ERROR - Error initializing trading environment: Failed to calculate technical indicators: Invalid values in BB_Upper
+2025-02-04 23:04:17,124 - __main__ - ERROR - Value error processing AMD: Failed to calculate technical indicators: Invalid values in BB_Upper
+2025-02-04 23:04:17,127 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:17] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:04:17,139 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:04:17] "GET / HTTP/1.1" 200 -
+2025-02-04 23:06:38,672 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:06:38,674 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:06:40,316 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "GET / HTTP/1.1" 200 -
+2025-02-04 23:06:40,409 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:06:40,410 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:06:40,480 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:06:40,538 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:06:40,551 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:40] "GET / HTTP/1.1" 200 -
+2025-02-04 23:06:43,926 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:06:46,529 - Main_code - INFO - Successfully calculated indicators for MSFT. Shape: (250, 16)
+2025-02-04 23:06:46,530 - Main_code - ERROR - Error in _calculate_indicators: Insufficient data points for MSFT. Need at least 26 days.
+2025-02-04 23:06:46,531 - Main_code - ERROR - Error in get_stock_data: Insufficient data points for MSFT. Need at least 26 days.
+2025-02-04 23:06:46,531 - Main_code - ERROR - Error initializing trading environment: Insufficient data points for MSFT. Need at least 26 days.
+2025-02-04 23:06:46,532 - __main__ - ERROR - Value error processing MSFT: Insufficient data points for MSFT. Need at least 26 days.
+2025-02-04 23:06:46,535 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:46] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:06:46,544 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:06:46] "GET / HTTP/1.1" 200 -
+2025-02-04 23:07:51,471 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:07:51,473 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:07:53,135 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "GET / HTTP/1.1" 200 -
+2025-02-04 23:07:53,233 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:07:53,234 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:07:53,339 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:07:53,393 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:07:53,404 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:07:53] "GET / HTTP/1.1" 200 -
+2025-02-04 23:07:57,721 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:08:00,627 - Main_code - INFO - Successfully calculated indicators for MSFT training data. Shape: (250, 16)
+2025-02-04 23:08:00,630 - Main_code - ERROR - Error in indicator calculation: Insufficient data for Bollinger Bands calculation for MSFT
+2025-02-04 23:08:00,630 - Main_code - ERROR - Error in _calculate_indicators: Failed to calculate indicators: Insufficient data for Bollinger Bands calculation for MSFT
+2025-02-04 23:08:00,630 - Main_code - ERROR - Error in get_stock_data: Failed to calculate indicators: Insufficient data for Bollinger Bands calculation for MSFT
+2025-02-04 23:08:00,632 - Main_code - ERROR - Error initializing trading environment: Failed to calculate indicators: Insufficient data for Bollinger Bands calculation for MSFT
+2025-02-04 23:08:00,632 - __main__ - ERROR - Value error processing MSFT: Failed to calculate indicators: Insufficient data for Bollinger Bands calculation for MSFT
+2025-02-04 23:08:00,637 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:08:00] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:08:00,647 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:08:00] "GET / HTTP/1.1" 200 -
+2025-02-04 23:09:28,202 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:09:28,204 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:09:29,860 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:29] "GET / HTTP/1.1" 200 -
+2025-02-04 23:09:29,958 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:09:29,959 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:09:30,037 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:30] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:09:30,102 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:30] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:09:30,111 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:30] "GET / HTTP/1.1" 200 -
+2025-02-04 23:09:33,832 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:09:36,326 - Main_code - INFO - Successfully calculated indicators for MSFT training data. Shape: (250, 16)
+2025-02-04 23:09:36,332 - Main_code - INFO - Successfully calculated indicators for MSFT testing data. Shape: (5, 16)
+2025-02-04 23:09:36,333 - Main_code - INFO - Processed data for MSFT:
+2025-02-04 23:09:36,334 - Main_code - INFO - Training: 250 days (2024-01-29 00:00:00 to 2025-01-27 00:00:00)
+2025-02-04 23:09:36,334 - Main_code - INFO - Testing: 5 days (2025-01-28 00:00:00 to 2025-02-03 00:00:00)
+2025-02-04 23:09:36,985 - __main__ - INFO - Training completed for MSFT
+2025-02-04 23:09:36,987 - __main__ - INFO - Testing completed for MSFT
+2025-02-04 23:09:36,989 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 23:09:36,990 - __main__ - INFO - Results saved for MSFT
+2025-02-04 23:09:36,991 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:36] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:09:37,014 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 23:09:37,032 - __main__ - ERROR - Error loading results: 'dict object' has no attribute 'final_portfolio_value'
+2025-02-04 23:09:37,034 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:37] "[32mGET /results HTTP/1.1[0m" 302 -
+2025-02-04 23:09:37,042 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:09:37] "GET / HTTP/1.1" 200 -
+2025-02-04 23:10:59,940 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:10:59,942 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:11:01,417 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "GET / HTTP/1.1" 200 -
+2025-02-04 23:11:01,523 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:11:01,523 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:11:01,604 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:11:01,650 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:11:01,667 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:01] "GET / HTTP/1.1" 200 -
+2025-02-04 23:11:06,344 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:11:09,523 - Main_code - INFO - Successfully calculated indicators for MSFT training data. Shape: (250, 16)
+2025-02-04 23:11:09,531 - Main_code - INFO - Successfully calculated indicators for MSFT testing data. Shape: (5, 16)
+2025-02-04 23:11:09,532 - Main_code - INFO - Processed data for MSFT:
+2025-02-04 23:11:09,533 - Main_code - INFO - Training: 250 days (2024-01-29 00:00:00 to 2025-01-27 00:00:00)
+2025-02-04 23:11:09,534 - Main_code - INFO - Testing: 5 days (2025-01-28 00:00:00 to 2025-02-03 00:00:00)
+2025-02-04 23:11:10,236 - __main__ - INFO - Training completed for MSFT
+2025-02-04 23:11:10,237 - __main__ - INFO - Testing completed for MSFT
+2025-02-04 23:11:10,239 - Main_code - INFO - Trading results saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 23:11:10,240 - __main__ - INFO - Results saved for MSFT
+2025-02-04 23:11:10,241 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:10] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:11:10,259 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 23:11:10,277 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:10] "GET /results HTTP/1.1" 200 -
+2025-02-04 23:11:35,002 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:11:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:12:44,756 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:12:44,758 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:12:46,659 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "GET / HTTP/1.1" 200 -
+2025-02-04 23:12:46,770 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:12:46,771 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:12:46,845 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:12:46,898 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:12:46,908 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:12:46] "GET / HTTP/1.1" 200 -
+2025-02-04 23:13:05,496 - Main_code - INFO - Downloading data for GOOGL...
+2025-02-04 23:13:08,559 - Main_code - INFO - Successfully calculated indicators for GOOGL training data. Shape: (250, 16)
+2025-02-04 23:13:08,568 - Main_code - INFO - Successfully calculated indicators for GOOGL testing data. Shape: (5, 16)
+2025-02-04 23:13:08,569 - Main_code - INFO - Processed data for GOOGL:
+2025-02-04 23:13:08,570 - Main_code - INFO - Training: 250 days (2024-01-29 00:00:00 to 2025-01-27 00:00:00)
+2025-02-04 23:13:08,570 - Main_code - INFO - Testing: 5 days (2025-01-28 00:00:00 to 2025-02-03 00:00:00)
+2025-02-04 23:13:09,951 - __main__ - INFO - Training completed for GOOGL
+2025-02-04 23:13:09,954 - __main__ - INFO - Testing completed for GOOGL
+2025-02-04 23:13:09,990 - Main_code - INFO - Trading results successfully saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 23:13:09,990 - __main__ - INFO - Results saved for GOOGL
+2025-02-04 23:13:09,993 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:13:09] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:13:10,029 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 23:13:10,055 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:13:10] "GET /results HTTP/1.1" 200 -
+2025-02-04 23:14:11,496 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:14:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:15:10,421 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:10,460 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:15:10,464 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-02-04 23:15:10,480 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:15:10,535 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:15:10,555 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:10] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:19,088 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.113.160:8000
+2025-02-04 23:15:19,089 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 23:15:21,699 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:21,812 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:15:21,812 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:15:21,882 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:15:21,934 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:15:21,948 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:21] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:24,137 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:24,175 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:15:24,178 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-02-04 23:15:24,193 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "GET /get_stock_data HTTP/1.1" 200 -
+2025-02-04 23:15:24,204 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:15:24,216 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:24] "GET / HTTP/1.1" 200 -
+2025-02-04 23:15:27,095 - Main_code - INFO - Downloading data for MSFT...
+2025-02-04 23:15:31,596 - Main_code - INFO - Successfully calculated indicators for MSFT training data. Shape: (250, 16)
+2025-02-04 23:15:31,602 - Main_code - INFO - Successfully calculated indicators for MSFT testing data. Shape: (5, 16)
+2025-02-04 23:15:31,603 - Main_code - INFO - Processed data for MSFT:
+2025-02-04 23:15:31,603 - Main_code - INFO - Training: 250 days (2024-01-29 00:00:00 to 2025-01-27 00:00:00)
+2025-02-04 23:15:31,604 - Main_code - INFO - Testing: 5 days (2025-01-28 00:00:00 to 2025-02-03 00:00:00)
+2025-02-04 23:15:32,290 - __main__ - INFO - Training completed for MSFT
+2025-02-04 23:15:32,293 - __main__ - INFO - Testing completed for MSFT
+2025-02-04 23:15:32,316 - Main_code - INFO - Trading results successfully saved to C:\Users\indra\Desktop\Project\COde\trading_results.json
+2025-02-04 23:15:32,317 - __main__ - INFO - Results saved for MSFT
+2025-02-04 23:15:32,318 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "[32mPOST /process_stock HTTP/1.1[0m" 302 -
+2025-02-04 23:15:32,328 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 23:15:32,346 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "GET /results HTTP/1.1" 200 -
+2025-02-04 23:15:32,377 - __main__ - INFO - Successfully loaded results for display
+2025-02-04 23:15:32,379 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "GET /results HTTP/1.1" 200 -
+2025-02-04 23:15:32,416 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-02-04 23:15:32,551 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-02-04 23:15:32,560 - werkzeug - INFO - 127.0.0.1 - - [04/Feb/2025 23:15:32] "GET / HTTP/1.1" 200 -

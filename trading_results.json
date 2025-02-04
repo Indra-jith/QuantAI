@@ -1,97 +1,44 @@
 {
-    "symbol": "ACCO",
-    "initial_balance": 100.0,
-    "final_portfolio_value": 102.27052000000002,
-    "total_return_pct": 2.270520000000019,
+    "symbol": "MSFT",
+    "training_return": 0.0,
+    "final_portfolio_value": 100.0,
+    "initial_balance": 100,
+    "total_return_pct": 0.0,
+    "training": {
+        "return": 0.0,
+        "final_value": 100.0,
+        "trades": 0,
+        "profit": 0.0
+    },
+    "testing": {
+        "return": 0.0,
+        "final_value": 100.0,
+        "trades": 0,
+        "profit": 0.0
+    },
+    "model_performance": {
+        "avg_reward": 0.0,
+        "final_epsilon": 1.0,
+        "training_episodes": 10,
+        "sharpe_ratio": 0.0,
+        "max_drawdown": 0.0,
+        "total_trades": 0,
+        "total_profit": 0.0
+    },
     "recommendation": {
         "action": "BUY",
-        "confidence": 59.08902883529663,
+        "confidence": 38.8782799243927,
         "reason": "RSI indicates oversold conditions",
-        "current_price": 5.09,
         "probabilities": {
-            "buy": 0.5908902883529663,
-            "sell": 0.17754201591014862,
-            "hold": 0.23156771063804626
+            "hold": 0.22385644912719727,
+            "buy": 0.388782799243927,
+            "sell": 0.38736069202423096
         },
-        "technical_indicators": {
-            "RSI": 0.0,
-            "MACD": 0.0,
-            "MACD_Signal": 0.0,
-            "EMA5": 5.24,
-            "EMA20": 5.24
-        }
+        "trend_analysis": {
+            "recent_return": 0.0,
+            "total_return": 0.0
+        },
+        "timestamp": "2025-02-04 23:15:32"
     },
-    "trading_history": [
-        {
-            "date": "2025-01-24",
-            "action": "buy",
-            "shares": 17.0,
-            "price": 5.24,
-            "value": 89.16908,
-            "profit": null,
-            "portfolio_value": 99.91092
-        },
-        {
-            "date": "2025-01-27",
-            "action": "sell",
-            "shares": 17.0,
-            "price": 5.35,
-            "value": 90.85904999999998,
-            "profit": 1.7790499999999838,
-            "portfolio_value": 101.68996999999999
-        },
-        {
-            "date": "2025-01-28",
-            "action": "buy",
-            "shares": 17.0,
-            "price": 5.27,
-            "value": 89.67958999999998,
-            "profit": null,
-            "portfolio_value": 101.60038
-        },
-        {
-            "date": "2025-01-30",
-            "action": "sell",
-            "shares": 17.0,
-            "price": 5.32,
-            "value": 90.34956,
-            "profit": 0.7595600000000076,
-            "portfolio_value": 102.35994000000001
-        },
-        {
-            "date": "2025-01-31",
-            "action": "buy",
-            "shares": 17.0,
-            "price": 5.26,
-            "value": 89.50941999999999,
-            "profit": null,
-            "portfolio_value": 102.27052000000002
-        }
-    ],
-    "model_performance": {
-        "total_trades": 3,
-        "profitable_trades": 2,
-        "win_rate": 66.66666666666666,
-        "total_profit": 2.5386099999999914,
-        "sharpe_ratio": 12.153332382420475,
-        "volatility": 0.12196213469946487,
-        "max_drawdown": 0.0008810111754383148,
-        "training_episodes": 20
-    },
-    "market_analysis": {
-        "trend": "bearish",
-        "volatility": 0.12196213469946487,
-        "rsi": 0.0,
-        "volume_trend": "increasing"
-    },
-    "dates": {
-        "train": [
-            "2024-01-25",
-            "2025-01-23"
-        ],
-        "test": [
-            "2025-01-24",
-            "2025-02-04"
-        ]
-    }
+    "trading_history": []
 }
