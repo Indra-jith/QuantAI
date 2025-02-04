@@ -35,8 +35,11 @@ logger = logging.getLogger(__name__)
 warnings.filterwarnings('ignore')
 
 class StockDataProcessor:
-    def __init__(self, api_key: str):
-        self.api_key = api_key
+    def __init__(self, api_key: str = None):
+        # Get API key from environment variable if not provided
+        self.api_key = api_key or os.environ.get('ALPHA_VANTAGE_API_KEY')
+        if not self.api_key:
+            raise ValueError("Alpha Vantage API key is required")
         self.technical_cache = {}
         
     def get_stock_data(self, symbol: str) -> pd.DataFrame:
@@ -625,32 +628,23 @@ def get_date_ranges() -> Tuple[str, str]:
 def initialize_trading_environment(symbol: str, initial_balance: float = 100) -> Tuple[TradingAgent, StockTradingEnvironment]:
     """Initialize the trading environment and agent for a given symbol."""
     try:
-        # Import API key from app.py
-        from app import API_KEY
-        if not API_KEY:
-            raise ValueError("API key not found in app.py")
+        # Get API key from environment
+        api_key = os.environ.get('ALPHA_VANTAGE_API_KEY')
+        if not api_key:
+            raise ValueError("Alpha Vantage API key not found")
         
         # Create processor with the API key
-        processor = StockDataProcessor(api_key=API_KEY)
+        processor = StockDataProcessor(api_key=api_key)
         
-        # Get date ranges
-        date_ranges = get_date_ranges()
-        
-        # Get training and testing data
+        # Get training data
         train_data = processor.get_stock_data(symbol)
         logger.info(f"Got {len(train_data)} days of training data for {symbol}")
         
-        test_data = processor.get_stock_data(symbol)
-        logger.info(f"Got {len(test_data)} days of testing data for {symbol}")
-        
-        # Initialize test environment
-        env = StockTradingEnvironment(test_data, initial_balance=initial_balance)
+        # Initialize environment
+        env = StockTradingEnvironment(train_data, initial_balance=initial_balance)
         
         # Initialize agent
         agent = TradingAgent(state_size=env.state_size, action_size=env.action_size)
-        
-        logger.info(f"Training period: {date_ranges['train'][0]} to {date_ranges['train'][1]}")
-        logger.info(f"Testing period: {date_ranges['test'][0]} to {date_ranges['test'][1]}")
         
         return agent, env
         
