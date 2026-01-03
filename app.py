@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # API key directly in code (since it's public)
-API_KEY = 'BF24E50ARR9HZEP0'
+API_KEY = 'ZI9PD1P48JFR96AS'
 
 # Famous stocks list directly in code
 STOCK_LIST = [
